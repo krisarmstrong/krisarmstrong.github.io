@@ -41,7 +41,8 @@ nav {
     border: none; /* Ensure no borders exist */
     margin: 0; /* Eliminate any unintended spacing */
     padding: 0; /* Ensure no extra padding is causing visual effects */
-    /* border-bottom: 2px solid #007bff; /* Blue underline for nav bar */
+    border-top: none; /* Ensure no extra line above the nav */
+    border-bottom: none; /* Ensure no extra line below the nav */
 }
 
 nav ul {
@@ -157,7 +158,10 @@ a:hover {
     padding: 15px 10px; /* Add padding for spacing */
     font-size: 0.9rem; /* Slightly smaller font for footer text */
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.4); /* Subtle shadow above footer */
-    border-top: 2px solid #007bff; /* Add blue top border if needed */
+    border-top: 2px solid #007bff; /* Add blue top border */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
 }
 
 .site-footer a {
