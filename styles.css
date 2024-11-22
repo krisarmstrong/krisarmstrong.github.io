@@ -40,7 +40,7 @@ header p {
 nav {
     background-color: #1a1a1a; /* Slightly lighter for contrast */
     position: sticky; /* Make navbar stick below the header */
-    top: calc(100px + 61px); /* Dynamically calculate position based on header height */
+    top: 191px; /* Match the header's height exactly */
     z-index: 999; /* Ensure it's below the header */
     padding: 10px 0;
     border-top: none; /* Remove top border to eliminate double line */
@@ -80,6 +80,7 @@ nav ul li a:hover {
 
 /* Main Content Area */
 main {
+    padding-top: 305px; /* 191px (header) + 114px (nav) */
     padding: 40px 20px; /* Add space around the content */
     margin-top: 20px; /* Add spacing below the navbar */
     max-width: 900px; /* Restrict maximum width for readability */
@@ -87,6 +88,16 @@ main {
 }
 
 /* Container Class for Sections */
+.header-placeholder {
+    height: 191px; /* Match header height */
+    background-color: transparent;
+}
+
+.nav-placeholder {
+    height: 114px; /* Match nav height */
+    background-color: transparent;
+}
+
 .container {
     margin-bottom: 30px; /* Add spacing below each section */
     padding: 25px; /* Add padding inside the container */

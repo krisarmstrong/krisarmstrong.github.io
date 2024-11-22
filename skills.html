@@ -12,10 +12,16 @@
         <div data-include="header.html"></div>
     </header>
 
+    <!-- Placeholder for Header -->
+    <div class="header-placeholder"></div>
+
     <!-- Navigation -->
     <nav>
         <div data-include="nav.html"></div>
     </nav>
+
+    <!-- Placeholder for Navigation -->
+    <div class="nav-placeholder"></div>
 
     <!-- Main Content -->
     <main>
@@ -102,22 +108,9 @@
     <div data-include="footer.html"></div>
 
     <!-- Include JavaScript -->
-    <script>
-        function includeHTML() {
-            const elements = document.querySelectorAll("[data-include]");
-            elements.forEach(async (el) => {
-                const file = el.getAttribute("data-include");
-                if (file) {
-                    const response = await fetch(file);
-                    if (response.ok) {
-                        el.innerHTML = await response.text();
-                    } else {
-                        el.innerHTML = "Error loading file.";
-                    }
-                }
-            });
-        }
-        document.addEventListener("DOMContentLoaded", includeHTML);
-    </script>
+    <!-- Include JavaScript -->
+    <!-- Include JavaScript -->
+    <script src="includeHTML.js" defer></script>
+    <script src="menu.js" defer></script>
 </body>
 </html>
