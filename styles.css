@@ -86,26 +86,6 @@ ul li {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Key Highlights Styling */
-#highlights ul {
-    padding: 0;
-    list-style: none;
-}
-
-#highlights ul li {
-    background-color: #fff;
-    margin-bottom: 10px; /* Add space between items */
-    padding: 15px; /* Increase padding inside items */
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    line-height: 1.4; /* Better line spacing */
-}
-
-highlights ul li b {
-    color: #007BFF; /* Highlight the bold text */
-}
-
-
 footer {
     background-color: #333;
     color: #fff;
@@ -151,4 +131,118 @@ form input[type="submit"] {
 
 form input[type="submit"]:hover {
     background-color: #555;
+}
+
+/* Key Highlights Styling */
+#highlights ul {
+    padding: 0;
+    list-style: none;
+}
+
+#highlights ul li {
+    background-color: #fff;
+    margin-bottom: 10px; /* Add space between items */
+    padding: 15px; /* Increase padding inside items */
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    line-height: 1.4; /* Better line spacing */
+}
+
+#highlights ul li b {
+    color: #007BFF; /* Highlight the bold text */
+}
+
+/* Styling for the Key Achievements Section */
+#key-achievements {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fff; /* White background for contrast */
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    line-height: 1.6; /* Better readability */
+}
+
+#key-achievements h2 {
+    font-size: 1.8rem; /* Larger font size for the heading */
+    color: #333; /* Dark gray for the heading */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+#key-achievements ul {
+    padding-left: 20px; /* Indent list for readability */
+    list-style-type: none; /* Remove bullets */
+}
+
+#key-achievements ul li {
+    margin-bottom: 15px; /* Add spacing between items */
+    padding-left: 20px; /* Padding for alignment */
+    position: relative;
+}
+
+#key-achievements ul li::before {
+    content: "✔"; /* Checkmark icon */
+    color: #007BFF; /* Blue color for emphasis */
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#key-achievements b {
+    color: #007BFF; /* Highlight bolded text in blue */
+    font-weight: bold;
+}
+
+/* Styling for Skills Section */
+#skills {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fff; /* White background for contrast */
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+#skills h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+    text-transform: uppercase; /* Prominent heading */
+    border-bottom: 2px solid #007BFF; /* Blue underline */
+    padding-bottom: 5px;
+}
+
+#skills .skills-container {
+    margin-bottom: 20px; /* Space between Hard and Soft Skills */
+}
+
+#skills h3 {
+    font-size: 1.5rem;
+    color: #007BFF; /* Blue color for subheadings */
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+#skills ul {
+    padding-left: 20px; /* Indent list for readability */
+    list-style-type: none; /* Remove bullets */
+}
+
+#skills ul li {
+    margin-bottom: 10px; /* Add space between list items */
+    padding-left: 20px;
+    position: relative;
+}
+
+#skills ul li::before {
+    content: "✔"; /* Checkmark icon */
+    color: #007BFF; /* Blue color for icons */
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#skills b {
+    color: #007BFF; /* Highlight bolded text in blue */
+    font-weight: bold;
 }
