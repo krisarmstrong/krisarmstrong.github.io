@@ -1,176 +1,132 @@
 /* Reset and Global Styles */
-/* Reset default margins, paddings, and borders for consistency across browsers */
 * {
     margin: 0;
     padding: 0;
     border: 0;
-    box-sizing: border-box; /* Include padding and borders in element width/height */
+    box-sizing: border-box;
 }
 
-/* Global body styles */
 body {
     font-family: Arial, sans-serif; /* Clean and professional font */
-    background-color: #121212; /* Dark background for the entire site */
-    color: #e0e0e0; /* Light gray text for readability */
-    line-height: 1.6; /* Improve text readability */
-    display: flex; /* Use flexbox for overall layout */
-    flex-direction: column; /* Stack header, main, and footer vertically */
-    min-height: 100vh; /* Ensure body spans at least the full viewport height */
+    background-color: #121212;/* Dark background */
+    color: #e0e0e0;/* Light gray text */
+    line-height: 1.6;/* Improve text readability */
+    display: flex;/* Flexbox layout for body */
+    flex-direction: column;/* Stack header, main, and footer vertically */
+    min-height: 100vh;/* Full viewport height */
 }
 
 /* Header Styling */
-/* Header is sticky and remains at the top */
 header {
-    background-color: #1f1f1f; /* Slightly lighter dark header for contrast */
-    color: #ffffff; /* Bright white text for readability */
-    text-align: center; /* Center-align header content */
-    padding: 20px 0; /* Add padding for spacing */
-    border-bottom: 2px solid #007bff; /* Blue underline for emphasis */
-    position: sticky; /* Make header stick to the top on scroll */
-    top: 0; /* Ensure header stays at the very top */
-    z-index: 1000; /* Keep header above other elements */
+    background-color: #1f1f1f; /* Slightly lighter dark header */
+    color: #ffffff; /* Bright white text */
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 2px solid #007bff; /* Add blue underline */
+    position: sticky; /* Make header stick to the top */
+    top: 0; /* Position it at the very top */
+    z-index: 1000; /* Ensure it's above other elements */
 }
 
 /* Navigation Bar Styling */
-/* Navigation remains sticky and appears below the header */
 nav {
-    background-color: #1a1a1a; /* Slightly lighter than the body for contrast */
-    position: sticky; /* Stick navigation to the top below the header */
-    top: 68px; /* Adjust top position to account for header height */
-    z-index: 999; /* Ensure it stays above main content */
-    padding: 10px 0; /* Add padding inside navigation bar */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Add subtle shadow for depth */
+    background-color: #1a1a1a; /* Slightly lighter for contrast */
+    position: sticky; /* Stick below the header */
+    top: 68px; /* Adjust based on header height */
+    z-index: 999; /* Keep it above content */
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Add slight shadow */
 }
 
-/* Navigation list styling */
 nav ul {
-    list-style: none; /* Remove bullet points */
-    display: flex; /* Display navigation items in a row */
-    justify-content: center; /* Center-align navigation links */
-    margin: 0; /* Ensure no extra margin */
-    padding: 0; /* Ensure no extra padding */
+    list-style: none;  /* Remove bullets */
+    display: flex;
+    justify-content: center;
 }
 
-/* Navigation list item styling */
 nav ul li {
-    margin: 0 15px; /* Add spacing between navigation items */
+    margin: 0 15px;    /* Space between nav items */
 }
 
-/* Navigation links */
 nav ul li a {
-    color: #e0e0e0; /* Light gray links */
-    text-decoration: none; /* Remove underline for a clean look */
-    padding: 10px 15px; /* Add padding inside clickable area */
-    border-radius: 5px; /* Add rounded corners for modern design */
-    transition: background-color 0.3s, color 0.3s; /* Smooth hover transition */
+    color: #e0e0e0;    /* Light gray links */
+    text-decoration: none;    /* Clean look */
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-/* Hover effect for navigation links */
 nav ul li a:hover {
-    background-color: #007bff; /* Highlight link with blue background */
-    color: #ffffff; /* Change text to white for better contrast */
+    background-color: #007bff;    /* Highlight link on hover */
+    color: #ffffff;
 }
 
-/* Main Content Styling */
-/* Main content stretches to fill available space */
+/* Main Content Area */
 main {
-    flex: 1; /* Allow main content to grow and fill space */
-    padding: 40px 20px; /* Add padding for readability */
-    max-width: 900px; /* Restrict maximum width for readability */
-    margin: 0 auto; /* Center main content horizontally */
+    flex: 1;    /* Allow main content to grow and fill space */
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: 0 auto;    /* Center-align content */
 }
 
-/* Section Container Styling */
-/* Style for individual content sections */
+/* Section Containers */
 .container {
-    margin-bottom: 30px; /* Add spacing below each section */
-    padding: 25px; /* Add padding inside the section container */
-    background-color: #1e1e1e; /* Slightly darker gray for sections */
-    border-radius: 8px; /* Rounded corners for modern look */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); /* Subtle shadow for depth */
-    line-height: 1.6; /* Improve text readability */
+    margin-bottom: 30px;
+    padding: 25px;
+    background-color: #1e1e1e;    /* Slightly darker gray */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
 }
 
-/* Headings Styling */
-/* Styling for main section headings */
+/* Headings */
 .section-heading {
-    font-size: 1.8rem; /* Larger font size for main headings */
-    color: #ffffff; /* Bright white text */
-    font-weight: bold; /* Bold for emphasis */
-    margin-bottom: 20px; /* Add spacing below heading */
-    text-transform: uppercase; /* Uppercase for consistent styling */
-    border-bottom: 3px solid #007bff; /* Blue underline for visual separation */
-    padding-bottom: 5px; /* Add slight padding below text */
+    font-size: 1.8rem;
+    color: #ffffff;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    border-bottom: 3px solid #007bff;    /* Blue underline */
+    padding-bottom: 5px;
 }
 
-/* Subheadings Styling */
 .subheading {
-    font-size: 1.5rem; /* Slightly smaller than main heading */
-    color: #ffffff; /* Bright white text */
-    margin-bottom: 10px; /* Add spacing below subheading */
-    text-transform: uppercase; /* Uppercase for consistency */
-    font-weight: bold; /* Bold for emphasis */
-    border-bottom: 2px solid #007bff; /* Blue underline for structure */
-    padding-bottom: 5px; /* Add padding below text */
-}
-
-/* Unordered List Styling */
-/* General styling for lists */
-.list {
-    padding-left: 20px; /* Indent list items for readability */
-    list-style-type: none; /* Remove default bullet points */
-}
-
-/* List Item Styling */
-.list-item {
-    margin-bottom: 10px; /* Add spacing between list items */
-    padding-left: 20px; /* Indent content for alignment */
-    position: relative; /* Position for custom checkmarks */
-}
-
-/* Custom Checkmark for List Items */
-.list-item::before {
-    content: "✔"; /* Use checkmark for bullets */
-    color: #007bff; /* Blue checkmark */
-    font-weight: bold; /* Bold for visibility */
-    position: absolute; /* Position it relative to item */
-    left: 0; /* Align to the left */
-    top: 0; /* Align to the top */
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
 }
 
 /* Footer Styling */
-/* Footer stays at the bottom and is consistently styled */
 .site-footer {
-    background-color: #1f1f1f; /* Consistent with header color */
-    color: #e0e0e0; /* Light gray text */
-    text-align: center; /* Center-align footer content */
-    padding: 15px; /* Add padding for spacing */
-    font-size: 0.9rem; /* Slightly smaller font size */
-    border-top: 2px solid #007bff; /* Blue top border for separation */
-    margin-top: auto; /* Push footer to the bottom */
+    background-color: #1f1f1f;    /* Consistent with header */
+    color: #e0e0e0;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+    border-top: 2px solid #007bff;    /* Blue top border */
 }
 
-/* Footer Links */
+/* Links in Footer */
 .site-footer a {
-    color: #007bff; /* Blue links */
-    text-decoration: none; /* Remove underline for clean look */
-    transition: color 0.3s; /* Smooth hover effect */
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s;
 }
 
 .site-footer a:hover {
-    color: #0056b3; /* Darker blue on hover */
+    color: #0056b3;    /* Darker blue on hover */
 }
 
 /* Responsive Design */
-/* Adjustments for screens smaller than 768px */
 @media (max-width: 768px) {
     nav ul {
-        flex-direction: column; /* Stack navigation items vertically */
-        align-items: center; /* Center-align items */
+        flex-direction: column;        /* Stack nav items vertically */
     }
 
     .site-footer {
-        font-size: 0.8rem; /* Adjust font size for smaller screens */
-        padding: 10px; /* Reduce padding for smaller devices */
+        font-size: 0.8rem;        /* Adjust font size for smaller screens */
+        padding: 10px;
     }
-}
