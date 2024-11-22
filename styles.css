@@ -4,6 +4,7 @@ body {
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
+    line-height: 1.6; /* Improve readability */
 }
 
 header {
@@ -13,6 +14,18 @@ header {
     text-align: center;
 }
 
+header h1 {
+    font-size: 2rem; /* Adjust font size for better spacing */
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+header p {
+    margin: 0;
+    font-size: 1.2rem; /* Adjust font size for subtitle */
+}
+
+/* Navigation Styling */
 nav {
     background-color: #444;
 }
@@ -42,12 +55,16 @@ nav ul li a:hover {
     color: #fff;
 }
 
+/* Main Content */
 main {
-    padding: 20px;
+    padding: 40px 20px; /* Add padding for spacing around content */
+    max-width: 900px; /* Center content and limit width */
+    margin: 0 auto;
 }
 
 h1, h2 {
     color: #333;
+    margin-bottom: 20px; /* Add spacing below headings */
 }
 
 ul {
@@ -63,12 +80,31 @@ ul li {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
+/* Key Highlights Styling */
+#highlights ul {
+    padding: 0;
+    list-style: none;
+}
+
+#highlights ul li {
+    background-color: #fff;
+    margin-bottom: 10px; /* Add space between items */
+    padding: 15px; /* Increase padding inside items */
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    line-height: 1.4; /* Better line spacing */
+}
+
+#highlights ul li b {
+    color: #007BFF; /* Highlight the bold text */
+}
+
 footer {
     background-color: #333;
     color: #fff;
     text-align: center;
     padding: 10px 0;
-    position: fixed;
+    position: relative; /* Allow footer to sit naturally */
     width: 100%;
     bottom: 0;
 }
