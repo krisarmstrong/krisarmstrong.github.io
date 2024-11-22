@@ -194,6 +194,7 @@ a:hover {
     font-size: 1rem; /* Standard font size for inputs */
     background-color: #2a2a2a; /* Darker background for input fields */
     color: #ffffff; /* Light text for readability */
+    resize: vertical; /* Allow vertical resizing */
     transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth focus effect */
 }
 
