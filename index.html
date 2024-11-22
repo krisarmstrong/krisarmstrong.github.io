@@ -8,19 +8,10 @@
 </head>
 <body>
     <header>
-        <h1>Kris Armstrong, CISSP, CWNA, CWSP, CWDP</h1>
-        <p>Senior Security Architect | Cybersecurity Specialistr</p>
+        <div data-include="header.html"></div>
     </header>
     <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="experience.html">Experience</a></li>
-            <li><a href="skills.html">Skills</a></li>
-            <li><a href="certifications.html">Certifications</a></li>
-            <li><a href="education.html">Education</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+        <div data-include="nav.html"></div>
     </nav>
         <!-- Main Content -->
         <main>
@@ -37,10 +28,43 @@
             <section id="highlights">
                 <h2>Key Highlights</h2>
                 <ul>
-                    <li>Enhanced customer satisfaction scores by 20% through targeted training and support.</li>
-                    <li>Reduced resolution time by 30% in NETSCOUT’s Technical Assistance Center (TAC).</li>
-                    <li>Trained over 500 customers, driving product adoption and strategic growth.</li>
-                    <li>Collaborated with R&D to align customer needs with product innovation.</li>
+                    <!-- Pre-Sales and Technical Expertise -->
+                    <li>
+                        <b>Pre-Sales Technical Expertise:</b> Partnered with enterprise sales teams to close $20M+ in new business by delivering tailored technical demonstrations and proof-of-concept (POC) solutions, increasing deal closure rates by 25%.
+                    </li>
+                    <li>
+                        <b>Customer-Centric Solutions:</b> Designed tailored end-to-end network and cybersecurity solutions for clients, achieving a customer satisfaction score of 98% and securing long-term partnerships.
+                    </li>
+            
+                    <!-- Cybersecurity and Risk Management -->
+                    <li>
+                        <b>Cybersecurity Leadership:</b> Spearheaded compliance initiatives for ISO 27001 and NIST CSF frameworks, ensuring 100% audit success and reducing security risks by 70%.
+                    </li>
+                    <li>
+                        <b>Incident Response and Threat Mitigation:</b> Led the resolution of a ransomware attack, mitigating damage within 2 hours and saving the organization over $1M in potential losses.
+                    </li>
+                    <li>
+                        <b>Network Security Enhancements:</b> Implemented advanced threat detection systems and secured wireless networks with WPA3 and 802.1x authentication, increasing anomaly detection rates by 50%.
+            
+                    <!-- Post-Sales and Training Expertise -->
+                    <li>
+                        <b>Post-Sales Training:</b> Delivered targeted training to over 500 enterprise clients, resulting in a 40% increase in product adoption and driving strategic growth for the organization.
+                    </li>
+                    <li>
+                        <b>Customer Retention:</b> Boosted retention rates by 30% by providing hands-on technical support and designing self-service resources for clients.
+            
+                    <!-- Automation and Innovation -->
+                    <li>
+                        <b>Automation for Efficiency:</b> Automated repetitive workflows with Python and Bash scripts, reducing technical demo preparation time by 35% and improving team productivity.
+                    </li>
+            
+                    <!-- Collaboration and R&D Impact -->
+                    <li>
+                        <b>Collaboration with R&D:</b> Served as the "voice of the customer" for product development, driving the successful launch of 5+ new features and increasing product adoption by 15%.
+                    </li>
+                    <li>
+                        <b>Metrics-Driven Results:</b> Exceeded annual sales quotas by 120% by effectively translating complex technical concepts into actionable business value for clients.
+                    </li>
                 </ul>
             </section>
     
@@ -48,20 +72,55 @@
             <section id="core-competencies">
                 <h2>Core Competencies</h2>
                 <ul>
-                    <li>Cybersecurity and Risk Management</li>
-                    <li>Wireless Network Design (CWDP, CWSP, CWNA)</li>
-                    <li>Python and Bash Scripting for Automation</li>
-                    <li>Cloud Computing (AWS, Azure)</li>
+                    <!-- Cybersecurity Expertise -->
+                    <li><b>Cybersecurity and Risk Management</b> – Proven ability to implement frameworks like ISO 27001 and NIST CSF, reducing security risks by 70% and ensuring 100% compliance during audits.</li>
+                    <li><b>Incident Response and Threat Mitigation</b> – Skilled in rapid response to cyber threats, such as resolving ransomware attacks within 2 hours to minimize damage and save over $1M in potential losses.</li>
+            
+                    <!-- Sales and Pre-Sales Engineering -->
+                    <li><b>Pre-Sales Technical Expertise</b> – Experienced in delivering tailored technical demonstrations and proof-of-concept solutions, closing $20M+ in enterprise business and increasing deal closure rates by 25%.</li>
+                    <li><b>Customer Enablement and Training</b> – Delivered customized training programs to over 500 clients, driving a 40% increase in product adoption and boosting retention rates by 30%.</li>
+            
+                    <!-- Networking and Systems Engineering -->
+                    <li><b>Wireless Network Design</b> – Certified Wireless Professional (CWDP, CWSP, CWNA) with expertise in secure deployment of wireless solutions using advanced protocols like WPA3 and 802.1x.</li>
+                    <li><b>Advanced Network Security</b> – Designed and deployed threat detection systems, increasing anomaly detection rates by 50% and securing network infrastructure end-to-end.</li>
+            
+                    <!-- Technical Innovation and Automation -->
+                    <li><b>Python and Bash Scripting</b> – Automated repetitive workflows to reduce technical demo preparation time by 35%, improving team productivity and operational efficiency.</li>
+                    <li><b>Collaboration with R&D</b> – Served as a bridge between clients and R&D teams, influencing 5+ feature launches that increased product adoption by 15%.</li>
+            
+                    <!-- Metrics-Driven Results -->
+                    <li><b>Data-Driven Problem Solving</b> – Achieved measurable outcomes, such as exceeding annual sales quotas by 120% and improving customer satisfaction scores by 20%.</li>
                 </ul>
+            </section>
+
                 <!-- Call to Action -->
+            <section>
                 <div class="cta">
                     <a href="Resume-Kris-Armstrong-Ingram-Micro.pdf" class="button">Download My Resume</a>
                     <a href="contact.html" class="button">Get in Touch</a>
                 </div>
             </section>
         </main>
-    <footer>
-        <p>&copy; 2024 Kris Armstrong</p>
-    </footer>
+    <!-- Include Footer -->
+    <div data-include="footer.html"></div>
+
+    <!-- Include the script to load components -->
+    <script>
+        function includeHTML() {
+            const elements = document.querySelectorAll("[data-include]");
+            elements.forEach(async (el) => {
+                const file = el.getAttribute("data-include");
+                if (file) {
+                    const response = await fetch(file);
+                    if (response.ok) {
+                        el.innerHTML = await response.text();
+                    } else {
+                        el.innerHTML = "Error loading file.";
+                    }
+                }
+            });
+        }
+        document.addEventListener("DOMContentLoaded", includeHTML);
+    </script>
 </body>
 </html>
