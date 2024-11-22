@@ -153,6 +153,22 @@ form input[type="submit"]:hover {
 }
 
 /* Styling for the Key Achievements Section */
+#key-achievements h3 {
+    font-size: 1.5rem;
+    color: #007BFF; /* Blue color for subheadings */
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+#key-achievements h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+    text-transform: uppercase; /* Prominent heading */
+    border-bottom: 2px solid #007BFF; /* Blue underline */
+    padding-bottom: 5px;
+}
+
 #key-achievements {
     margin-bottom: 30px;
     padding: 20px;
@@ -211,15 +227,6 @@ form input[type="submit"]:hover {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
-#skills h2 {
-    font-size: 1.8rem;
-    color: #333;
-    margin-bottom: 15px;
-    text-transform: uppercase; /* Prominent heading */
-    border-bottom: 2px solid #007BFF; /* Blue underline */
-    padding-bottom: 5px;
-}
-
 #skills .skills-container {
     margin-bottom: 20px; /* Space between Hard and Soft Skills */
 }
@@ -229,6 +236,15 @@ form input[type="submit"]:hover {
     color: #007BFF; /* Blue color for subheadings */
     margin-bottom: 10px;
     text-transform: uppercase;
+}
+
+#skills h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+    text-transform: uppercase; /* Prominent heading */
+    border-bottom: 2px solid #007BFF; /* Blue underline */
+    padding-bottom: 5px;
 }
 
 #skills ul {
