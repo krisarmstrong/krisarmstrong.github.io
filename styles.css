@@ -8,13 +8,19 @@ body {
     line-height: 1.6; /* Improve text readability */
 }
 
+/* Header Styling - Make Sticky */
 header {
     background-color: #1f1f1f; /* Slightly lighter dark header */
     color: #ffffff; /* Bright white text for contrast */
     padding: 20px 0; /* Add padding for spacing */
     text-align: center; /* Center-align header content */
-    border-bottom: 2px solid #007bff; /* Add a blue accent underline */
+    border-bottom: 2px solid #007bff; /* Blue accent underline */
+    position: sticky; /* Sticky position for scrolling */
+    top: 0; /* Fix header to the top of the viewport */
+    z-index: 1000; /* Ensure it stays above other elements */
 }
+
+
 
 header h1 {
     font-size: 2.2rem; /* Large font size for the main heading */
@@ -28,10 +34,14 @@ header p {
     color: #b0b0b0; /* Subtle gray for secondary text */
 }
 
-/* Navigation Bar Styling */
+/* Navigation Bar - Sticky */
 nav {
-    background-color: #1a1a1a; /* Slightly lighter than body for contrast */
-    border-bottom: 2px solid #007bff; /* Blue underline for nav bar */
+    background-color: #1a1a1a; /* Slightly lighter for contrast */
+    position: sticky; /* Make navbar stick below the header */
+    top: 68px; /* Adjust based on header height */
+    z-index: 999; /* Keep it above main content */
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Subtle shadow for separation */
 }
 
 nav ul {
@@ -77,22 +87,23 @@ main {
     line-height: 1.6; /* Improve text readability */
 }
 
-/* Section Headings */
+/* Section Headings - Keep One Blue Line */
 .section-heading {
     font-size: 1.8rem; /* Larger size for section titles */
     color: #ffffff; /* Bright white headings */
     margin-bottom: 20px; /* Add spacing below the heading */
     text-transform: uppercase; /* Make headings uppercase for emphasis */
-    border-bottom: 3px solid #007bff; /* Blue underline for visual separation */
+    border-bottom: 3px solid #007bff; /* Blue underline */
     padding-bottom: 5px; /* Add padding below text */
 }
 
-/* Subheading Styling */
+/* Subheading Styling - Remove Blue Line */
 .subheading {
     font-size: 1.5rem; /* Slightly smaller than main heading */
-    color: #007bff; /* Blue for subheadings */
+    color: #ffffff; /* White for subheadings */
     margin-bottom: 10px; /* Space below subheading */
     text-transform: uppercase; /* Uppercase styling for consistency */
+    font-weight: bold; /* Bold text */
 }
 
 /* Unordered List Styling */
@@ -215,10 +226,23 @@ a:hover {
     transform: scale(1.05); /* Slightly enlarge button on hover */
 }
 
-/* Responsive Design */
+/* Responsive Design for Navbar */
 @media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Stack nav items vertically */
+        padding: 0; /* Reset padding for mobile */
+    }
+
+    nav ul li {
+        margin: 5px 0; /* Add vertical spacing between items */
+    }
+
     .site-footer {
-        font-size: 0.8rem; /* Adjust font size for smaller screens */
-        padding: 10px 5px; /* Reduce padding on mobile */
+        font-size: 0.8rem; /* Smaller font size for footer on mobile */
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    main {
+        padding: 20px 15px; /* Reduce padding on mobile */
     }
 }
