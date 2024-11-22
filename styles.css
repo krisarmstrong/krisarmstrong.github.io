@@ -40,7 +40,7 @@ header p {
 nav {
     background-color: #1a1a1a; /* Slightly lighter for contrast */
     position: sticky; /* Make navbar stick below the header */
-    top: 0; /* Match the header's height exactly */
+    top: 61; /* Match the header's height exactly */
     z-index: 999; /* Ensure it's below the header */
     padding: 10px 0;
     border-top: none; /* Remove top border to eliminate double line */
