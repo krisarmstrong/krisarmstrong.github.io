@@ -1,165 +1,176 @@
 /* Reset and Global Styles */
+/* Reset default margins, paddings, and borders for consistency across browsers */
 * {
-    margin: 0; /* Remove all default margin */
-    padding: 0; /* Remove all default padding */
-    border: 0; /* Reset any default borders */
-    box-sizing: border-box; /* Ensure consistent sizing for elements */
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box; /* Include padding and borders in element width/height */
 }
 
+/* Global body styles */
 body {
-    font-family: Arial, sans-serif; /* Clean, professional font */
-    background-color: #121212; /* Dark background for the site */
+    font-family: Arial, sans-serif; /* Clean and professional font */
+    background-color: #121212; /* Dark background for the entire site */
     color: #e0e0e0; /* Light gray text for readability */
-    line-height: 1.6; /* Improve readability of text */
-    display: flex; /* Use Flexbox to structure the layout */
+    line-height: 1.6; /* Improve text readability */
+    display: flex; /* Use flexbox for overall layout */
     flex-direction: column; /* Stack header, main, and footer vertically */
-    min-height: 100vh; /* Ensure full viewport height */
+    min-height: 100vh; /* Ensure body spans at least the full viewport height */
 }
 
 /* Header Styling */
+/* Header is sticky and remains at the top */
 header {
-    background-color: #1f1f1f; /* Dark gray header */
-    color: #ffffff; /* Bright white text */
+    background-color: #1f1f1f; /* Slightly lighter dark header for contrast */
+    color: #ffffff; /* Bright white text for readability */
     text-align: center; /* Center-align header content */
-    padding: 20px 0; /* Add spacing inside header */
-    border-bottom: 2px solid #007bff; /* Add blue underline below header */
-    position: sticky; /* Make header stick to the top of the viewport */
-    top: 0; /* Position it at the very top */
-    z-index: 1000; /* Ensure header stays above other elements */
+    padding: 20px 0; /* Add padding for spacing */
+    border-bottom: 2px solid #007bff; /* Blue underline for emphasis */
+    position: sticky; /* Make header stick to the top on scroll */
+    top: 0; /* Ensure header stays at the very top */
+    z-index: 1000; /* Keep header above other elements */
 }
 
 /* Navigation Bar Styling */
+/* Navigation remains sticky and appears below the header */
 nav {
-    background-color: #1a1a1a; /* Slightly lighter gray for contrast */
-    position: sticky; /* Stick nav below the header */
-    top: 68px; /* Offset for sticky positioning below the header */
-    z-index: 999; /* Ensure nav is above main content */
-    padding: 10px 0; /* Add spacing around navigation items */
+    background-color: #1a1a1a; /* Slightly lighter than the body for contrast */
+    position: sticky; /* Stick navigation to the top below the header */
+    top: 68px; /* Adjust top position to account for header height */
+    z-index: 999; /* Ensure it stays above main content */
+    padding: 10px 0; /* Add padding inside navigation bar */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Add subtle shadow for depth */
 }
 
-/* Navigation Menu (Desktop View) */
+/* Navigation list styling */
 nav ul {
-    list-style: none; /* Remove bullets */
-    display: flex; /* Align items in a row */
-    justify-content: center; /* Center-align nav items */
+    list-style: none; /* Remove bullet points */
+    display: flex; /* Display navigation items in a row */
+    justify-content: center; /* Center-align navigation links */
+    margin: 0; /* Ensure no extra margin */
+    padding: 0; /* Ensure no extra padding */
 }
 
+/* Navigation list item styling */
 nav ul li {
-    margin: 0 15px; /* Space between nav items */
+    margin: 0 15px; /* Add spacing between navigation items */
 }
 
+/* Navigation links */
 nav ul li a {
     color: #e0e0e0; /* Light gray links */
-    text-decoration: none; /* Remove underline for a cleaner look */
-    padding: 10px 15px; /* Add clickable area around links */
-    border-radius: 5px; /* Slightly rounded corners */
-    transition: background-color 0.3s, color 0.3s; /* Smooth hover effect */
+    text-decoration: none; /* Remove underline for a clean look */
+    padding: 10px 15px; /* Add padding inside clickable area */
+    border-radius: 5px; /* Add rounded corners for modern design */
+    transition: background-color 0.3s, color 0.3s; /* Smooth hover transition */
 }
 
+/* Hover effect for navigation links */
 nav ul li a:hover {
     background-color: #007bff; /* Highlight link with blue background */
-    color: #ffffff; /* White text on hover */
+    color: #ffffff; /* Change text to white for better contrast */
 }
 
-/* Mobile Navigation Menu */
-.menu-toggle {
-    display: none; /* Hide on desktop */
-}
-
-/* Mobile-Specific Styles */
-@media (max-width: 768px) {
-    nav ul {
-        display: none; /* Hide menu by default */
-        flex-direction: column; /* Stack items vertically */
-        position: absolute; /* Position menu dropdown */
-        background-color: #1a1a1a; /* Match desktop nav color */
-        top: 58px; /* Position below header */
-        left: 0;
-        right: 0;
-        z-index: 999; /* Ensure menu stays above content */
-        padding: 10px 0; /* Add spacing */
-    }
-
-    nav ul.show {
-        display: flex; /* Show menu when toggled */
-    }
-
-    .menu-toggle {
-        display: block; /* Show hamburger menu on small screens */
-        color: #ffffff; /* White icon for visibility */
-        background-color: transparent; /* No background */
-        border: none; /* Remove border */
-        font-size: 1.5rem; /* Make it tappable */
-        cursor: pointer; /* Pointer cursor */
-        position: absolute;
-        top: 15px; /* Align with nav */
-        right: 15px;
-        z-index: 1000; /* Stay above nav menu */
-    }
-
-    nav ul li {
-        margin: 10px 0; /* Add spacing between nav items in dropdown */
-        text-align: center; /* Center-align text */
-    }
-}
-
-/* Main Content Area */
+/* Main Content Styling */
+/* Main content stretches to fill available space */
 main {
-    flex: 1; /* Allow main content to grow and fill available space */
-    padding: 40px 20px; /* Add spacing inside content */
+    flex: 1; /* Allow main content to grow and fill space */
+    padding: 40px 20px; /* Add padding for readability */
     max-width: 900px; /* Restrict maximum width for readability */
-    margin: 0 auto; /* Center the content */
+    margin: 0 auto; /* Center main content horizontally */
 }
 
-/* Section Containers */
+/* Section Container Styling */
+/* Style for individual content sections */
 .container {
-    margin-bottom: 30px; /* Add spacing below sections */
-    padding: 25px; /* Add padding inside sections */
+    margin-bottom: 30px; /* Add spacing below each section */
+    padding: 25px; /* Add padding inside the section container */
     background-color: #1e1e1e; /* Slightly darker gray for sections */
     border-radius: 8px; /* Rounded corners for modern look */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); /* Add depth */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); /* Subtle shadow for depth */
+    line-height: 1.6; /* Improve text readability */
 }
 
-/* Headings */
+/* Headings Styling */
+/* Styling for main section headings */
 .section-heading {
-    font-size: 1.8rem; /* Slightly larger headings */
+    font-size: 1.8rem; /* Larger font size for main headings */
     color: #ffffff; /* Bright white text */
-    font-weight: bold; /* Emphasize headings */
-    margin-bottom: 20px; /* Add spacing below */
-    text-transform: uppercase; /* Uppercase headings for impact */
-    border-bottom: 3px solid #007bff; /* Blue underline */
-    padding-bottom: 5px; /* Add spacing below text */
+    font-weight: bold; /* Bold for emphasis */
+    margin-bottom: 20px; /* Add spacing below heading */
+    text-transform: uppercase; /* Uppercase for consistent styling */
+    border-bottom: 3px solid #007bff; /* Blue underline for visual separation */
+    padding-bottom: 5px; /* Add slight padding below text */
 }
 
+/* Subheadings Styling */
 .subheading {
-    font-size: 1.5rem; /* Slightly smaller than main headings */
+    font-size: 1.5rem; /* Slightly smaller than main heading */
     color: #ffffff; /* Bright white text */
-    margin-bottom: 10px; /* Add spacing below */
-    text-transform: uppercase; /* Uppercase text for consistency */
-    font-weight: bold; /* Bold text */
+    margin-bottom: 10px; /* Add spacing below subheading */
+    text-transform: uppercase; /* Uppercase for consistency */
+    font-weight: bold; /* Bold for emphasis */
     border-bottom: 2px solid #007bff; /* Blue underline for structure */
-    padding-bottom: 5px; /* Add spacing */
+    padding-bottom: 5px; /* Add padding below text */
+}
+
+/* Unordered List Styling */
+/* General styling for lists */
+.list {
+    padding-left: 20px; /* Indent list items for readability */
+    list-style-type: none; /* Remove default bullet points */
+}
+
+/* List Item Styling */
+.list-item {
+    margin-bottom: 10px; /* Add spacing between list items */
+    padding-left: 20px; /* Indent content for alignment */
+    position: relative; /* Position for custom checkmarks */
+}
+
+/* Custom Checkmark for List Items */
+.list-item::before {
+    content: "✔"; /* Use checkmark for bullets */
+    color: #007bff; /* Blue checkmark */
+    font-weight: bold; /* Bold for visibility */
+    position: absolute; /* Position it relative to item */
+    left: 0; /* Align to the left */
+    top: 0; /* Align to the top */
 }
 
 /* Footer Styling */
+/* Footer stays at the bottom and is consistently styled */
 .site-footer {
-    background-color: #1f1f1f; /* Match header for consistency */
+    background-color: #1f1f1f; /* Consistent with header color */
     color: #e0e0e0; /* Light gray text */
     text-align: center; /* Center-align footer content */
-    padding: 15px; /* Add spacing */
-    font-size: 0.9rem; /* Smaller font size */
-    border-top: 2px solid #007bff; /* Blue top border */
-    margin-top: auto; /* Push footer to the bottom of the viewport */
+    padding: 15px; /* Add padding for spacing */
+    font-size: 0.9rem; /* Slightly smaller font size */
+    border-top: 2px solid #007bff; /* Blue top border for separation */
+    margin-top: auto; /* Push footer to the bottom */
 }
 
 /* Footer Links */
 .site-footer a {
     color: #007bff; /* Blue links */
-    text-decoration: none; /* Remove underline */
+    text-decoration: none; /* Remove underline for clean look */
     transition: color 0.3s; /* Smooth hover effect */
 }
 
 .site-footer a:hover {
     color: #0056b3; /* Darker blue on hover */
+}
+
+/* Responsive Design */
+/* Adjustments for screens smaller than 768px */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Stack navigation items vertically */
+        align-items: center; /* Center-align items */
+    }
+
+    .site-footer {
+        font-size: 0.8rem; /* Adjust font size for smaller screens */
+        padding: 10px; /* Reduce padding for smaller devices */
+    }
 }
