@@ -14,7 +14,7 @@ header {
     color: #ffffff; /* Bright white text for contrast */
     padding: 20px 0; /* Add padding for spacing */
     text-align: center; /* Center-align header content */
-    border-bottom: 2px solid #007bff; /* Blue accent underline */
+    /* border-bottom: 2px solid #007bff; /* Blue accent underline */
     position: sticky; /* Sticky position for scrolling */
     top: 0; /* Fix header to the top of the viewport */
     z-index: 1000; /* Ensure it stays above other elements */
@@ -37,6 +37,7 @@ header p {
 /* Navigation Bar - Sticky */
 nav {
     background-color: #1a1a1a; /* Slightly lighter for contrast */
+    top: 72px; /* Adjust based on the actual header height */
     position: sticky; /* Make navbar stick below the header */
     top: 68px; /* Adjust based on header height */
     z-index: 999; /* Keep it above main content */
@@ -59,7 +60,7 @@ nav ul li {
 nav ul li a {
     color: #e0e0e0; /* Light gray links */
     text-decoration: none; /* Remove underline for a cleaner look */
-    padding: 10px 15px; /* Add padding inside links */
+    padding: 10px 20px; /* Adjust for better touch targets */
     display: block; /* Ensure clickable area covers padding */
     border-radius: 5px; /* Slightly rounded corners */
     transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover transition */
@@ -73,6 +74,7 @@ nav ul li a:hover {
 /* Main Content Area */
 main {
     padding: 40px 20px; /* Add space around the content */
+    margin-top: 20px; /* Add spacing below the navbar */
     max-width: 900px; /* Restrict maximum width for readability */
     margin: 0 auto; /* Center the main content on the page */
 }
@@ -229,6 +231,17 @@ a:hover {
 
 /* Responsive Design for Navbar */
 @media (max-width: 768px) {
+    nav ul.menu {
+        display: none; /* Hide menu by default */
+        flex-direction: column; /* Stack items for mobile */
+        padding: 0; /* Reset padding for mobile */
+        margin: 0; /* Reset margin for mobile */
+    }
+
+    nav ul.menu.open {
+        display: flex; /* Show menu when open */
+    }
+
     nav ul {
         flex-direction: column; /* Stack nav items vertically */
         padding: 0; /* Reset padding for mobile */
