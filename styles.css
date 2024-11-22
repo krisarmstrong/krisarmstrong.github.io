@@ -102,7 +102,6 @@ main {
     margin-bottom: 10px; /* Space below subheading */
     text-transform: uppercase; /* Uppercase styling for consistency */
     font-weight: bold; /* Bold */
-    border-bottom: 2px solid #007bff; /* Blue underline for visual structure */
     padding-bottom: 5px; /* Add spacing below text */
 }
 
