@@ -7,31 +7,42 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Header -->
     <header>
         <div data-include="header.html"></div>
     </header>
+
+    <!-- Navigation -->
     <nav>
         <div data-include="nav.html"></div>
     </nav>
+
+    <!-- Main Content -->
     <main>
-        <section>
-            <h2>Contact Me</h2>
-            <form action="https://formspree.io/f/mbjnezaa"
-                method="POST">
-                <label for="name">Name:</label><br>
-                <input type="text" id="name" name="name" required><br>
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email" required><br>
-                <label for="message">Message:</label><br>
-                <textarea id="message" name="message" rows="4" cols="50" required></textarea><br>
-                <input type="submit" value="Send">
+        <section id="contact" class="container">
+            <h2 class="section-heading">Contact Me</h2>
+            <p>
+                I'd love to hear from you! Whether you have a question, a business opportunity, or just want to connect, feel free to drop a message using the form below. I'll get back to you as soon as possible.
+            </p>
+            <form action="https://formspree.io/f/mbjnezaa" method="POST" class="contact-form">
+                <label for="name" class="form-label">Name:</label>
+                <input type="text" id="name" name="name" class="form-input" required>
+
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" id="email" name="email" class="form-input" required>
+
+                <label for="message" class="form-label">Message:</label>
+                <textarea id="message" name="message" rows="5" class="form-textarea" required></textarea>
+
+                <input type="submit" value="Send" class="form-submit">
             </form>
         </section>
     </main>
-    <!-- Include Footer -->
+
+    <!-- Footer -->
     <div data-include="footer.html"></div>
 
-    <!-- Include the script to load components -->
+    <!-- Include JavaScript -->
     <script>
         function includeHTML() {
             const elements = document.querySelectorAll("[data-include]");

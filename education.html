@@ -7,23 +7,52 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Header -->
     <header>
         <div data-include="header.html"></div>
     </header>
+
+    <!-- Navigation -->
     <nav>
         <div data-include="nav.html"></div>
     </nav>
-    <main>
-        <section>
-            <h2>Colorado Technical University</h2>
-            <p><strong>Master of Science (MS) in Computer and Information Systems Security/Information Assurance</strong><br>
-            January 2014 - December 2014</p>
 
-            <p><strong>Bachelor of Science (BS) in Management Information Systems</strong><br>
-            January 2008 - December 2013</p>
+    <!-- Main Content -->
+    <main>
+        <section id="education" class="container">
+            <h2 class="section-heading">Education</h2>
+
+            <!-- Master's Degree -->
+            <div class="education-item">
+                <h3 class="education-title">Colorado Technical University</h3>
+                <p>
+                    <b>Master of Science (MS) in Computer and Information Systems Security/Information Assurance</b><br>
+                    <span class="education-duration">January 2014 - December 2014</span>
+                </p>
+                <ul class="education-highlights">
+                    <li>Focused on cybersecurity frameworks, risk management, and advanced threat mitigation.</li>
+                    <li>Completed a capstone project on ISO 27001 compliance implementation for enterprise networks.</li>
+                    <li>Graduated with honors, achieving a 4.0 GPA.</li>
+                </ul>
+            </div>
+
+            <!-- Bachelor's Degree -->
+            <div class="education-item">
+                <h3 class="education-title">Colorado Technical University</h3>
+                <p>
+                    <b>Bachelor of Science (BS) in Management Information Systems</b><br>
+                    <span class="education-duration">January 2008 - December 2013</span>
+                </p>
+                <ul class="education-highlights">
+                    <li>Specialized in database management, networking, and systems design.</li>
+                    <li>Developed a student portal system as part of a senior project, improving user access efficiency by 30%.</li>
+                    <li>Actively participated in the university's tech club, mentoring peers in programming and network design.</li>
+                </ul>
+            </div>
         </section>
     </main>
-    <!-- Include Footer -->
+
+    <!-- Footer -->
     <div data-include="footer.html"></div>
 
     <!-- Include the script to load components -->

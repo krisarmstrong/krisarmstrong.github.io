@@ -1,10 +1,11 @@
+/* Global Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
-    line-height: 1.6; /* Improve readability */
+    line-height: 1.6;
 }
 
 header {
@@ -15,17 +16,16 @@ header {
 }
 
 header h1 {
-    font-size: 2rem; /* Adjust font size for better spacing */
+    font-size: 2rem;
     margin: 0;
     padding-bottom: 10px;
 }
 
 header p {
     margin: 0;
-    font-size: 1.2rem; /* Adjust font size for subtitle */
+    font-size: 1.2rem;
 }
 
-/* Navigation Styling */
 nav {
     background-color: #444;
 }
@@ -55,219 +55,86 @@ nav ul li a:hover {
     color: #fff;
 }
 
-/* Main Content */
 main {
-    padding: 40px 20px; /* Add padding for spacing around content */
-    max-width: 900px; /* Center content and limit width */
+    padding: 40px 20px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
-h1, h2 {
-    color: #333;
-    margin-bottom: 20px; /* Add spacing below headings */
-}
-
-/* Style for <b> tags */
-b {
-    color: #007BFF; /* Blue color for emphasis */
-    font-weight: bold; /* Ensure it remains bold */
-}
-
-ul {
-    padding: 0;
-    list-style: none;
-}
-
-ul li {
-    background-color: #fff;
-    margin: 5px 0;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: relative; /* Allow footer to sit naturally */
-    width: 100%;
-    bottom: 0;
-}
-
-form {
-    background-color: #fff;
+/* Global Classes */
+.container {
+    margin-bottom: 30px;
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-form label {
-    display: block;
-    margin: 10px 0 5px;
-}
-
-form input[type="text"],
-form input[type="email"],
-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-form input[type="submit"] {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-form input[type="submit"]:hover {
-    background-color: #555;
-}
-
-/* Key Highlights Styling */
-#highlights ul {
-    padding: 0;
-    list-style: none;
-}
-
-#highlights ul li {
     background-color: #fff;
-    margin-bottom: 10px; /* Add space between items */
-    padding: 15px; /* Increase padding inside items */
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    line-height: 1.4; /* Better line spacing */
+    line-height: 1.6;
 }
 
-#highlights ul li b {
-    color: #007BFF; /* Highlight the bold text */
+.section-heading {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #007BFF;
+    padding-bottom: 5px;
 }
 
-/* Styling for the Key Achievements Section */
-#key-achievements h3 {
+.subheading {
     font-size: 1.5rem;
-    color: #007BFF; /* Blue color for subheadings */
+    color: #007BFF;
     margin-bottom: 10px;
     text-transform: uppercase;
 }
 
-#key-achievements h2 {
-    font-size: 1.8rem;
-    color: #333;
-    margin-bottom: 15px;
-    text-transform: uppercase; /* Prominent heading */
-    border-bottom: 2px solid #007BFF; /* Blue underline */
-    padding-bottom: 5px;
+.list {
+    padding-left: 20px;
+    list-style-type: none;
 }
 
-#key-achievements {
-    margin-bottom: 30px;
-    padding: 20px;
-    background-color: #fff; /* White background for contrast */
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
-    line-height: 1.6; /* Better readability */
-}
-
-#key-achievements h2 {
-    font-size: 1.8rem; /* Larger font size for the heading */
-    color: #333; /* Dark gray for the heading */
-    margin-bottom: 20px; /* Space below the heading */
-}
-
-#key-achievements ul {
-    padding-left: 20px; /* Indent list for readability */
-    list-style-type: none; /* Remove bullets */
-}
-
-#key-achievements ul li {
-    margin-bottom: 15px; /* Add spacing between items */
-    padding-left: 20px; /* Padding for alignment */
-    position: relative;
-}
-
-#key-achievements ul li::before {
-    content: "✔"; /* Checkmark icon */
-    color: #007BFF; /* Blue color for emphasis */
-    font-weight: bold;
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-
-#key-achievements b {
-    color: #007BFF; /* Highlight bolded text in blue */
-    font-weight: bold;
-}
-
-#key-achievements h2 {
-    font-size: 1.8rem;
-    color: #333;
-    margin-bottom: 15px;
-    text-transform: uppercase; /* Prominent heading */
-    border-bottom: 2px solid #007BFF; /* Blue underline */
-    padding-bottom: 5px;
-}
-
-/* Styling for Skills Section */
-#skills {
-    margin-bottom: 30px;
-    padding: 20px;
-    background-color: #fff; /* White background for contrast */
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-}
-
-#skills .skills-container {
-    margin-bottom: 20px; /* Space between Hard and Soft Skills */
-}
-
-#skills h3 {
-    font-size: 1.5rem;
-    color: #007BFF; /* Blue color for subheadings */
+.list-item {
     margin-bottom: 10px;
-    text-transform: uppercase;
-}
-
-#skills h2 {
-    font-size: 1.8rem;
-    color: #333;
-    margin-bottom: 15px;
-    text-transform: uppercase; /* Prominent heading */
-    border-bottom: 2px solid #007BFF; /* Blue underline */
-    padding-bottom: 5px;
-}
-
-#skills ul {
-    padding-left: 20px; /* Indent list for readability */
-    list-style-type: none; /* Remove bullets */
-}
-
-#skills ul li {
-    margin-bottom: 10px; /* Add space between list items */
     padding-left: 20px;
     position: relative;
 }
 
-#skills ul li::before {
-    content: "✔"; /* Checkmark icon */
-    color: #007BFF; /* Blue color for icons */
+.list-item::before {
+    content: "✔";
+    color: #007BFF;
     font-weight: bold;
     position: absolute;
     left: 0;
     top: 0;
 }
 
-#skills b {
-    color: #007BFF; /* Highlight bolded text in blue */
+.highlight {
+    color: #007BFF;
     font-weight: bold;
+}
+
+/* Footer Styling */
+.site-footer {
+    background-color: #333; /* Dark background for contrast */
+    color: #fff; /* White text for readability */
+    text-align: center;
+    padding: 15px 10px;
+    font-size: 0.9rem; /* Slightly smaller font for subtlety */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Add a slight shadow */
+}
+
+.site-footer a {
+    color: #007BFF; /* Highlighted color for links */
+    text-decoration: none; /* No underline */
+}
+
+.site-footer a:hover {
+    text-decoration: underline; /* Underline on hover for accessibility */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .site-footer {
+        font-size: 0.8rem; /* Adjust font size for mobile */
+        padding: 10px 5px; /* Reduce padding for smaller screens */
+    }
 }

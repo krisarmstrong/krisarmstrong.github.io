@@ -7,40 +7,69 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Header -->
     <header>
         <div data-include="header.html"></div>
     </header>
+
+    <!-- Navigation -->
     <nav>
         <div data-include="nav.html"></div>
     </nav>
+
+    <!-- Main Content -->
     <main>
-        <!-- Certifications -->
-        <section id="certifications">
-            <div class="certifications-container">
-                <h2>Certifications</h2>
-                <ul>
-                    <h3>Security Certifications</h3>
+        <section id="certifications" class="container">
+            <h2 class="section-heading">Certifications</h2>
+
+            <!-- Security Certifications -->
+            <div class="certification-category">
+                <h3 class="certification-title">Security Certifications</h3>
+                <ul class="certification-list">
                     <li>
-                        <b>CISSP:</b> <a href="https://www.isc2.org/Certifications/CISSP" target="_blank">Certified Information Systems Security Professional</a>
+                        <b>CISSP:</b> <a href="https://www.isc2.org/Certifications/CISSP" target="_blank" rel="noopener noreferrer">Certified Information Systems Security Professional</a>
                     </li>
-                    <h3>Network Certifications</h3>
+                </ul>
+            </div>
+
+            <!-- Network Certifications -->
+            <div class="certification-category">
+                <h3 class="certification-title">Network Certifications</h3>
+                <ul class="certification-list">
                     <li>
-                        <b>CWNA:</b> <a href="https://www.cwnp.com/certifications/cwna" target="_blank">Certified Wireless Network Administrator</a>
+                        <b>CWNA:</b> <a href="https://www.cwnp.com/certifications/cwna" target="_blank" rel="noopener noreferrer">Certified Wireless Network Administrator</a>
                     </li>
                     <li>
-                        <b>CWSP:</b> <a href="https://www.cwnp.com/certifications/cwsp" target="_blank">Certified Wireless Security Professional</a>
+                        <b>CWSP:</b> <a href="https://www.cwnp.com/certifications/cwsp" target="_blank" rel="noopener noreferrer">Certified Wireless Security Professional</a>
                     </li>
                     <li>
-                        <b>CWDP:</b> <a href="https://www.cwnp.com/certifications/cwdp" target="_blank">Certified Wireless Design Professional</a>
+                        <b>CWDP:</b> <a href="https://www.cwnp.com/certifications/cwdp" target="_blank" rel="noopener noreferrer">Certified Wireless Design Professional</a>
                     </li>
                     <li>
                         <b>CCNP:</b> Cisco Certified Network Professional
                     </li>
                 </ul>
             </div>
+
+            <!-- Professional Development -->
+            <div class="certification-category">
+                <h3 class="certification-title">Professional Development</h3>
+                <ul class="certification-list">
+                    <li>
+                        <b>Learning Cloud Computing:</b> <a href="https://www.linkedin.com/learning/" target="_blank" rel="noopener noreferrer">Core Concepts</a>
+                    </li>
+                    <li>
+                        <b>Learning Threat Intelligence:</b> <a href="https://www.linkedin.com/learning/" target="_blank" rel="noopener noreferrer">LinkedIn Learning</a>
+                    </li>
+                    <li>
+                        <b>Deep Dive into Open-Source Intelligence:</b> <a href="https://www.linkedin.com/learning/" target="_blank" rel="noopener noreferrer">LinkedIn Learning</a>
+                    </li>
+                </ul>
+            </div>
         </section>
     </main>
-    <!-- Include Footer -->
+
+    <!-- Footer -->
     <div data-include="footer.html"></div>
 
     <!-- Include the script to load components -->
