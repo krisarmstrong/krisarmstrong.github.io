@@ -13,11 +13,12 @@ header {
     background-color: #1f1f1f; /* Slightly lighter dark header */
     color: #ffffff; /* Bright white text for contrast */
     padding: 10px 0; /* Add padding for spacing */
+    border-bottom: none; /* Remove border from header */
+    top: 0; /* Stick to top */
+    z-index: 1000; /* Ensure it's above the nav */
     text-align: center; /* Center-align header content */
     /* border-bottom: 2px solid #007bff; /* Blue accent underline */
     position: sticky; /* Sticky position for scrolling */
-    top: 0; /* Fix header to the top of the viewport */
-    z-index: 1000; /* Ensure it stays above other elements */
 }
 
 
@@ -37,12 +38,14 @@ header p {
 /* Navigation Bar - Sticky */
 nav {
     background-color: #1a1a1a; /* Slightly lighter for contrast */
-    top: 56px; /* Adjust based on the actual header height */
     position: sticky; /* Make navbar stick below the header */
-    z-index: 999; /* Keep it above main content */
+    top: 61px; /* Adjust to match the height of the header */
+    z-index: 1000; /* Keep it above main content */
     padding: 10px 0;
-    border-bottom: 2px solid #007bff; /* Keep a single blue underline for the nav */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Subtle shadow for separation */
+    border-top: none; /* Remove top border to eliminate double line */
+    border-bottom: 2px solid #007bff; /* Keep single blue underline */
+    box-shadow: none; /* Remove shadow to simplify design */
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Subtle shadow for separation */
 }
 
 nav ul {
