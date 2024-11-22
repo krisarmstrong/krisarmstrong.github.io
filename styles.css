@@ -9,6 +9,7 @@ body {
 }
 
 /* Header Styling - Make Sticky */
+/* Header Styling - Make Sticky */
 header {
     background-color: #1f1f1f; /* Slightly lighter dark header */
     color: #ffffff; /* Bright white text for contrast */
@@ -17,10 +18,9 @@ header {
     top: 0; /* Stick to top */
     z-index: 1000; /* Ensure it's above the nav */
     text-align: center; /* Center-align header content */
-    /* border-bottom: 2px solid #007bff; /* Blue accent underline */
     position: sticky; /* Sticky position for scrolling */
+    height: auto; /* Ensure the height matches the content */
 }
-
 
 
 header h1 {
@@ -36,17 +36,21 @@ header p {
 }
 
 /* Navigation Bar - Sticky */
+/* Navigation Bar - Sticky */
 nav {
     background-color: #1a1a1a; /* Slightly lighter for contrast */
     position: sticky; /* Make navbar stick below the header */
-    top: 61px; /* Adjust to match the height of the header */
-    z-index: 1000; /* Keep it above main content */
+    top: calc(10px + 61px); /* Dynamically calculate position based on header height */
+    z-index: 999; /* Ensure it's below the header */
     padding: 10px 0;
     border-top: none; /* Remove top border to eliminate double line */
     border-bottom: 2px solid #007bff; /* Keep single blue underline */
-    box-shadow: none; /* Remove shadow to simplify design */
-    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Subtle shadow for separation */
+    margin: 0; /* Remove any unintended margin */
+    box-shadow: none; /* Ensure shadow is disabled for cleaner design */
+
+        /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Subtle shadow for separation */
 }
+
 
 nav ul {
     list-style: none; /* Remove bullet points */
