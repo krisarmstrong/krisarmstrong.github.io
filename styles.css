@@ -84,6 +84,7 @@ main {
 .section-heading {
     font-size: 1.8rem; /* Larger size for section titles */
     color: #ffffff; /* Bright white headings */
+    font-weight: bolder;
     margin-bottom: 20px; /* Add spacing below the heading */
     text-transform: uppercase; /* Make headings uppercase for emphasis */
     border-bottom: 3px solid #007bff; /* Blue underline for visual separation */
@@ -93,9 +94,11 @@ main {
 /* Subheading Styling */
 .subheading {
     font-size: 1.5rem; /* Slightly smaller than main heading */
-    color: #007bff; /* Blue for subheadings */
+    color: #ffffff; /* Bright white headings */
+    /* color: #007bff; /* Blue for subheadings */
     margin-bottom: 10px; /* Space below subheading */
     text-transform: uppercase; /* Uppercase styling for consistency */
+    font-weight: bold; /* Bold 
 }
 
 /* Unordered List Styling */
