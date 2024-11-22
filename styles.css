@@ -12,7 +12,7 @@ body {
 header {
     background-color: #1f1f1f; /* Slightly lighter dark header */
     color: #ffffff; /* Bright white text for contrast */
-    padding: 20px 0; /* Add padding for spacing */
+    padding: 10px 0; /* Add padding for spacing */
     text-align: center; /* Center-align header content */
     /* border-bottom: 2px solid #007bff; /* Blue accent underline */
     position: sticky; /* Sticky position for scrolling */
@@ -37,9 +37,9 @@ header p {
 /* Navigation Bar - Sticky */
 nav {
     background-color: #1a1a1a; /* Slightly lighter for contrast */
-    top: 0px; /* Adjust based on the actual header height */
+    top: 56px; /* Adjust based on the actual header height */
     position: sticky; /* Make navbar stick below the header */
-    z-index: 1000; /* Keep it above main content */
+    z-index: 999; /* Keep it above main content */
     padding: 10px 0;
     border-bottom: 2px solid #007bff; /* Keep a single blue underline for the nav */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Subtle shadow for separation */
