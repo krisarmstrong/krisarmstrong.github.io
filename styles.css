@@ -1,4 +1,10 @@
 /* Global Styles */
+* {
+    margin: 0; /* Reset all margins */
+    padding: 0; /* Reset all padding */
+    border: 0; /* Remove all borders */
+    box-sizing: border-box; /* Include padding and borders in element size */
+}
 body {
     font-family: Arial, sans-serif; /* Clean and professional font */
     margin: 0; /* Remove default margin */
@@ -13,7 +19,8 @@ header {
     color: #ffffff; /* Bright white text for contrast */
     padding: 20px 0; /* Add padding for spacing */
     text-align: center; /* Center-align header content */
-    border-bottom: 2px solid #007bff; /* Add a blue accent underline */
+    border-bottom: none;
+    /* border-bottom: 2px solid #007bff; /* Add a blue accent underline */
 }
 
 header h1 {
@@ -35,8 +42,6 @@ nav {
     margin: 0; /* Eliminate any unintended spacing */
     padding: 0; /* Ensure no extra padding is causing visual effects */
     /* border-bottom: 2px solid #007bff; /* Blue underline for nav bar */
-    border-top: none;
-    border-bottom: none;
 }
 
 nav ul {
@@ -100,7 +105,9 @@ main {
     /* color: #007bff; /* Blue for subheadings */
     margin-bottom: 10px; /* Space below subheading */
     text-transform: uppercase; /* Uppercase styling for consistency */
-    font-weight: bold; /* Bold 
+    font-weight: bold; /* Bold */
+    border-bottom: 2px solid #007bff; /* Blue underline for visual structure */
+    padding-bottom: 5px; /* Add spacing below text */
 }
 
 /* Unordered List Styling */
@@ -150,6 +157,7 @@ a:hover {
     padding: 15px 10px; /* Add padding for spacing */
     font-size: 0.9rem; /* Slightly smaller font for footer text */
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.4); /* Subtle shadow above footer */
+    border-top: 2px solid #007bff; /* Add blue top border if needed */
 }
 
 .site-footer a {
