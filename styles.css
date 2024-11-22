@@ -31,6 +31,9 @@ header p {
 /* Navigation Bar Styling */
 nav {
     background-color: #1a1a1a; /* Slightly lighter than body for contrast */
+    border: none; /* Ensure no borders exist */
+    margin: 0; /* Eliminate any unintended spacing */
+    padding: 0; /* Ensure no extra padding is causing visual effects */
     /* border-bottom: 2px solid #007bff; /* Blue underline for nav bar */
 }
 
