@@ -14,9 +14,9 @@ header {
     background-color: #1f1f1f; /* Slightly lighter dark header */
     color: #ffffff; /* Bright white text for contrast */
     padding: 10px 0; /* Add padding for spacing */
-    border-bottom: none; /* Remove border from header */
+    border-bottom: 2px solid #007bff; /* Single blue line below header */
     top: 0; /* Stick to top */
-    z-index: 1000; /* Ensure it's above the nav */
+    z-index: 1000; /* Ensure it's above nav */
     text-align: center; /* Center-align header content */
     position: sticky; /* Sticky position for scrolling */
     height: auto; /* Ensure the height matches the content */
@@ -40,18 +40,14 @@ header p {
 nav {
     background-color: #1a1a1a; /* Slightly lighter for contrast */
     position: sticky; /* Make navbar stick below the header */
-    top: 211; /* Match the header's height exactly */
+    top: 61px; /* Adjust to match the height of the header */
     z-index: 999; /* Ensure it's below the header */
-    padding: 10px 0;
-    border-top: none; /* Remove top border to eliminate double line */
-    border-bottom: 2px solid #007bff; /* Keep single blue underline */
-    margin: 0; /* Remove any unintended margin */
+    padding: 10px 0; /* Proper padding for content */
+    border-bottom: none; /* Remove any border to avoid a double line */
+    margin: 0; /* Remove unintended margin */
     height: auto; /* Explicit height */
-    box-shadow: none; /* Ensure shadow is disabled for cleaner design */
-
-        /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Subtle shadow for separation */
+    box-shadow: none; /* Remove shadow for simplicity */
 }
-
 
 nav ul {
     list-style: none; /* Remove bullet points */
