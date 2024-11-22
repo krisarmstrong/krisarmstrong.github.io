@@ -1,250 +1,224 @@
 /* Global Styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
+    font-family: Arial, sans-serif; /* Clean and professional font */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    background-color: #121212; /* Dark background for the entire site */
+    color: #e0e0e0; /* Light gray text for readability */
+    line-height: 1.6; /* Improve text readability */
 }
 
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
+    background-color: #1f1f1f; /* Slightly lighter dark header */
+    color: #ffffff; /* Bright white text for contrast */
+    padding: 20px 0; /* Add padding for spacing */
+    text-align: center; /* Center-align header content */
+    border-bottom: 2px solid #007bff; /* Add a blue accent underline */
 }
 
 header h1 {
-    font-size: 2rem;
-    margin: 0;
-    padding-bottom: 10px;
+    font-size: 2.2rem; /* Large font size for the main heading */
+    margin: 0; /* Remove margin around the heading */
+    padding-bottom: 5px; /* Add slight spacing below the text */
 }
 
 header p {
-    margin: 0;
-    font-size: 1.2rem;
+    margin: 0; /* Remove margin for alignment */
+    font-size: 1.2rem; /* Subheading font size */
+    color: #b0b0b0; /* Subtle gray for secondary text */
 }
 
+/* Navigation Bar Styling */
 nav {
-    background-color: #444;
+    background-color: #1a1a1a; /* Slightly lighter than body for contrast */
+    border-bottom: 2px solid #007bff; /* Blue underline for nav bar */
 }
 
 nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    display: flex; /* Display items in a horizontal row */
+    justify-content: center; /* Center-align navigation links */
 }
 
 nav ul li {
-    margin: 0 10px;
+    margin: 0 10px; /* Space between navigation items */
 }
 
 nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 15px;
-    display: block;
-    border-radius: 5px;
+    color: #e0e0e0; /* Light gray links */
+    text-decoration: none; /* Remove underline for a cleaner look */
+    padding: 10px 15px; /* Add padding inside links */
+    display: block; /* Ensure clickable area covers padding */
+    border-radius: 5px; /* Slightly rounded corners */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover transition */
 }
 
 nav ul li a:hover {
-    background-color: #555;
-    color: #fff;
+    background-color: #007bff; /* Bright blue hover effect */
+    color: #ffffff; /* Change text to white on hover */
 }
 
+/* Main Content Area */
 main {
-    padding: 40px 20px;
-    max-width: 900px;
-    margin: 0 auto;
+    padding: 40px 20px; /* Add space around the content */
+    max-width: 900px; /* Restrict maximum width for readability */
+    margin: 0 auto; /* Center the main content on the page */
 }
 
-/* Global Text Enhancements */
-b, strong {
-    font-weight: bold; /* Bold text remains simple bold */
-    color: inherit; /* Ensure it doesn’t inherit link color */
+/* Container Class for Sections */
+.container {
+    margin-bottom: 30px; /* Add spacing below each section */
+    padding: 25px; /* Add padding inside the container */
+    background-color: #1e1e1e; /* Dark gray for section backgrounds */
+    border-radius: 8px; /* Rounded corners for modern look */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); /* Subtle shadow for depth */
+    line-height: 1.6; /* Improve text readability */
+}
+
+/* Section Headings */
+.section-heading {
+    font-size: 1.8rem; /* Larger size for section titles */
+    color: #ffffff; /* Bright white headings */
+    margin-bottom: 20px; /* Add spacing below the heading */
+    text-transform: uppercase; /* Make headings uppercase for emphasis */
+    border-bottom: 3px solid #007bff; /* Blue underline for visual separation */
+    padding-bottom: 5px; /* Add padding below text */
+}
+
+/* Subheading Styling */
+.subheading {
+    font-size: 1.5rem; /* Slightly smaller than main heading */
+    color: #007bff; /* Blue for subheadings */
+    margin-bottom: 10px; /* Space below subheading */
+    text-transform: uppercase; /* Uppercase styling for consistency */
+}
+
+/* Unordered List Styling */
+.list {
+    padding-left: 20px; /* Indent list items for readability */
+    list-style-type: none; /* Remove default bullets */
+}
+
+.list-item {
+    margin-bottom: 10px; /* Add space between list items */
+    padding-left: 20px; /* Indent content for better alignment */
+    position: relative; /* Allow for custom bullets */
+}
+
+/* Custom Checkmark for List Items */
+.list-item::before {
+    content: "✔"; /* Use checkmark for bullets */
+    color: #007bff; /* Blue for the checkmark */
+    font-weight: bold; /* Bold checkmark for visibility */
+    position: absolute; /* Position it relative to the item */
+    left: 0; /* Align to the left */
+    top: 0; /* Align to the top */
+}
+
+/* Highlight Text Class */
+.highlight {
+    color: #ffffff; /* Bright white text */
+    font-weight: bold; /* Bold text for emphasis */
 }
 
 /* Hyperlink Styling */
 a {
-    color: #007BFF; /* Blue color for links */
-    text-decoration: underline; /* Underline links */
-    transition: color 0.3s; /* Smooth transition effect */
+    color: #007bff; /* Bright blue for links */
+    text-decoration: underline; /* Underline links for clarity */
+    transition: color 0.3s ease; /* Smooth transition on hover */
 }
 
 a:hover {
     color: #0056b3; /* Darker blue on hover */
 }
 
-/* Global Classes */
-.container {
-    margin-bottom: 30px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    line-height: 1.6;
-}
-
-.section-heading {
-    font-size: 1.8rem;
-    color: #333;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    border-bottom: 2px solid #007BFF;
-    padding-bottom: 5px;
-}
-
-.subheading {
-    font-size: 1.5rem;
-    color: #007BFF;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-}
-
-.list {
-    padding-left: 20px;
-    list-style-type: none;
-}
-
-.list-item {
-    margin-bottom: 10px;
-    padding-left: 20px;
-    position: relative;
-}
-
-.list-item::before {
-    content: "✔";
-    color: #007BFF;
-    font-weight: bold;
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-
-.highlight {
-    color: #007BFF;
-    font-weight: bold;
-}
-
 /* Footer Styling */
 .site-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 15px 10px;
-    font-size: 0.9rem;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #1f1f1f; /* Dark footer for consistency */
+    color: #e0e0e0; /* Light gray text */
+    text-align: center; /* Center-align footer content */
+    padding: 15px 10px; /* Add padding for spacing */
+    font-size: 0.9rem; /* Slightly smaller font for footer text */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.4); /* Subtle shadow above footer */
 }
 
 .site-footer a {
-    color: #007BFF;
-    text-decoration: none;
+    color: #007bff; /* Blue links in the footer */
+    text-decoration: none; /* Remove underline for cleaner look */
 }
 
 .site-footer a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Underline links on hover */
 }
 
 /* Contact Form Styling */
 #contact {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.6;
+    background-color: #1e1e1e; /* Match other sections' background */
+    padding: 25px; /* Add padding inside the form container */
+    border-radius: 10px; /* Rounded corners for a modern look */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); /* Subtle shadow for depth */
+    max-width: 600px; /* Restrict width for readability */
+    margin: 0 auto; /* Center the form */
 }
 
 .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-/* Add a light hint with placeholder */
-.form-input::placeholder,
-.form-textarea::placeholder {
-    color: #aaa;
-    font-style: italic;
-}
-
-/* Styling for invalid fields */
-.form-input:invalid,
-.form-textarea:invalid {
-    border-color: red;
-    background-color: #ffe6e6;
-    transition: background-color 0.3s, border-color 0.3s;
-}
-
-/* Styling for valid fields */
-.form-input:valid,
-.form-textarea:valid {
-    border-color: green;
-    background-color: #e6ffe6;
-    transition: background-color 0.3s, border-color 0.3s;
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack elements vertically */
+    gap: 15px; /* Add space between form elements */
 }
 
 .form-label {
-    font-weight: bold;
-    color: #333;
+    font-weight: bold; /* Bold text for form labels */
+    color: #ffffff; /* Bright white labels */
 }
 
 .form-input,
 .form-textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: border-color 0.3s, box-shadow 0.3s;
+    width: 100%; /* Full width for input fields */
+    padding: 10px; /* Add padding inside the fields */
+    border: 1px solid #444; /* Dark gray border */
+    border-radius: 5px; /* Rounded corners for inputs */
+    font-size: 1rem; /* Standard font size for inputs */
+    background-color: #2a2a2a; /* Darker background for input fields */
+    color: #ffffff; /* Light text for readability */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth focus effect */
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+    color: #888; /* Light gray placeholder text */
+    font-style: italic; /* Italic style for placeholders */
 }
 
 .form-input:focus,
 .form-textarea:focus {
-    border-color: #007BFF;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-    outline: none;
-}
-
-.form-textarea {
-    resize: none;
+    border-color: #007bff; /* Blue border on focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Blue shadow for focus */
+    outline: none; /* Remove default outline */
 }
 
 .form-submit {
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
+    background-color: #007bff; /* Blue submit button */
+    color: #ffffff; /* White text for contrast */
+    border: none; /* Remove border */
+    padding: 10px 15px; /* Add padding inside the button */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1rem; /* Standard font size */
+    cursor: pointer; /* Pointer cursor for buttons */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effect */
 }
 
 .form-submit:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .site-footer {
-        font-size: 0.8rem;
-        padding: 10px 5px;
-    }
-
-    .form-input,
-    .form-textarea {
-        padding: 8px;
-        font-size: 0.9rem;
-    }
-
-    .form-submit {
-        font-size: 0.9rem;
-        padding: 8px 12px;
+        font-size: 0.8rem; /* Adjust font size for smaller screens */
+        padding: 10px 5px; /* Reduce padding on mobile */
     }
 }
