@@ -37,11 +37,11 @@ header p {
 /* Navigation Bar - Sticky */
 nav {
     background-color: #1a1a1a; /* Slightly lighter for contrast */
-    top: 72px; /* Adjust based on the actual header height */
+    top: 0px; /* Adjust based on the actual header height */
     position: sticky; /* Make navbar stick below the header */
-    top: 68px; /* Adjust based on header height */
-    z-index: 999; /* Keep it above main content */
+    z-index: 1000; /* Keep it above main content */
     padding: 10px 0;
+    border-bottom: 2px solid #007bff; /* Keep a single blue underline for the nav */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Subtle shadow for separation */
 }
 
@@ -234,7 +234,8 @@ a:hover {
     nav ul.menu {
         display: none; /* Hide menu by default */
         flex-direction: column; /* Stack items for mobile */
-        padding: 0; /* Reset padding for mobile */
+        background-color: #1a1a1a; /* Consistent background for dropdown */
+        padding: 10px 0; /* Adjust padding */
         margin: 0; /* Reset margin for mobile */
     }
 
@@ -249,6 +250,15 @@ a:hover {
 
     nav ul li {
         margin: 5px 0; /* Add vertical spacing between items */
+    }
+
+    .menu-toggle {
+        display: block; /* Show hamburger menu on mobile */
+        background: none; /* Clear background */
+        border: none; /* Remove border */
+        font-size: 1.5rem; /* Size for hamburger */
+        color: #e0e0e0; /* Light gray */
+        cursor: pointer; /* Pointer cursor */
     }
 
     .site-footer {
