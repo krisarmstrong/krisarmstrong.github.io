@@ -67,6 +67,11 @@ h1, h2 {
     margin-bottom: 20px; /* Add spacing below headings */
 }
 
+/* Style for <b> tags */
+b {
+    color: #007BFF; /* Blue color for emphasis */
+    font-weight: bold; /* Ensure it remains bold */
+}
 
 ul {
     padding: 0;
@@ -100,11 +105,6 @@ highlights ul li b {
     color: #007BFF; /* Highlight the bold text */
 }
 
-/* Style for <b> tags */
-b {
-    color: #007BFF; /* Blue color for emphasis */
-    font-weight: bold; /* Ensure it remains bold */
-}
 
 footer {
     background-color: #333;
