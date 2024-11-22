@@ -61,6 +61,23 @@ main {
     margin: 0 auto;
 }
 
+/* Global Text Enhancements */
+b, strong {
+    font-weight: bold; /* Bold text remains simple bold */
+    color: inherit; /* Ensure it doesn’t inherit link color */
+}
+
+/* Hyperlink Styling */
+a {
+    color: #007BFF; /* Blue color for links */
+    text-decoration: underline; /* Underline links */
+    transition: color 0.3s; /* Smooth transition effect */
+}
+
+a:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
 /* Global Classes */
 .container {
     margin-bottom: 30px;
