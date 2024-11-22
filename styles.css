@@ -19,7 +19,7 @@ header {
     z-index: 1000; /* Ensure it's above the nav */
     text-align: center; /* Center-align header content */
     position: sticky; /* Sticky position for scrolling */
-    height: 191; /* Ensure the height matches the content */
+    height: auto; /* Ensure the height matches the content */
 }
 
 
@@ -40,13 +40,13 @@ header p {
 nav {
     background-color: #1a1a1a; /* Slightly lighter for contrast */
     position: sticky; /* Make navbar stick below the header */
-    top: 191px; /* Match the header's height exactly */
+    top: 0; /* Match the header's height exactly */
     z-index: 999; /* Ensure it's below the header */
     padding: 10px 0;
     border-top: none; /* Remove top border to eliminate double line */
     border-bottom: 2px solid #007bff; /* Keep single blue underline */
     margin: 0; /* Remove any unintended margin */
-    height: 92px; /* Explicit height */
+    height: auto; /* Explicit height */
     box-shadow: none; /* Ensure shadow is disabled for cleaner design */
 
         /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Subtle shadow for separation */
@@ -90,7 +90,7 @@ main {
 
 /* Container Class for Sections */
 .header-placeholder {
-    height: 191px; /* Match header height */
+    height: 0; /* Match header height */
     background-color: transparent;
 }
 
