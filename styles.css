@@ -12,7 +12,7 @@ body {
 header {
     position: sticky; /* Sticky position for scrolling */
     position: -webkit-sticky; /* Safari compatibility */
-    /* top: 0; /* Stick to the very top */
+    top: 0; /* Stick to the very top */
     z-index: 1001; /* Ensure header is above other elements */
     background-color: #1f1f1f; /* Slightly lighter dark header */
     color: #ffffff; /* Bright white text for contrast */
@@ -35,6 +35,7 @@ header p {
 
 /* Navigation Bar - Sticky */
 nav {
+    top: 131; /* Stick to the very top */
     position: sticky; /* Make navbar stick below the header */
     position: -webkit-sticky; /* Safari compatibility */
     /* top: 0; /* Match header height (10px padding + 42px content height) */
