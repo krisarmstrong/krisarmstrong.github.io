@@ -3,17 +3,29 @@ document.addEventListener("DOMContentLoaded", () => {
     const nav = document.querySelector("nav");
     const main = document.querySelector("main");
 
-    // Wait until the header and nav are fully loaded
-    const waitForContent = setInterval(() => {
-        if (header.offsetHeight > 0 && nav.offsetHeight > 0) {
-            const headerHeight = header.offsetHeight;
-            const navHeight = nav.offsetHeight;
+    // Function to adjust layout
+    const adjustLayout = () => {
+        if (header && nav && main) {
+            const headerHeight = header.offsetHeight || 0;
+            const navHeight = nav.offsetHeight || 0;
 
-            // Dynamically adjust the top of the nav and main content spacing
+            // Dynamically set the top of the nav and the margin of the main content
             nav.style.top = `${headerHeight}px`;
             main.style.marginTop = `${headerHeight + navHeight}px`;
+        }
+    };
 
-            clearInterval(waitForContent); // Stop the interval
+    // Initial adjustment
+    adjustLayout();
+
+    // Fallback interval to ensure the layout is corrected if elements take time to load
+    const waitForContent = setInterval(() => {
+        if (header.offsetHeight > 0 && nav.offsetHeight > 0) {
+            adjustLayout();
+            clearInterval(waitForContent); // Stop the interval once done
         }
     }, 50); // Check every 50ms
+
+    // Re-adjust layout on window resize
+    window.addEventListener("resize", adjustLayout);
 });
