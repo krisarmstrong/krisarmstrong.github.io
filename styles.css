@@ -16,7 +16,6 @@ header {
     background-color: #1f1f1f; /* Slightly lighter dark header */
     color: #ffffff; /* Bright white text for contrast */
     padding: 10px 0; /* Add padding for spacing */
-    border-bottom: 2px solid #007bff; /* Single blue line below header */
     text-align: center; /* Center-align header content */
 }
 
@@ -39,7 +38,7 @@ nav {
     z-index: 1000; /* Ensure navbar is below the header but above content */
     background-color: #1a1a1a; /* Slightly lighter for contrast */
     padding: 10px 0; /* Proper padding for content */
-    border-bottom: none; /* Remove border to avoid a double line */
+    border-top: 2px solid #007bff; /* Single blue line below header */
 }
 
 nav ul {
