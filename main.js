@@ -9,8 +9,15 @@ document.addEventListener("DOMContentLoaded", () => {
             const headerHeight = header.offsetHeight || 0;
             const navHeight = nav.offsetHeight || 0;
 
-            // Dynamically set the top of the nav and the margin of the main content
+            // Ensure the header remains sticky at the top
+            header.style.position = "sticky";
+            header.style.top = "0";
+
+            // Set the nav position relative to the header
+            nav.style.position = "sticky";
             nav.style.top = `${headerHeight}px`;
+
+            // Adjust the margin of the main content
             main.style.marginTop = `${headerHeight + navHeight}px`;
         }
     };
@@ -18,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Initial adjustment
     adjustLayout();
 
-    // Fallback interval to ensure the layout is corrected if elements take time to load
+    // Fallback interval to ensure proper layout if elements take time to load
     const waitForContent = setInterval(() => {
         if (header.offsetHeight > 0 && nav.offsetHeight > 0) {
             adjustLayout();
