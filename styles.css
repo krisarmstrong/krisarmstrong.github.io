@@ -166,6 +166,68 @@ a:hover {
 .menu-toggle {
     display: none; /* Hidden by default */
 }
+/* Contact Form Styling */
+#contact {
+    background-color: #1e1e1e; /* Match section background */
+    padding: 25px; /* Add padding inside the form container */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); /* Subtle shadow */
+    max-width: 600px; /* Restrict width for readability */
+    margin: 30px auto; /* Center the form */
+}
+
+.contact-form {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack elements vertically */
+    gap: 15px; /* Add space between form elements */
+}
+
+.form-label {
+    font-weight: bold; /* Bold text for labels */
+    color: #ffffff; /* Bright white labels */
+}
+
+.form-input,
+.form-textarea {
+    width: 100%; /* Full width for input fields */
+    padding: 10px; /* Add padding */
+    border: 1px solid #444; /* Dark gray border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1rem; /* Standard font size */
+    background-color: #2a2a2a; /* Darker background for input fields */
+    color: #ffffff; /* Light text for readability */
+    resize: vertical; /* Allow vertical resizing for textarea */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth focus effect */
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+    color: #888; /* Light gray placeholder text */
+    font-style: italic; /* Italic style for placeholders */
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    border-color: #007bff; /* Blue border on focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Blue glow for focus */
+    outline: none; /* Remove default outline */
+}
+
+.form-submit {
+    background-color: #007bff; /* Bright blue button */
+    color: #ffffff; /* White text for contrast */
+    border: none; /* Remove border */
+    padding: 10px 15px; /* Add padding inside the button */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1rem; /* Standard font size */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effect */
+}
+
+.form-submit:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
 
 /* Responsive Design for Navbar */
 /* Show toggle button only on smaller screens */
