@@ -35,7 +35,7 @@ header p {
 /* Navigation Bar - Sticky */
 nav {
     position: sticky; /* Make navbar stick below the header */
-    top: 211; /* Match header height (10px padding + 42px content height) */
+    top: 211px; /* Match header height (10px padding + 42px content height) */
     z-index: 1000; /* Ensure navbar is below the header but above content */
     background-color: #1a1a1a; /* Slightly lighter for contrast */
     padding: 10px 0; /* Proper padding for content */
@@ -163,35 +163,35 @@ a:hover {
     text-decoration: underline; /* Underline links on hover */
 }
 
+.menu-toggle {
+    display: none; /* Hidden by default */
+}
+
 /* Responsive Design for Navbar */
+/* Show toggle button only on smaller screens */
 @media (max-width: 768px) {
-    nav ul {
-        display: none; /* Hide default nav items for mobile */
-        flex-direction: column; /* Stack nav items vertically */
-        padding: 0; /* Reset padding for mobile */
-    }
-
-    nav ul li {
-        display: block; /* Show hamburger menu */
-        margin: 5px 0; /* Add vertical spacing between items */
-    }
-
     .menu-toggle {
-        display: none; /* Ensure the menu remains hidden initially */
-        /* display: block; /* Show hamburger menu on mobile */
-        background: none; /* Clear background */
+        display: block;
+        background: none; /* No background */
         border: none; /* Remove border */
-        font-size: 1.5rem; /* Size for hamburger */
-        color: #e0e0e0; /* Light gray */
+        font-size: 1.5rem; /* Adjust size */
+        color: #e0e0e0; /* Light gray color */
         cursor: pointer; /* Pointer cursor */
     }
 
-    .site-footer {
-        font-size: 0.8rem; /* Smaller font size for footer on mobile */
-        padding: 10px; /* Adjust padding for smaller screens */
+    nav ul {
+        display: none; /* Hide menu by default */
+        flex-direction: column; /* Stack items vertically */
+        background-color: #1a1a1a; /* Match navbar background */
+        padding: 10px 0; /* Add padding for spacing */
+        margin: 0; /* Remove margin */
     }
 
-    main {
-        padding: 20px 15px; /* Reduce padding on mobile */
+    nav ul.open {
+        display: flex; /* Show menu when open */
+    }
+
+    nav ul li {
+        margin: 5px 0; /* Add vertical spacing */
     }
 }
