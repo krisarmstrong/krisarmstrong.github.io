@@ -16,7 +16,7 @@ header {
     background-color: #1f1f1f; /* Slightly lighter dark header */
     color: #ffffff; /* Bright white text for contrast */
     padding: 10px 0; /* Add padding for spacing */
-   /* border-bottom: 2px solid #007bff; /* Single blue line below header */
+    border-bottom: 2px solid #007bff; /* Single blue line below header */
     text-align: center; /* Center-align header content */
 }
 
@@ -35,13 +35,11 @@ header p {
 /* Navigation Bar - Sticky */
 nav {
     position: sticky; /* Make navbar stick below the header */
-    top: 191px; /* Match header height (10px padding + 42px content height) */
-    z-index: 999; /* Ensure navbar is below the header but above content */
+    top: 0; /* Match header height (10px padding + 42px content height) */
+    z-index: 1000; /* Ensure navbar is below the header but above content */
     background-color: #1a1a1a; /* Slightly lighter for contrast */
     padding: 10px 0; /* Proper padding for content */
     border-bottom: none; /* Remove border to avoid a double line */
-    margin: 0; /* Remove unintended margin */
-    box-shadow: none; /* Remove shadow for simplicity */
 }
 
 nav ul {
@@ -72,9 +70,10 @@ nav ul li a:hover {
 
 /* Main Content Area */
 main {
-    padding: 40px 20px; /* Add space around the content */
     margin: 0 auto; /* Push main content below the sticky navbar */
+    padding: 40px 20px; /* Add space around the content */
     max-width: 900px; /* Restrict maximum width for readability */
+    margin-top: 0; /* Default, adjusted dynamically by JavaScript */
 }
 
 /* Container Class for Sections */
