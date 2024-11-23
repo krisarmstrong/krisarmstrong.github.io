@@ -35,7 +35,7 @@ header p {
 /* Navigation Bar - Sticky */
 nav {
     position: sticky; /* Make navbar stick below the header */
-    top: 62px; /* Match header height (10px padding + 42px content height) */
+    top: 215px; /* Match header height (10px padding + 42px content height) */
     z-index: 1000; /* Ensure navbar is below the header but above content */
     background-color: #1a1a1a; /* Slightly lighter for contrast */
     padding: 10px 0; /* Proper padding for content */
@@ -72,8 +72,9 @@ nav ul li a:hover {
 
 /* Main Content Area */
 main {
+    margin-top: 305px;
     padding: 40px 20px; /* Add space around the content */
-    margin: 62px auto 0; /* Push main content below the sticky navbar */
+    /* margin: 62px auto 0; /* Push main content below the sticky navbar */
     max-width: 900px; /* Restrict maximum width for readability */
 }
 
