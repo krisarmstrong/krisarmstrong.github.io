@@ -73,7 +73,7 @@ main {
     margin: 0 auto; /* Push main content below the sticky navbar */
     padding: 40px 20px; /* Add space around the content */
     max-width: 900px; /* Restrict maximum width for readability */
-    margin-top: 0; /* Default, adjusted dynamically by JavaScript */
+    margin-top: 0 !important; /* Default, adjusted dynamically by JavaScript */
 }
 
 /* Container Class for Sections */

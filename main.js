@@ -5,11 +5,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Wait until the header and nav are fully loaded
     const waitForContent = setInterval(() => {
-        if (header.offsetHeight > 0 && nav.offsetHeight > 0) {
+        if (header && nav && main && header.offsetHeight > 0 && nav.offsetHeight > 0) {
             const headerHeight = header.offsetHeight;
             const navHeight = nav.offsetHeight;
 
-            // Dynamically adjust the top of the nav and main content spacing
+            // Adjust positions
             nav.style.top = `${headerHeight}px`;
             main.style.marginTop = `${headerHeight + navHeight}px`;
 
