@@ -37,7 +37,7 @@ nav {
     top: 0; /* Match header height (10px padding + 42px content height) */
     z-index: 1000; /* Ensure navbar is below the header but above content */
     background-color: #1a1a1a; /* Slightly lighter for contrast */
-    padding: 10px 0; /* Proper padding for content */
+    padding: 10px 0 0 0; /* Proper padding for content */
     border-top: 2px solid #007bff; /* Single blue line below header */
 }
 
