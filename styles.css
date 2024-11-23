@@ -72,9 +72,8 @@ nav ul li a:hover {
 
 /* Main Content Area */
 main {
-    margin-top: 305px;
     padding: 40px 20px; /* Add space around the content */
-    /* margin: 62px auto 0; /* Push main content below the sticky navbar */
+    margin: 62px auto 0; /* Push main content below the sticky navbar */
     max-width: 900px; /* Restrict maximum width for readability */
 }
 
