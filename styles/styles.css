@@ -46,7 +46,7 @@ main {
 
 /* Navbar Menu Styling */
 .site-navbar {
-    top: 131px; /* Stick below the header */
+    /* top: 131px; /* Stick below the header */
     position: sticky; /* Make navbar stick below the header */
     position: -webkit-sticky; /* Safari compatibility */
     z-index: 1000; /* Ensure navbar is below the header but above content */

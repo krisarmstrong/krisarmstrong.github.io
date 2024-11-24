@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const header = document.querySelector(".site.header");
-    const nav = document.querySelector(".site.navbar");
+    const header = document.querySelector(".site-header");
+    const nav = document.querySelector(".site-navbar");
     const main = document.querySelector("main");
 
-    // Function to adjust layout
+    // Function to adjust layout dynamically
     const adjustLayout = () => {
         if (header && nav && main) {
             const headerHeight = header.offsetHeight || 0;
@@ -22,10 +22,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    // Initial adjustment
+    // Initial adjustment on DOMContentLoaded
     adjustLayout();
 
-    // Fallback interval to ensure proper layout if elements take time to load
+    // Fallback interval to ensure layout is applied if elements take time to load
     const waitForContent = setInterval(() => {
         if (header.offsetHeight > 0 && nav.offsetHeight > 0) {
             adjustLayout();
