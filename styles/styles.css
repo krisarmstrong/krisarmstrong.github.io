@@ -20,20 +20,27 @@ main {
 }
 /* Site Header */
 .site-header {
-    padding: 0; /* Remove default padding */
-    margin: 0; /* Remove default margin */
+    position: sticky; /* Sticky position for scrolling */
+    position: -webkit-sticky; /* Safari compatibility */
+    top: 0; /* Stick to the very top */
+    z-index: 1001; /* Ensure header is above other elements */
+    background-color: #1f1f1f; /* Slightly lighter dark header */
+    color: #ffffff; /* Bright white text for contrast */
+    padding: 10px 0; /* Add padding for spacing */
+    text-align: center; /* Center-align header content */
+    /* border-bottom: 2px solid #007bff; /* Single blue line below header */
 }
 
 .site-header h1 {
-    font-size: 2.2rem;
-    margin: 0;
-    padding-bottom: 5px;
+    font-size: 2.2rem; /* Large font size for the main heading */
+    margin: 0; /* Remove margin around the heading */
+    padding-bottom: 5px; /* Add slight spacing below the text */
 }
 
 .site-header p {
-    font-size: 1.2rem;
-    color: #b0b0b0;
-    margin: 0;
+    margin: 0; /* Remove margin for alignment */
+    font-size: 1.2rem; /* Subheading font size */
+    color: #b0b0b0; /* Subtle gray for secondary text */
 }
 
 

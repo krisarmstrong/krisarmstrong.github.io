@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const header = document.querySelector("header");
-    const nav = document.querySelector("nav");
+    const header = document.querySelector(".site.header");
+    const nav = document.querySelector(".site.navbar");
     const main = document.querySelector("main");
 
     // Function to adjust layout
