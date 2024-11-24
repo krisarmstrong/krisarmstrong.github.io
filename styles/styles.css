@@ -9,66 +9,7 @@ body {
 }
 
 /* Header Styling - Make Sticky */
-header {
-    position: sticky; /* Sticky position for scrolling */
-    position: -webkit-sticky; /* Safari compatibility */
-    top: 0; /* Stick to the very top */
-    z-index: 1001; /* Ensure header is above other elements */
-    background-color: #1f1f1f; /* Slightly lighter dark header */
-    color: #ffffff; /* Bright white text for contrast */
-    padding: 10px 0; /* Add padding for spacing */
-    text-align: center; /* Center-align header content */
-    /* border-bottom: 2px solid #007bff; /* Single blue line below header */
-}
 
-header h1 {
-    font-size: 2.2rem; /* Large font size for the main heading */
-    margin: 0; /* Remove margin around the heading */
-    padding-bottom: 5px; /* Add slight spacing below the text */
-}
-
-header p {
-    margin: 0; /* Remove margin for alignment */
-    font-size: 1.2rem; /* Subheading font size */
-    color: #b0b0b0; /* Subtle gray for secondary text */
-}
-
-/* Navigation Bar - Sticky */
-nav {
-    top: 131; /* Stick to the very top */
-    position: sticky; /* Make navbar stick below the header */
-    position: -webkit-sticky; /* Safari compatibility */
-    /* top: 0; /* Match header height (10px padding + 42px content height) */
-    z-index: 1000; /* Ensure navbar is below the header but above content */
-    background-color: #1a1a1a; /* Slightly lighter for contrast */
-    padding: 10px 0 0 0; /* Proper padding for content */
-}
-
-nav ul {
-    list-style: none; /* Remove bullet points */
-    padding: 0; /* Remove default padding */
-    margin: 0; /* Remove default margin */
-    display: flex; /* Display items in a horizontal row */
-    justify-content: center; /* Center-align navigation links */
-}
-
-nav ul li {
-    margin: 0 10px; /* Space between navigation items */
-}
-
-nav ul li a {
-    color: #e0e0e0; /* Light gray links */
-    text-decoration: none; /* Remove underline for a cleaner look */
-    padding: 10px 20px; /* Adjust for better touch targets */
-    display: block; /* Ensure clickable area covers padding */
-    border-radius: 5px; /* Slightly rounded corners */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover transition */
-}
-
-nav ul li a:hover {
-    background-color: #007bff; /* Bright blue hover effect */
-    color: #ffffff; /* Change text to white on hover */
-}
 
 /* Main Content Area */
 main {
@@ -95,9 +36,18 @@ main {
     margin: 0;
 }
 
+
 /* Navbar Menu Styling */
+.site-navbar {
+    top: 131px; /* Stick below the header */
+    position: sticky; /* Make navbar stick below the header */
+    position: -webkit-sticky; /* Safari compatibility */
+    z-index: 1000; /* Ensure navbar is below the header but above content */
+    background-color: #1a1a1a; /* Slightly lighter for contrast */
+    padding: 10px 0 0 0; /* Proper padding for content */
+}
+
 .site-navbar ul {
-    position: sticky;
     list-style: none; /* Remove bullet points */
     padding: 0; /* Remove default padding */
     margin: 0; /* Remove default margin */
