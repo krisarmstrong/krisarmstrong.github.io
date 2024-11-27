@@ -1,16 +1,14 @@
-// JavaScript for Navbar and Theme
+// Modified main.js
 import { initContentLoader } from "./content-loader.js";
 import { setupThemeToggle } from "./theme-manager.js";
 
 // Initialize App
 document.addEventListener("DOMContentLoaded", () => {
-    initContentLoader()
-        .then(() => {
-            console.log("All content loaded successfully.");
-            setupThemeToggle(); // Ensure theme toggle functionality
-            setupNavbarScrollBehavior(); // Ensure scroll behavior is set
-        })
-        .catch((err) => console.error("Error during initialization:", err));
+    initContentLoader(() => {
+        console.log("All content loaded successfully.");
+        setupThemeToggle(); // Ensure theme toggle functionality
+        setupNavbarScrollBehavior(); // Ensure scroll behavior is set after navbar is loaded
+    });
 });
 
 // Navbar scroll behavior
@@ -21,7 +19,7 @@ const setupNavbarScrollBehavior = () => {
         return;
     }
 
-    // Apply sticky-top class if missing
+    // Ensure sticky-top is applied
     if (!navbar.classList.contains("sticky-top")) {
         navbar.classList.add("sticky-top");
     }

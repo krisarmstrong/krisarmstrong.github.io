@@ -29,7 +29,7 @@ export const loadContent = (id, url) => {
         .catch((error) => console.error(`Error loading content for ${id} from ${url}:`, error));
 };
 
-export const initContentLoader = () => {
+export const initContentLoader = (onComplete) => {
     const pageId = document.body.getAttribute("data-page");
 
     if (!pageId) {
@@ -51,23 +51,12 @@ export const initContentLoader = () => {
                     loadContent("key-highlights", "components/key-highlights.html"),
                     loadContent("core-competencies", "components/core-competencies.html"),
                 ]);
-            case "certification":
-                return Promise.all([
-                    loadContent("security-certification", "components/security-certification.html"),
-                    loadContent("wireless-certification", "components/wireless-certification.html"),
-                    loadContent("network-certification", "components/network-certification.html"),
-                ]);
-            case "about":
-                return Promise.all([
-                    loadContent("about-me", "components/about-me.html"),
-                    loadContent("key-achievements", "components/key-achievements.html"),
-                    loadContent("what-drives-me", "components/what-drives-me.html"),
-                ]);
             case "contact":
                 return loadContent("contact-form", "components/contact-form.html");
             default:
                 console.warn(`No content defined for pageId: ${pageId}`);
-                return Promise.resolve();
         }
+    }).then(() => {
+        if (typeof onComplete === "function") onComplete();
     });
 };
