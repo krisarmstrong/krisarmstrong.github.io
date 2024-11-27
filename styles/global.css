@@ -1,5 +1,14 @@
-i:hover {
-    color: #1a73e8; /* Brighter blue on hover */
-    transform: scale(1.1); /* Slightly larger */
-    transition: transform 0.2s ease, color 0.2s ease; /* Smooth hover effect */
+@import url('sections.css');
+@import url('forms.css');
+@import url('buttons.css');
+@import url('theme.css');
+@import url('navbar.css');
+
+/* Footer social icons */
+.social-icons a {
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1); /* Zoom on hover */
 }

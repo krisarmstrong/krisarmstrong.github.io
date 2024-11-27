@@ -1,8 +1,0 @@
-
-body {
-    font-family: Arial, sans-serif;
-}
-.section-title {
-    color: #007bff;
-    margin-bottom: 1rem;
-}

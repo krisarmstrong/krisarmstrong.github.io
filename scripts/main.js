@@ -12,3 +12,13 @@ document.addEventListener("DOMContentLoaded", () => {
             console.error("Error during initialization:", err)
         );
 });
+
+window.addEventListener("scroll", () => {
+    const navbar = document.querySelector(".navbar"); // Target your navbar element
+
+    if (window.scrollY > 10) {
+        navbar.classList.add("scrolled"); // Add shadow or style changes when scrolling
+    } else {
+        navbar.classList.remove("scrolled"); // Remove shadow or style changes when at the top
+    }
+});

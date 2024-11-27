@@ -1,0 +1,113 @@
+/* === Sections CSS === */
+
+/* Common section layout */
+.section {
+    padding: 2rem 0;
+    margin: 3rem 0;
+    text-align: left;
+}
+
+/* Section title styles */
+.section-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1.75rem;
+    color: #3b9a94; /* Teal alternative */
+    /*color: var(--bs-primary); */
+    text-transform: uppercase;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+body.bg-light .section-title {
+    color: #2a9d8f; /* Consistent with light mode */
+}
+
+/* Highlight Colors */
+a.link-secondary:hover {
+    color: #3b9a94; /* Matches the revised palette */
+}
+
+/* Hover effect for titles */
+.section-title:hover {
+    color: #4dabf7;
+    transform: scale(1.1);
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+/* Hereo Section */
+.hero {
+    background-color: #1a1a1a; /* Dark background to distinguish hero */
+    color: #f1f1f1; /* Light text for contrast */
+    padding: 5rem 0; /* Vertical spacing */
+    border-bottom: 1px solid #333; /* Subtle divider */
+}
+
+.hero h1 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    color: var(--bs-primary); /* Bootstrap primary color */
+    animation: fadeIn 1s ease-in-out;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.hero a.btn {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+}
+
+
+/* === Icon Background for Lists === */
+/* Circular background for icons */
+.icon-bg {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem; /* Diameter of the circle */
+    height: 2.5rem;
+    border-radius: 50%; /* Makes the background circular */
+    background-color: var(--bs-primary); /* Bootstrap primary color */
+    color: #fff; /* White icon color */
+    font-size: 1.25rem; /* Matches fa-lg size */
+    margin-right: 1rem; /* Space between icon and text */
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+/* Hover effect for icons */
+.icon-bg:hover {
+    background-color: #4dabf7; /* Lighter blue on hover */
+    transform: scale(1.1); /* Slight zoom effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+}
+
+/* Ensures text alignment next to the icons */
+.highlight-list-item {
+    display: flex;
+    align-items: center; /* Vertically aligns icons and text */
+    margin-bottom: 1.5rem; /* Add spacing between list items */
+}
+
+/* Text beside icons */
+.highlight-list-item p {
+    margin: 0; /* Removes unwanted margin */
+    font-size: 1rem; /* Standard font size */
+    color: inherit; /* Matches surrounding text */
+}
+
+/* Keyframes for animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,52 @@
+/* === Navbar CSS === */
+
+/* Light mode styles */
+.navbar-light {
+    background-color: #f9f9f9; /* Subtle light gray */
+    border-bottom: 1px solid #e1e1e1; /* Subtle separator */
+}
+
+/* Dark mode styles */
+.navbar-dark {
+    background-color: #343a40; /* Dark gray for dark mode */
+}
+
+.navbar {
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Sticky Navbar */
+.sticky-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    background-color: inherit;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Scrolled Navbar */
+.navbar.scrolled {
+    background-color: rgba(0, 0, 0, 0.9);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Navbar branding */
+.navbar-brand small {
+    font-size: 0.85rem;
+    color: #b3b3b3 !important;
+    line-height: 1.4;
+    display: block;
+    margin-top: 0.25rem;
+    font-style: italic; /* Optional for visual contrast */
+}
+
+/* Light mode adjustments for the tagline */
+body.bg-light .navbar-brand small {
+    color: #555555; /* Darker gray for better visibility */
+}
+
+/* Secondary fallback for muted text */
+.navbar-brand small.text-muted {
+    font-family: 'Inter', Arial, sans-serif;
+    color: #b3b3b3 !important; /* Override conflicting styles */
+}

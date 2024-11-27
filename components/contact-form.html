@@ -1,36 +1,73 @@
-<section id="contact-form" class="text-center my-5 py-5">
+<section id="contact-form" class="section text-center">
     <div class="container">
-        <h2 class="fw-bold fs-3 mb-4 text-uppercase text-primary">Contact Me</h2>
-        <form class="row g-4 mt-4 justify-content-center" style="max-width: 600px; margin: auto;">
+        <h2 class="section-title">Contact Me</h2>
+        <form 
+            id="form" 
+            class="form-container row g-4 justify-content-center" 
+            style="max-width: 600px; margin: auto;"
+        >
+            <!-- Recipient's Name (Optional) -->
+            <input 
+                type="hidden" 
+                name="to_name" 
+                value="Kris" 
+            > 
+
+            <!-- Your Name -->
             <div class="col-12">
-                <label for="name" class="form-label small">Name</label>
+                <label for="from_name" class="form-label">Name</label>
                 <input 
                     type="text" 
-                    class="form-control shadow-sm" 
-                    id="name" 
-                    placeholder="Your Name"
-                    required>
+                    class="form-control" 
+                    id="from_name" 
+                    name="from_name" 
+                    placeholder="Your Name" 
+                    required
+                >
             </div>
+
+            <!-- Your Email -->
             <div class="col-12">
-                <label for="email" class="form-label small">Email</label>
+                <label for="email" class="form-label">Email</label>
                 <input 
                     type="email" 
-                    class="form-control shadow-sm" 
+                    class="form-control" 
                     id="email" 
-                    placeholder="Your Email"
-                    required>
+                    name="email" 
+                    placeholder="Your Email" 
+                    required
+                >
             </div>
+
+            <!-- Message -->
             <div class="col-12">
-                <label for="message" class="form-label small">Message</label>
+                <label for="message" class="form-label">Message</label>
                 <textarea 
-                    class="form-control shadow-sm" 
+                    class="form-control" 
                     id="message" 
+                    name="message" 
                     rows="4" 
-                    placeholder="Your Message"
-                    required></textarea>
+                    placeholder="Your Message" 
+                    required
+                ></textarea>
             </div>
-            <div class="col-12 text-center">
-                <button type="submit" class="btn btn-primary px-4 py-2 shadow-sm rounded">Send</button>
+
+            <!-- Optional Reply-To Field -->
+            <input 
+                type="hidden" 
+                name="reply_to" 
+                id="reply_to" 
+                value=""
+            >
+
+            <!-- Submit Button -->
+            <div class="col-12">
+                <button 
+                    id="button" 
+                    type="submit" 
+                    class="btn btn-primary btn-lg px-4 py-2">
+                    Send
+                </button>
             </div>
         </form>
     </div>
