@@ -1,30 +1,27 @@
-document.addEventListener("DOMContentLoaded", function () {
-    emailjs.init("PinoAlZtG1dygd7XH"); // Replace with your public key
-
-    const btn = document.getElementById("button");
+loadContent("contact-form", "components/contact-form.html", () => {
     const form = document.getElementById("form");
+    const btn = document.getElementById("button");
 
     if (!form) {
-        console.error("Form not found in the DOM.");
+        console.error("Form not found in the DOM after dynamic load.");
         return;
     }
 
     form.addEventListener("submit", function (event) {
-        event.preventDefault(); // Prevent default form submission behavior
+        event.preventDefault();
+        btn.textContent = "Sending...";
 
-        btn.textContent = "Sending..."; // Update button text
+        const serviceID = "service_y3acoix";
+        const templateID = "template_2twx09d";
 
-        const serviceID = "service_y3acoix"; // Your service ID
-        const templateID = "template_2twx09d"; // Your template ID
-
-        emailjs.sendForm(serviceID, templateID, this)
+        emailjs.sendForm(serviceID, templateID, form)
             .then(() => {
-                btn.textContent = "Send Email"; // Reset button text
+                btn.textContent = "Send Email";
                 alert("Your message has been sent successfully!");
-                form.reset(); // Clear the form fields
+                form.reset();
             })
             .catch((err) => {
-                btn.textContent = "Send Email"; // Reset button text
+                btn.textContent = "Send Email";
                 alert("Failed to send the message. Please try again later.");
                 console.error("EmailJS error:", err);
             });
