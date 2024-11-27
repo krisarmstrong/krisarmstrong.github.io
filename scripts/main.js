@@ -7,19 +7,31 @@ document.addEventListener("DOMContentLoaded", () => {
     initContentLoader()
         .then(() => {
             console.log("All content loaded successfully.");
-            setupThemeToggle(); // Ensure light/dark mode toggles are functional
+            setupThemeToggle(); // Ensure theme toggle functionality
+            setupNavbarScrollBehavior(); // Ensure scroll behavior is set
         })
         .catch((err) => console.error("Error during initialization:", err));
 });
 
 // Navbar scroll behavior
-window.addEventListener("scroll", () => {
+const setupNavbarScrollBehavior = () => {
     const navbar = document.querySelector(".navbar");
-    if (!navbar) return;
-
-    if (window.scrollY > 10) {
-        navbar.classList.add("scrolled"); // Custom scroll behavior
-    } else {
-        navbar.classList.remove("scrolled");
+    if (!navbar) {
+        console.warn("Navbar not found in the DOM.");
+        return;
     }
-});
+
+    // Always apply sticky-top class
+    if (!navbar.classList.contains("sticky-top")) {
+        navbar.classList.add("sticky-top");
+    }
+
+    // Add scroll behavior
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 10) {
+            navbar.classList.add("scrolled");
+        } else {
+            navbar.classList.remove("scrolled");
+        }
+    });
+};
