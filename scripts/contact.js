@@ -3,7 +3,7 @@ export const initContactForm = () => {
     const btn = document.getElementById("button");
 
     if (!form) {
-        console.error("Form not found in the DOM.");
+        console.error("Form not found in the DOM after dynamic load.");
         return;
     }
 
@@ -11,8 +11,8 @@ export const initContactForm = () => {
         event.preventDefault();
         btn.textContent = "Sending...";
 
-        const serviceID = "service_y3acoix"; // Your EmailJS service ID
-        const templateID = "template_2twx09d"; // Your EmailJS template ID
+        const serviceID = "service_y3acoix";
+        const templateID = "template_2twx09d";
 
         emailjs.sendForm(serviceID, templateID, form)
             .then(() => {

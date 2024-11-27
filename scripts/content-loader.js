@@ -1,5 +1,3 @@
-const cache = new Map(); // Cache to optimize content fetching
-
 export const loadContent = (id, url, callback) => {
     const element = document.getElementById(id);
     if (!element) {
@@ -7,19 +5,11 @@ export const loadContent = (id, url, callback) => {
         return Promise.resolve(); // Skip if element doesn't exist
     }
 
-    // Check cache for previously fetched content
-    if (cache.has(url)) {
-        element.innerHTML = cache.get(url);
-        if (callback) callback(); // Call the callback if provided
-        return Promise.resolve();
-    }
-
     return fetch(url)
         .then((res) => res.text())
         .then((data) => {
             element.innerHTML = data || "<p>Content unavailable.</p>";
-            cache.set(url, data); // Cache the fetched content
-            if (callback) callback(); // Call the callback if provided
+            if (callback) callback(); // Call the callback after content is loaded
         })
         .catch((error) => {
             console.error(`Error loading content for ${id}:`, error);
@@ -38,47 +28,68 @@ export const initContentLoader = () => {
 
     return Promise.all([
         loadContent("navbar", "components/navbar.html", () => {
-            setupThemeToggle(); // Ensure theme toggle works
-            ensureStickyBehavior(); // Apply sticky behavior to the navbar
-        }),
-        loadContent("header", "components/header.html"),
-        loadContent("footer", "components/footer.html"),
+            if (typeof setupThemeToggle === "function") {
+                setupThemeToggle();
+            } else {
+                console.warn("setupThemeToggle is not defined.");
+            }
+        }).catch(() => console.error("Failed to load navbar")),
+
+        loadContent("header", "components/header.html").catch(() =>
+            console.error("Failed to load header")
+        ),
+        loadContent("footer", "components/footer.html").catch(() =>
+            console.error("Failed to load footer")
+        ),
     ]).then(() => {
         switch (pageId) {
             case "index":
                 return Promise.all([
-                    loadContent("professional-summary", "components/professional-summary.html"),
-                    loadContent("key-highlights", "components/key-highlights.html"),
-                    loadContent("core-competencies", "components/core-competencies.html"),
+                    loadContent("professional-summary", "components/professional-summary.html").catch(() =>
+                        console.error("Failed to load professional-summary")
+                    ),
+                    loadContent("key-highlights", "components/key-highlights.html").catch(() =>
+                        console.error("Failed to load key-highlights")
+                    ),
+                    loadContent("core-competencies", "components/core-competencies.html").catch(() =>
+                        console.error("Failed to load core-competencies")
+                    ),
                 ]);
             case "certification":
                 return Promise.all([
-                    loadContent("security-certification", "components/security-certification.html"),
-                    loadContent("wireless-certification", "components/wireless-certification.html"),
-                    loadContent("network-certification", "components/network-certification.html"),
+                    loadContent("security-certification", "components/security-certification.html").catch(() =>
+                        console.error("Failed to load security-certification")
+                    ),
+                    loadContent("wireless-certification", "components/wireless-certification.html").catch(() =>
+                        console.error("Failed to load wireless-certification")
+                    ),
+                    loadContent("network-certification", "components/network-certification.html").catch(() =>
+                        console.error("Failed to load network-certification")
+                    ),
                 ]);
             case "about":
                 return Promise.all([
-                    loadContent("about-me", "components/about-me.html"),
-                    loadContent("key-achievements", "components/key-achievements.html"),
-                    loadContent("what-drives-me", "components/what-drives-me.html"),
+                    loadContent("about-me", "components/about-me.html").catch(() =>
+                        console.error("Failed to load about-me")
+                    ),
+                    loadContent("key-achievements", "components/key-achievements.html").catch(() =>
+                        console.error("Failed to load key-achievements")
+                    ),
+                    loadContent("what-drives-me", "components/what-drives-me.html").catch(() =>
+                        console.error("Failed to load what-drives-me")
+                    ),
                 ]);
             case "contact":
-                return loadContent("contact-form", "components/contact-form.html", initContactForm); // Initialize the form
+                return loadContent("contact-form", "components/contact-form.html", () => {
+                    if (typeof initContactForm === "function") {
+                        initContactForm();
+                    } else {
+                        console.warn("initContactForm is not defined.");
+                    }
+                }).catch(() => console.error("Failed to load contact-form"));
             default:
                 console.warn(`No content defined for pageId: ${pageId}`);
                 return Promise.resolve();
         }
     });
-};
-
-const ensureStickyBehavior = (navbarElement) => {
-    if (!navbarElement.classList.contains("sticky-top")) {
-        navbarElement.classList.add("sticky-top");
-    }
-    navbarElement.style.position = "relative";
-    requestAnimationFrame(() => {
-        navbarElement.style.position = ""; // Reset position to allow sticky behavior
-    });
-    console.log("Sticky behavior ensured for navbar.");
 };
