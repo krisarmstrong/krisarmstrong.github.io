@@ -1,0 +1,5 @@
+i:hover {
+    color: #1a73e8; /* Brighter blue on hover */
+    transform: scale(1.1); /* Slightly larger */
+    transition: transform 0.2s ease, color 0.2s ease; /* Smooth hover effect */
+}
