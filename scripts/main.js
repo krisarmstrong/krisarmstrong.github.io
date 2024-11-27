@@ -15,13 +15,10 @@ document.addEventListener("DOMContentLoaded", () => {
 // Navbar scroll behavior
 window.addEventListener("scroll", () => {
     const navbar = document.querySelector(".navbar");
-    if (!navbar) {
-        console.warn("Navbar element not found.");
-        return;
-    }
+    if (!navbar) return;
 
     if (window.scrollY > 10) {
-        navbar.classList.add("scrolled"); // Add styles on scroll
+        navbar.classList.add("scrolled"); // Custom scroll behavior
     } else {
         navbar.classList.remove("scrolled");
     }
