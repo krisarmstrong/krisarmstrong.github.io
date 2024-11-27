@@ -1,48 +1,19 @@
 const cache = new Map(); // Cache to optimize content fetching
-
-export const loadContent = (id, url) => {
+export const loadContent = (id, url, callback) => {
     const element = document.getElementById(id);
     if (!element) {
         console.warn(`Element with ID "${id}" not found.`);
         return Promise.resolve(); // Skip if element doesn't exist
     }
 
-    // Check cache before making a network request
-    if (cache.has(url)) {
-        element.innerHTML = cache.get(url);
-        element.classList.add("loaded"); // Add 'loaded' class for animation
-        console.log(`Loaded (cached) content for ${id}`);
-
-        // Reapply sticky behavior if it's the navbar
-        if (id === "navbar") {
-            ensureStickyBehavior(element);
-        }
-
-        return Promise.resolve();
-    }
-
     return fetch(url)
-        .then((res) => {
-            if (!res.ok) throw new Error(`HTTP error! Status: ${res.status}`);
-            return res.text();
-        })
+        .then((res) => res.text())
         .then((data) => {
             element.innerHTML = data || "<p>Content unavailable.</p>";
-            setTimeout(() => {
-                element.classList.add("loaded"); // Add 'loaded' class for animation
-                console.log(`Added 'loaded' class to ${id}`);
-            }, 50); // Delay for rendering
-
-            // Reapply sticky behavior if it's the navbar
-            if (id === "navbar") {
-                ensureStickyBehavior(element);
-            }
-
-            cache.set(url, data); // Cache the content
-            console.log(`Loaded content for ${id}`);
+            if (callback) callback(); // Call the callback after content is loaded
         })
         .catch((error) => {
-            console.error(`Error loading content for ${id} from ${url}:`, error);
+            console.error(`Error loading content for ${id}:`, error);
         });
 };
 
