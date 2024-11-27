@@ -21,7 +21,7 @@ const setupNavbarScrollBehavior = () => {
         return;
     }
 
-    // Always apply sticky-top class
+    // Apply sticky-top class if missing
     if (!navbar.classList.contains("sticky-top")) {
         navbar.classList.add("sticky-top");
     }
