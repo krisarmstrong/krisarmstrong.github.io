@@ -2,7 +2,7 @@
 import { initContentLoader } from "./content-loader.js";
 import { setupThemeToggle } from "./theme-manager.js";
 
-// Initialize App
+// Ensure navbar scroll behavior runs after dynamic content loads
 document.addEventListener("DOMContentLoaded", () => {
     initContentLoader(() => {
         console.log("All content loaded successfully.");
@@ -19,10 +19,8 @@ const setupNavbarScrollBehavior = () => {
         return;
     }
 
-    // Ensure sticky-top is applied
-    if (!navbar.classList.contains("sticky-top")) {
-        navbar.classList.add("sticky-top");
-    }
+    // Always ensure sticky-top is applied
+    navbar.classList.add("sticky-top");
 
     // Add scroll behavior
     window.addEventListener("scroll", () => {

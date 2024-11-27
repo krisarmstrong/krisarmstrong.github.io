@@ -26,7 +26,7 @@ export const loadContent = (id, url) => {
             cache.set(url, data); // Cache the content
             console.log(`Loaded content for ${id}`);
         })
-        .catch((error) => console.error(`Error loading content for ${id} from ${url}:`, error));
+        .catch((error) => console.error(`Error loading content for ${id}:`, error));
 };
 
 export const initContentLoader = (onComplete) => {
