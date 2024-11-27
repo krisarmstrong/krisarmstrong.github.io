@@ -1,28 +1,40 @@
 import { initContentLoader } from "./content-loader.js";
 import { setupThemeToggle } from "./theme-manager.js";
+import { initContactForm } from "./contact.js"; // Ensure contact form logic is loaded
 
-// Entry point of the app
+// Main application initialization
 document.addEventListener("DOMContentLoaded", () => {
+    console.log("Initializing main.js");
+
+    // Load dynamic content
     initContentLoader()
         .then(() => {
             console.log("All content loaded successfully.");
+
+            // Initialize theme toggle
             setupThemeToggle();
+
+            // Check if the current page is the contact page
+            const pageId = document.body.getAttribute("data-page");
+            if (pageId === "contact") {
+                initContactForm(); // Initialize form submission logic
+            }
         })
-        .catch((err) =>
-            console.error("Error during initialization:", err)
-        );
-});
+        .catch((err) => {
+            console.error("Error during initialization:", err);
+        });
 
-window.addEventListener("scroll", () => {
-    const navbar = document.querySelector(".navbar"); // Target your navbar element
-
-    if (window.scrollY > 10) {
-        navbar.classList.add("scrolled"); // Add shadow or style changes when scrolling
+    // Add scroll listener for navbar behavior
+    const navbar = document.querySelector(".navbar");
+    if (navbar) {
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 10) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        });
     } else {
-        navbar.classList.remove("scrolled"); // Remove shadow or style changes when at the top
+        console.warn("Navbar not found in the DOM.");
     }
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-    initContentLoader();
 });

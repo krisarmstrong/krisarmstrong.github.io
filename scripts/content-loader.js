@@ -7,14 +7,19 @@ export const loadContent = (id, url, callback) => {
         return Promise.resolve(); // Skip if element doesn't exist
     }
 
+    // Check cache for previously fetched content
+    if (cache.has(url)) {
+        element.innerHTML = cache.get(url);
+        if (callback) callback(); // Call the callback if provided
+        return Promise.resolve();
+    }
+
     return fetch(url)
-        .then((res) => {
-            if (!res.ok) throw new Error(`HTTP error! Status: ${res.status}`);
-            return res.text();
-        })
+        .then((res) => res.text())
         .then((data) => {
             element.innerHTML = data || "<p>Content unavailable.</p>";
-            if (callback) callback(); // Execute callback for dependent scripts
+            cache.set(url, data); // Cache the fetched content
+            if (callback) callback(); // Call the callback if provided
         })
         .catch((error) => {
             console.error(`Error loading content for ${id}:`, error);
@@ -33,8 +38,8 @@ export const initContentLoader = () => {
 
     return Promise.all([
         loadContent("navbar", "components/navbar.html", () => {
-            setupThemeToggle(); // Attach theme toggle logic after navbar loads
-            ensureStickyBehavior(); // Reapply sticky behavior
+            setupThemeToggle(); // Ensure theme toggle works
+            ensureStickyBehavior(); // Apply sticky behavior to the navbar
         }),
         loadContent("header", "components/header.html"),
         loadContent("footer", "components/footer.html"),
@@ -59,9 +64,7 @@ export const initContentLoader = () => {
                     loadContent("what-drives-me", "components/what-drives-me.html"),
                 ]);
             case "contact":
-                return loadContent("contact-form", "components/contact-form.html", () => {
-                    initContactForm(); // Attach EmailJS logic after form is loaded
-                });
+                return loadContent("contact-form", "components/contact-form.html", initContactForm); // Initialize the form
             default:
                 console.warn(`No content defined for pageId: ${pageId}`);
                 return Promise.resolve();
@@ -69,22 +72,13 @@ export const initContentLoader = () => {
     });
 };
 
-const ensureStickyBehavior = () => {
-    const navbar = document.querySelector(".sticky-navbar");
-    if (!navbar) {
-        console.warn("Navbar not found for sticky behavior.");
-        return;
+const ensureStickyBehavior = (navbarElement) => {
+    if (!navbarElement.classList.contains("sticky-top")) {
+        navbarElement.classList.add("sticky-top");
     }
-
-    if (!navbar.classList.contains("sticky-top")) {
-        navbar.classList.add("sticky-top");
-    }
-
-    // Force layout recalculation to ensure sticky behavior
-    navbar.style.position = "relative";
+    navbarElement.style.position = "relative";
     requestAnimationFrame(() => {
-        navbar.style.position = "";
+        navbarElement.style.position = ""; // Reset position to allow sticky behavior
     });
-
     console.log("Sticky behavior ensured for navbar.");
 };

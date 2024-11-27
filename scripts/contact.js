@@ -1,9 +1,9 @@
-loadContent("contact-form", "components/contact-form.html", () => {
+export const initContactForm = () => {
     const form = document.getElementById("form");
     const btn = document.getElementById("button");
 
     if (!form) {
-        console.error("Form not found in the DOM after dynamic load.");
+        console.error("Form not found in the DOM.");
         return;
     }
 
@@ -11,8 +11,8 @@ loadContent("contact-form", "components/contact-form.html", () => {
         event.preventDefault();
         btn.textContent = "Sending...";
 
-        const serviceID = "service_y3acoix";
-        const templateID = "template_2twx09d";
+        const serviceID = "service_y3acoix"; // Your EmailJS service ID
+        const templateID = "template_2twx09d"; // Your EmailJS template ID
 
         emailjs.sendForm(serviceID, templateID, form)
             .then(() => {
@@ -26,4 +26,4 @@ loadContent("contact-form", "components/contact-form.html", () => {
                 console.error("EmailJS error:", err);
             });
     });
-});
+};
