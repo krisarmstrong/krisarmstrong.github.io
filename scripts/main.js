@@ -1,4 +1,4 @@
-// Modified main.js
+// JavaScript for Navbar and Theme
 import { initContentLoader } from "./content-loader.js";
 import { setupThemeToggle } from "./theme-manager.js";
 
@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initContentLoader(() => {
         console.log("All content loaded successfully.");
         setupThemeToggle(); // Ensure theme toggle functionality
-        setupNavbarScrollBehavior(); // Ensure scroll behavior is set after navbar is loaded
+        setupNavbarScrollBehavior(); // Ensure scroll behavior is set after navbar loads
     });
 });
 

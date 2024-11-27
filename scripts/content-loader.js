@@ -43,20 +43,38 @@ export const initContentLoader = (onComplete) => {
         loadContent("navbar", "components/navbar.html"),
         loadContent("header", "components/header.html"),
         loadContent("footer", "components/footer.html"),
-    ]).then(() => {
-        switch (pageId) {
-            case "index":
-                return Promise.all([
-                    loadContent("professional-summary", "components/professional-summary.html"),
-                    loadContent("key-highlights", "components/key-highlights.html"),
-                    loadContent("core-competencies", "components/core-competencies.html"),
-                ]);
-            case "contact":
-                return loadContent("contact-form", "components/contact-form.html");
-            default:
-                console.warn(`No content defined for pageId: ${pageId}`);
-        }
-    }).then(() => {
-        if (typeof onComplete === "function") onComplete();
-    });
+    ])
+        .then(() => {
+            switch (pageId) {
+                case "index":
+                    return Promise.all([
+                        loadContent("professional-summary", "components/professional-summary.html"),
+                        loadContent("key-highlights", "components/key-highlights.html"),
+                        loadContent("core-competencies", "components/core-competencies.html"),
+                    ]);
+                case "certification":
+                    return Promise.all([
+                        loadContent("security-certification", "components/security-certification.html"),
+                        loadContent("wireless-certification", "components/wireless-certification.html"),
+                        loadContent("network-certification", "components/network-certification.html"),
+                    ]);
+                case "about":
+                    return Promise.all([
+                        loadContent("about-me", "components/about-me.html"),
+                        loadContent("key-achievements", "components/key-achievements.html"),
+                        loadContent("what-drives-me", "components/what-drives-me.html"),
+                    ]);
+                case "contact":
+                    return loadContent("contact-form", "components/contact-form.html");
+                default:
+                    console.warn(`No content defined for pageId: ${pageId}`);
+                    return Promise.resolve();
+            }
+        })
+        .then(() => {
+            // Call the provided callback after all content has loaded
+            if (typeof onComplete === "function") {
+                onComplete();
+            }
+        });
 };
