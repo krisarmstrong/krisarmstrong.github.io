@@ -1,951 +1,1084 @@
-diff --git a/Archive.zip b/Archive.zip
-deleted file mode 100644
-index 4bf8bc3..0000000
-Binary files a/Archive.zip and /dev/null differ
-diff --git a/about.html b/about.html
-index 4e9510e..5105095 100644
---- a/about.html
-+++ b/about.html
-@@ -2,11 +2,13 @@
- <html lang="en">
- 
- <head>
--  <meta charset="UTF-8" />
--  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
--  <title>About</title>
--  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
--  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
-+  <meta charset="UTF-8">
-+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-+  <title>About Me</title>
-+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-+  <link rel="stylesheet" href="/styles/global.css">
- </head>
- 
- <body data-page="about" class="bg-dark text-light">
-diff --git a/certifications.html b/certifications.html
-index 193067d..affb6ba 100644
---- a/certifications.html
-+++ b/certifications.html
-@@ -4,10 +4,11 @@
- <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
--    <title>Certifications</title>
-+    <title>Certification</title>
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
--    <!-- Font Awesome -->
-+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-+    <link rel="stylesheet" href="/styles/global.css">
- </head>
- 
- <body data-page="certification" class="bg-dark text-light">
-diff --git a/components/about-me.html b/components/about-me.html
-index 8c051d7..a99a475 100644
---- a/components/about-me.html
-+++ b/components/about-me.html
-@@ -1,6 +1,6 @@
--<section id="about-me" class="my-5 py-4">
--    <div class="container mb-5">
--        <h2 class="fw-bold fs-3 text-uppercase text-primary border-bottom pb-2">About Me</h2>
-+<section id="about-me" class="section">
-+    <div class="container">
-+        <h2 class="section-title">About Me</h2>
-         <p>
-             With over 20 years of experience in networking and cybersecurity, I am a results-driven professional known
-             for designing, implementing, and managing secure, scalable network solutions that drive business success. My
-diff --git a/components/contact-form.html b/components/contact-form.html
-index 6742646..24b8ce7 100644
---- a/components/contact-form.html
-+++ b/components/contact-form.html
-@@ -1,36 +1,73 @@
--<section id="contact-form" class="text-center my-5 py-5">
-+<section id="contact-form" class="section text-center">
-     <div class="container">
--        <h2 class="fw-bold fs-3 mb-4 text-uppercase text-primary">Contact Me</h2>
--        <form class="row g-4 mt-4 justify-content-center" style="max-width: 600px; margin: auto;">
-+        <h2 class="section-title">Contact Me</h2>
-+        <form 
-+            id="form" 
-+            class="form-container row g-4 justify-content-center" 
-+            style="max-width: 600px; margin: auto;"
-+        >
-+            <!-- Recipient's Name (Optional) -->
-+            <input 
-+                type="hidden" 
-+                name="to_name" 
-+                value="Kris" 
-+            > 
-+
-+            <!-- Your Name -->
-             <div class="col-12">
--                <label for="name" class="form-label small">Name</label>
-+                <label for="from_name" class="form-label">Name</label>
-                 <input 
-                     type="text" 
--                    class="form-control shadow-sm" 
--                    id="name" 
--                    placeholder="Your Name"
--                    required>
-+                    class="form-control" 
-+                    id="from_name" 
-+                    name="from_name" 
-+                    placeholder="Your Name" 
-+                    required
-+                >
-             </div>
-+
-+            <!-- Your Email -->
-             <div class="col-12">
--                <label for="email" class="form-label small">Email</label>
-+                <label for="email" class="form-label">Email</label>
-                 <input 
-                     type="email" 
--                    class="form-control shadow-sm" 
-+                    class="form-control" 
-                     id="email" 
--                    placeholder="Your Email"
--                    required>
-+                    name="email" 
-+                    placeholder="Your Email" 
-+                    required
-+                >
-             </div>
-+
-+            <!-- Message -->
-             <div class="col-12">
--                <label for="message" class="form-label small">Message</label>
-+                <label for="message" class="form-label">Message</label>
-                 <textarea 
--                    class="form-control shadow-sm" 
-+                    class="form-control" 
-                     id="message" 
-+                    name="message" 
-                     rows="4" 
--                    placeholder="Your Message"
--                    required></textarea>
-+                    placeholder="Your Message" 
-+                    required
-+                ></textarea>
-             </div>
--            <div class="col-12 text-center">
--                <button type="submit" class="btn btn-primary px-4 py-2 shadow-sm rounded">Send</button>
-+
-+            <!-- Optional Reply-To Field -->
-+            <input 
-+                type="hidden" 
-+                name="reply_to" 
-+                id="reply_to" 
-+                value=""
-+            >
-+
-+            <!-- Submit Button -->
-+            <div class="col-12">
-+                <button 
-+                    id="button" 
-+                    type="submit" 
-+                    class="btn btn-primary btn-lg px-4 py-2">
-+                    Send
-+                </button>
-             </div>
-         </form>
-     </div>
-diff --git a/components/core-competencies.html b/components/core-competencies.html
-index bdf2021..813c242 100644
---- a/components/core-competencies.html
-+++ b/components/core-competencies.html
-@@ -1,41 +1,65 @@
--<section id="core-competencies" class="mt-5">
--    <div class="container mb-5">
--        <h2 class="fw-bold fs-3 text-primary text-uppercase border-bottom pb-2">Core Competencies</h2>
-+<section id="core-competencies" class="section">
-+    <div class="container">
-+        <h2 class="section-title">Core Competencies</h2>
-         <ul class="list-unstyled mt-4">
--            <li class="d-flex align-items-center mb-3">
--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
-+            <li class="highlight-list-item">
-+                <span class="icon-bg">
-+                    <i class="fa-solid fa-check"></i>
-+                </span>
-                 <span><b>Cybersecurity and Risk Management:</b> Proven ability to implement frameworks like ISO 27001 and NIST CSF, reducing security risks by 70% and ensuring 100% compliance during audits.</span>
-             </li>
--            <li class="d-flex align-items-center mb-3">
--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
-+            <li class="highlight-list-item">
-+                <span class="icon-bg">
-+                    <i class="fa-solid fa-check"></i>
-+                </span>
-+                <span><b>Cybersecurity and Risk Management:</b> Proven ability to implement frameworks like ISO 27001 and NIST CSF, reducing security risks by 70% and ensuring 100% compliance during audits.</span>
-+            </li>
-+            <li class="highlight-list-item">
-+                <span class="icon-bg">
-+                    <i class="fa-solid fa-check"></i>
-+                </span>
-                 <span><b>Incident Response and Threat Mitigation:</b> Skilled in rapid response to cyber threats, such as resolving ransomware attacks within 2 hours to minimize damage and save over $1M in potential losses.</span>
-             </li>
--            <li class="d-flex align-items-center mb-3">
--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
-+            <li class="highlight-list-item">
-+                <span class="icon-bg">
-+                    <i class="fa-solid fa-check"></i>
-+                </span>
-                 <span><b>Pre-Sales Technical Expertise:</b> Experienced in delivering tailored technical demonstrations and proof-of-concept solutions, closing $20M+ in enterprise business and increasing deal closure rates by 25%.</span>
-             </li>
--            <li class="d-flex align-items-center mb-3">
--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
-+            <li class="highlight-list-item">
-+                <span class="icon-bg">
-+                    <i class="fa-solid fa-check"></i>
-+                </span>
-                 <span><b>Customer Enablement and Training:</b> Delivered customized training programs to over 500 clients, driving a 40% increase in product adoption and boosting retention rates by 30%.</span>
-             </li>
--            <li class="d-flex align-items-center mb-3">
--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
-+            <li class="highlight-list-item">
-+                <span class="icon-bg">
-+                    <i class="fa-solid fa-check"></i>
-+                </span>
-                 <span><b>Wireless Network Design:</b> Certified Wireless Professional (CWDP, CWSP, CWNA) with expertise in secure deployment of wireless solutions using advanced protocols like WPA3 and 802.1x.</span>
-             </li>
--            <li class="d-flex align-items-center mb-3">
--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
-+            <li class="highlight-list-item">
-+                <span class="icon-bg">
-+                    <i class="fa-solid fa-check"></i>
-+                </span>
-                 <span><b>Advanced Network Security:</b> Designed and deployed threat detection systems, increasing anomaly detection rates by 50% and securing network infrastructure end-to-end.</span>
-             </li>
--            <li class="d-flex align-items-center mb-3">
--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
-+            <li class="highlight-list-item">
-+                <span class="icon-bg">
-+                    <i class="fa-solid fa-check"></i>
-+                </span>
-                 <span><b>Python and Bash Scripting:</b> Automated repetitive workflows to reduce technical demo preparation time by 35%, improving team productivity and operational efficiency.</span>
-             </li>
--            <li class="d-flex align-items-center mb-3">
--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
-+            <li class="highlight-list-item">
-+                <span class="icon-bg">
-+                    <i class="fa-solid fa-check"></i>
-+                </span>
-                 <span><b>Collaboration with R&D:</b> Served as a bridge between clients and R&D teams, influencing 5+ feature launches that increased product adoption by 15%.</span>
-             </li>
--            <li class="d-flex align-items-center mb-3">
--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
-+            <li class="highlight-list-item">
-+                <span class="icon-bg">
-+                    <i class="fa-solid fa-check"></i>
-+                </span>
-                 <span><b>Data-Driven Problem Solving:</b> Achieved measurable outcomes, such as exceeding annual sales quotas by 120% and improving customer satisfaction scores by 20%.</span>
-             </li>
-         </ul>
-diff --git a/components/footer.html b/components/footer.html
-index 53c5bda..3893c28 100644
---- a/components/footer.html
-+++ b/components/footer.html
-@@ -12,4 +12,5 @@
-             <i class="fa-brands fa-github fa-lg"></i>
-         </a>
-     </div>
-+    <a href="#top" class="btn btn-secondary btn-sm mt-3">Back to Top</a>
- </footer>
-diff --git a/components/header.html b/components/header.html
-index 8e0a907..858cca2 100644
---- a/components/header.html
-+++ b/components/header.html
-@@ -1,6 +1,5 @@
--<header class="text-center py-5">
--    <div class="container">
--        <h1>Kris Armstrong</h1>
--        <p>Cybersecurity Specialist | Networking Professional</p>
--    </div>
-+<header class="hero text-center py-5">
-+    <h1 class="display-4 fw-bold text-primary">Welcome to My Professional Portfolio</h1>
-+    <p class="lead text-light">Explore my expertise in cybersecurity and networking.</p>
-+    <a href="contact.html" class="btn btn-primary btn-lg mt-3">Get in Touch</a>
- </header>
-\ No newline at end of file
-diff --git a/components/key-achievements.html b/components/key-achievements.html
-index d955a7f..10d283b 100644
---- a/components/key-achievements.html
-+++ b/components/key-achievements.html
-@@ -1,45 +1,67 @@
--<section id="key-highlights" class="mt-5">
--    <div class="container mb-5">
--        <h2 class="fw-bold fs-3 text-primary text-uppercase border-bottom pb-2">Key Achievements</h2>
-+<section id="key-achievements" class="section">
-+    <div class="container">
-+        <h2 class="section-title">Key Achievements</h2>
-         <ul class="list-unstyled mt-4">
--            <li class="d-flex align-items-center mb-3">
--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
--                <span><b>Strategic Revenue Growth:</b> Partnered with enterprise teams to deliver tailored technical solutions, driving over $20M in new business and achieving a 25% increase in deal closure rates.</span>
-+            <li class="highlight-list-item">
-+                <span class="icon-bg">
-+                    <i class="fa-solid fa-check"></i>
-+                </span>
-+                <span><b>Strategic Revenue Growth:</b> Partnered with enterprise teams to deliver tailored technical solutions, driving over $20M in new business and achieving a 25% increase in deal closure
-+                    rates.</span>
-             </li>
--            <li class="d-flex align-items-center mb-3">
--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
-+            <li class="highlight-list-item">
-+                <span class="icon-bg">
-+                    <i class="fa-solid fa-check"></i>
-+                </span>
-                 <span><b>Customer-Centric Innovation:</b> Designed end-to-end networking and security solutions that boosted customer satisfaction scores by 20% and secured long-term client retention.</span>
-             </li>
--            <li class="d-flex align-items-center mb-3">
--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
-+            <li class="highlight-list-item">
-+                <span class="icon-bg">
-+                    <i class="fa-solid fa-check"></i>
-+                </span>
-                 <span><b>Security Leadership:</b> Spearheaded cybersecurity initiatives to achieve compliance with industry frameworks like ISO 27001 and NIST CSF, reducing organizational risk by 70%.</span>
-             </li>
--            <li class="d-flex align-items-center mb-3">
--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
-+            <li class="highlight-list-item">
-+                <span class="icon-bg">
-+                    <i class="fa-solid fa-check"></i>
-+                </span>
-                 <span><b>Incident Response Expertise:</b> Led the resolution of high-priority cybersecurity incidents, including ransomware mitigation within hours, safeguarding over $1M in potential losses.</span>
-             </li>
--            <li class="d-flex align-items-center mb-3">
--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
-+            <li class="highlight-list-item">
-+                <span class="icon-bg">
-+                    <i class="fa-solid fa-check"></i>
-+                </span>
-                 <span><b>Operational Efficiency:</b> Automated workflows and technical demonstrations with Python and Bash scripting, reducing preparation time by 35% and improving team productivity.</span>
-             </li>
--            <li class="d-flex align-items-center mb-3">
--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
--                <span><b>Training and Enablement:</b> Delivered advanced technical training to over 500 clients, increasing product adoption by 40% and equipping customers to navigate complex cybersecurity challenges.</span>
-+            <li class="highlight-list-item">
-+                <span class="icon-bg">
-+                    <i class="fa-solid fa-check"></i>
-+                </span>
-+                <span><b>Training and Enablement:</b> Delivered advanced technical training to over 500 clients, increasing product adoption by 40% and equipping customers to navigate complex cybersecurity
-+                    challenges.</span>
-             </li>
--            <li class="d-flex align-items-center mb-3">
--                <i class="fa=solid fa-circle-check me-3 fa-lg>"></i>
-+            <li class="highlight-list-item">
-+                <span class="icon-bg">
-+                    <i class="fa-solid fa-check"></i>
-+                </span>
-                 <span><b>Network Security Enhancements:</b> Designed and deployed advanced threat detection systems and secure wireless solutions using protocols like WPA3 and 802.1x, increasing anomaly detection rates by 50%.</span>
-             </li>
--            <li class="d-flex align-items-center mb-3">
--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
-+            <li class="highlight-list-item">
-+                <span class="icon-bg">
-+                    <i class="fa-solid fa-check"></i>
-+                </span>
-                 <span><b>R&D Collaboration:</b> Bridged customer feedback and product innovation, influencing the launch of 5+ strategic features and driving a 15% increase in product adoption.</span>
-             </li>
--            <li class="d-flex align-items-center mb-3">
--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
-+            <li class="highlight-list-item">
-+                <span class="icon-bg">
-+                    <i class="fa-solid fa-check"></i>
-+                </span>
-                 <span><b>Metrics-Driven Results:</b> Consistently exceeded sales and performance quotas by 120% through a focus on translating technical expertise into actionable business value.</span>
-             </li>
--            <li class="d-flex align-items-center mb-3">
--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
-+            <li class="highlight-list-item">
-+                <span class="icon-bg">
-+                    <i class="fa-solid fa-check"></i>
-+                </span>
-                 <span><b>Team Leadership:</b> Mentored cross-functional teams, empowering peers and junior engineers to enhance their skills, align with business goals, and deliver impactful outcomes.</span>
-             </li>
-         </ul>
-diff --git a/components/key-highlights.html b/components/key-highlights.html
-index cec2ac0..467fa95 100644
---- a/components/key-highlights.html
-+++ b/components/key-highlights.html
-@@ -1,45 +1,65 @@
--<section id="key-highlights" class="mt-5">
--    <div class="container mb-5">
--        <h2 class="fw-bold fs-3 text-primary text-uppercase border-bottom pb-2">Key Highlights</h2>
-+<section id="key-highlights" class="section">
-+    <div class="container">
-+        <h2 class="section-title">Key Highlights</h2>
-         <ul class="list-unstyled mt-4">
--            <li class="d-flex align-items-center mb-3">
--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
-+            <li class="highlight-list-item">
-+                <span class="icon-bg">
-+                    <i class="fa-solid fa-check"></i>
-+                </span>
-                 <span><b>Pre-Sales Technical Expertise:</b> Partnered with enterprise sales teams to close $20M+ in new business by delivering tailored technical demonstrations and proof-of-concept (POC) solutions, increasing deal closure rates by 25%.</span>
-             </li>
--            <li class="d-flex align-items-center mb-3">
--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
-+            <li class="highlight-list-item">
-+                <span class="icon-bg">
-+                    <i class="fa-solid fa-check"></i>
-+                </span>
-                 <span><b>Customer-Centric Solutions:</b> Designed tailored end-to-end network and cybersecurity solutions for clients, achieving a customer satisfaction score of 98% and securing long-term partnerships.</span>
-             </li>
--            <li class="d-flex align-items-center mb-3">
--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
-+            <li class="highlight-list-item">
-+                <span class="icon-bg">
-+                    <i class="fa-solid fa-check"></i>
-+                </span>
-                 <span><b>Cybersecurity Leadership:</b> Spearheaded compliance initiatives for ISO 27001 and NIST CSF frameworks, ensuring 100% audit success and reducing security risks by 70%.</span>
-             </li>
--            <li class="d-flex align-items-center mb-3">
--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
-+            <li class="highlight-list-item">
-+                <span class="icon-bg">
-+                    <i class="fa-solid fa-check"></i>
-+                </span>
-                 <span><b>Incident Response and Threat Mitigation:</b> Led the resolution of a ransomware attack, mitigating damage within 2 hours and saving the organization over $1M in potential losses.</span>
-             </li>
--            <li class="d-flex align-items-center mb-3">
--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
-+            <li class="highlight-list-item">
-+                <span class="icon-bg">
-+                    <i class="fa-solid fa-check"></i>
-+                </span>
-                 <span><b>Network Security Enhancements:</b> Implemented advanced threat detection systems and secured wireless networks with WPA3 and 802.1x authentication, increasing anomaly detection rates by 50%.</span>
-             </li>
--            <li class="d-flex align-items-center mb-3">
--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
-+            <li class="highlight-list-item">
-+                <span class="icon-bg">
-+                    <i class="fa-solid fa-check"></i>
-+                </span>
-                 <span><b>Post-Sales Training:</b> Delivered targeted training to over 500 enterprise clients, resulting in a 40% increase in product adoption and driving strategic growth for the organization.</span>
-             </li>
--            <li class="d-flex align-items-center mb-3">
--                <i class="fa=solid fa-circle-check me-3 fa-lg>"></i>
-+            <li class="highlight-list-item">
-+                <span class="icon-bg">
-+                    <i class="fa-solid fa-check"></i>
-+                </span>
-                 <span><b>Customer Retention:</b> Boosted retention rates by 30% by providing hands-on technical support and designing self-service resources for clients.</span>
-             </li>
--            <li class="d-flex align-items-center mb-3">
--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
-+            <li class="highlight-list-item">
-+                <span class="icon-bg">
-+                    <i class="fa-solid fa-check"></i>
-+                </span>
-                 <span><b>Automation for Efficiency:</b> Automated repetitive workflows with Python and Bash scripts, reducing technical demo preparation time by 35% and improving team productivity.</span>
-             </li>
--            <li class="d-flex align-items-center mb-3">
--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
--                <span><b>Collaboration with R&D: </b> Served as the "voice of the customer" for product development, driving the successful launch of 5+ new features and increasing product adoption by 15%.</span>
-+            <li class="highlight-list-item">
-+                <span class="icon-bg">
-+                    <i class="fa-solid fa-check"></i>
-+                </span>
-+                <span><b>Collaboration with R&D:</b> Served as the "voice of the customer" for product development, driving the successful launch of 5+ new features and increasing product adoption by 15%.</span>
-             </li>
--            <li class="d-flex align-items-center mb-3">
--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
-+            <li class="highlight-list-item">
-+                <span class="icon-bg">
-+                    <i class="fa-solid fa-check"></i>
-+                </span>
-                 <span><b>Metrics-Driven Results:</b> Exceeded annual sales quotas by 120% by effectively translating complex technical concepts into actionable business value for clients.</span>
-             </li>
-         </ul>
-diff --git a/components/navbar.html b/components/navbar.html
-index 0704a4f..1f7b52e 100644
---- a/components/navbar.html
-+++ b/components/navbar.html
-@@ -1,13 +1,12 @@
--<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-+<nav class="navbar navbar-expand-lg sticky-navbar">
-     <div class="container">
--        <a class="navbar-brand" href="#">Kris Armstrong</a>
--
--        <!-- Toggler for Mobile View -->
-+        <a class="navbar-brand" href="#">
-+            <span>Kris Armstrong</span>
-+            <small class="d-block text-muted">Cybersecurity Specialist | Networking Professional</small>
-+        </a>
-         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-             <span class="navbar-toggler-icon"></span>
-         </button>
--
--        <!-- Navbar Links -->
-         <div class="collapse navbar-collapse" id="navbarNav">
-             <ul class="navbar-nav ms-auto">
-                 <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-@@ -16,8 +15,6 @@
-                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-             </ul>
-         </div>
--
--        <!-- Theme Toggle Button -->
-         <button id="theme-toggle" class="btn btn-outline-light ms-3">Switch to Light Mode</button>
-     </div>
- </nav>
-\ No newline at end of file
-diff --git a/components/network-certification.html b/components/network-certification.html
-index 78c6eec..34afe7a 100644
---- a/components/network-certification.html
-+++ b/components/network-certification.html
-@@ -1,10 +1,12 @@
--<section id="network-certification" class="my-5 py-4">
--    <div class="container mb-5">
--        <h2 class="fw-bold fs-3 text-primary text-uppercase border-bottom pb-2">Network Certification</h2>
-+<section id="network-certification" class="section">
-+    <div class="container">
-+        <h2 class="section-title">Network Certifications</h2>
-         <ul class="list-unstyled mt-4">
--            <li class="d-flex align-items-center mb-3">
--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
--                <span><b>CCN -</b> Cisco Certified Network Professional</span>
-+            <li class="highlight-list-item">
-+                <span class="icon-bg">
-+                    <i class="fa-solid fa-check"></i>
-+                </span>
-+                <span><b>CCNP -</b> Cisco Certified Network Professional</span>
-             </li>
-         </ul>
-     </div>
-diff --git a/components/professional-summary.html b/components/professional-summary.html
-index 76c3589..0b6c7ed 100644
---- a/components/professional-summary.html
-+++ b/components/professional-summary.html
-@@ -1,9 +1,10 @@
--<section id="professional-summary" class="my-5 py-4">
--    <div class="container mb-5">
--        <h2 class="fw-bold fs-3 text-primary text-uppercase border-bottom pb-2">Professional Summary</h2>
-+<section id="professional-summary" class="section">
-+    <div class="container">
-+        <h2 class="section-title">Professional Summary</h2>
-         <p>
-             A results-driven professional with over 20 years of expertise in networking and cybersecurity.
--            I specialize in designing secure, scalable solutions and delivering technical excellence.
-+        </p>
-+        <p>I specialize in designing secure, scalable solutions and delivering technical excellence.
-         </p>
-     </div>
- </section>
-\ No newline at end of file
-diff --git a/components/security-certification.html b/components/security-certification.html
-index f43036b..a33a7a5 100644
---- a/components/security-certification.html
-+++ b/components/security-certification.html
-@@ -1,11 +1,13 @@
--<section id="security-certification" class="my-5 py-4">
--    <div class="container mb-5">
--        <h2 class="fw-bold fs-3 text-primary text-uppercase border-bottom pb-2">Security Certification</h2>
-+<section id="security-certification" class="section">
-+    <div class="container">
-+        <h2 class="section-title">Security Certifications</h2>
-         <ul class="list-unstyled mt-4">
--            <li class="d-flex align-items-center mb-3">
--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
-+            <li class="highlight-list-item">
-+                <span class="icon-bg">
-+                    <i class="fa-solid fa-check"></i>
-+                </span>
-                 <span><b>CISSP -</b> Certified Information Systems Security Professional</span>
-             </li>
-         </ul>
-     </div>
--</section>
-+</section>
-\ No newline at end of file
-diff --git a/components/what-drives-me.html b/components/what-drives-me.html
-index 040f993..5258f5f 100644
---- a/components/what-drives-me.html
-+++ b/components/what-drives-me.html
-@@ -1,6 +1,6 @@
--<section id="what-drives-me" class="my-5 py-4">
--    <div class="container mb-5">
--        <h2 class="fw-bold fs-3 text-primary text-uppercase border-bottom pb-2">What Drives Me</h2>
-+<section id="what-drives-me" class="section">
-+    <div class="container">
-+        <h2 class="section-title">What Drives Me</h2>
-         <p>
-             My passion lies in solving complex challenges within the ever-evolving fields of <b>cybersecurity</b> and <b>network engineering.</b> I am driven by the opportunity to craft innovative, scalable, and secure solutions that not only meet technical needs but also deliver measurable business outcomes.
-         </p>
-diff --git a/components/wireless-certification.html b/components/wireless-certification.html
-index ea8c7f6..0fc2251 100644
---- a/components/wireless-certification.html
-+++ b/components/wireless-certification.html
-@@ -1,16 +1,29 @@
--<section id="text-primary text-uppercase" class="my-5 py-4">
--    <div class="container mb-5">
--        <h2 class="fw-bold fs-3 text-primary text-uppercase border-bottom pb-2">Wireless Certification</h2>
-+<section id="wireless-certification" class="section">
-+    <div class="container">
-+        <h2 class="section-title">Wireless Certifications</h2>
-         <ul class="list-unstyled mt-4">
--            <li class="d-flex align-items-center mb-3">
--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
--                <span><b>CWNA -</b> Certified Wireless Network Administrator</span>
-+            <li class="highlight-list-item">
-+                <span class="icon-bg">
-+                    <i class="fa-solid fa-check"></i>
-+                </span>
-+                <span>
-+                    <b>CWNA -</b> Certified Wireless Network Administrator</span>
-             </li>
--            <li class="d-flex align-items-center mb-3">
--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>       <span><b>CWSP -</b> Certified Wireless Security Professional</span>
-+
-+            <li class="highlight-list-item">
-+                <span class="icon-bg">
-+                    <i class="fa-solid fa-check"></i>
-+                </span>
-+                <span>
-+                    <b>CWSP -</b> Certified Wireless Security Professional</span>
-             </li>
--            <li class="d-flex align-items-center mb-3">
--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>        <span><b>CWDP -</b> Certified Wireless Design Professional</span>
-+
-+            <li class="highlight-list-item">
-+                <span class="icon-bg">
-+                    <i class="fa-solid fa-check"></i>
-+                </span>
-+                <span><b>CWDP -</b> Certified Wireless Design
-+                    Professional</span>
-             </li>
-         </ul>
-     </div>
+diff --git a/changes.diff b/changes.diff
+index f36793e..e69de29 100644
+--- a/changes.diff
++++ b/changes.diff
+@@ -1,951 +0,0 @@
+-diff --git a/Archive.zip b/Archive.zip
+-deleted file mode 100644
+-index 4bf8bc3..0000000
+-Binary files a/Archive.zip and /dev/null differ
+-diff --git a/about.html b/about.html
+-index 4e9510e..5105095 100644
+---- a/about.html
+-+++ b/about.html
+-@@ -2,11 +2,13 @@
+- <html lang="en">
+- 
+- <head>
+--  <meta charset="UTF-8" />
+--  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+--  <title>About</title>
+--  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+--  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+-+  <meta charset="UTF-8">
+-+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-+  <title>About Me</title>
+-+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+-+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+-+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+-+  <link rel="stylesheet" href="/styles/global.css">
+- </head>
+- 
+- <body data-page="about" class="bg-dark text-light">
+-diff --git a/certifications.html b/certifications.html
+-index 193067d..affb6ba 100644
+---- a/certifications.html
+-+++ b/certifications.html
+-@@ -4,10 +4,11 @@
+- <head>
+-     <meta charset="UTF-8">
+-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+--    <title>Certifications</title>
+-+    <title>Certification</title>
+-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+-     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+--    <!-- Font Awesome -->
+-+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+-+    <link rel="stylesheet" href="/styles/global.css">
+- </head>
+- 
+- <body data-page="certification" class="bg-dark text-light">
+-diff --git a/components/about-me.html b/components/about-me.html
+-index 8c051d7..a99a475 100644
+---- a/components/about-me.html
+-+++ b/components/about-me.html
+-@@ -1,6 +1,6 @@
+--<section id="about-me" class="my-5 py-4">
+--    <div class="container mb-5">
+--        <h2 class="fw-bold fs-3 text-uppercase text-primary border-bottom pb-2">About Me</h2>
+-+<section id="about-me" class="section">
+-+    <div class="container">
+-+        <h2 class="section-title">About Me</h2>
+-         <p>
+-             With over 20 years of experience in networking and cybersecurity, I am a results-driven professional known
+-             for designing, implementing, and managing secure, scalable network solutions that drive business success. My
+-diff --git a/components/contact-form.html b/components/contact-form.html
+-index 6742646..24b8ce7 100644
+---- a/components/contact-form.html
+-+++ b/components/contact-form.html
+-@@ -1,36 +1,73 @@
+--<section id="contact-form" class="text-center my-5 py-5">
+-+<section id="contact-form" class="section text-center">
+-     <div class="container">
+--        <h2 class="fw-bold fs-3 mb-4 text-uppercase text-primary">Contact Me</h2>
+--        <form class="row g-4 mt-4 justify-content-center" style="max-width: 600px; margin: auto;">
+-+        <h2 class="section-title">Contact Me</h2>
+-+        <form 
+-+            id="form" 
+-+            class="form-container row g-4 justify-content-center" 
+-+            style="max-width: 600px; margin: auto;"
+-+        >
+-+            <!-- Recipient's Name (Optional) -->
+-+            <input 
+-+                type="hidden" 
+-+                name="to_name" 
+-+                value="Kris" 
+-+            > 
+-+
+-+            <!-- Your Name -->
+-             <div class="col-12">
+--                <label for="name" class="form-label small">Name</label>
+-+                <label for="from_name" class="form-label">Name</label>
+-                 <input 
+-                     type="text" 
+--                    class="form-control shadow-sm" 
+--                    id="name" 
+--                    placeholder="Your Name"
+--                    required>
+-+                    class="form-control" 
+-+                    id="from_name" 
+-+                    name="from_name" 
+-+                    placeholder="Your Name" 
+-+                    required
+-+                >
+-             </div>
+-+
+-+            <!-- Your Email -->
+-             <div class="col-12">
+--                <label for="email" class="form-label small">Email</label>
+-+                <label for="email" class="form-label">Email</label>
+-                 <input 
+-                     type="email" 
+--                    class="form-control shadow-sm" 
+-+                    class="form-control" 
+-                     id="email" 
+--                    placeholder="Your Email"
+--                    required>
+-+                    name="email" 
+-+                    placeholder="Your Email" 
+-+                    required
+-+                >
+-             </div>
+-+
+-+            <!-- Message -->
+-             <div class="col-12">
+--                <label for="message" class="form-label small">Message</label>
+-+                <label for="message" class="form-label">Message</label>
+-                 <textarea 
+--                    class="form-control shadow-sm" 
+-+                    class="form-control" 
+-                     id="message" 
+-+                    name="message" 
+-                     rows="4" 
+--                    placeholder="Your Message"
+--                    required></textarea>
+-+                    placeholder="Your Message" 
+-+                    required
+-+                ></textarea>
+-             </div>
+--            <div class="col-12 text-center">
+--                <button type="submit" class="btn btn-primary px-4 py-2 shadow-sm rounded">Send</button>
+-+
+-+            <!-- Optional Reply-To Field -->
+-+            <input 
+-+                type="hidden" 
+-+                name="reply_to" 
+-+                id="reply_to" 
+-+                value=""
+-+            >
+-+
+-+            <!-- Submit Button -->
+-+            <div class="col-12">
+-+                <button 
+-+                    id="button" 
+-+                    type="submit" 
+-+                    class="btn btn-primary btn-lg px-4 py-2">
+-+                    Send
+-+                </button>
+-             </div>
+-         </form>
+-     </div>
+-diff --git a/components/core-competencies.html b/components/core-competencies.html
+-index bdf2021..813c242 100644
+---- a/components/core-competencies.html
+-+++ b/components/core-competencies.html
+-@@ -1,41 +1,65 @@
+--<section id="core-competencies" class="mt-5">
+--    <div class="container mb-5">
+--        <h2 class="fw-bold fs-3 text-primary text-uppercase border-bottom pb-2">Core Competencies</h2>
+-+<section id="core-competencies" class="section">
+-+    <div class="container">
+-+        <h2 class="section-title">Core Competencies</h2>
+-         <ul class="list-unstyled mt-4">
+--            <li class="d-flex align-items-center mb-3">
+--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
+-+            <li class="highlight-list-item">
+-+                <span class="icon-bg">
+-+                    <i class="fa-solid fa-check"></i>
+-+                </span>
+-                 <span><b>Cybersecurity and Risk Management:</b> Proven ability to implement frameworks like ISO 27001 and NIST CSF, reducing security risks by 70% and ensuring 100% compliance during audits.</span>
+-             </li>
+--            <li class="d-flex align-items-center mb-3">
+--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
+-+            <li class="highlight-list-item">
+-+                <span class="icon-bg">
+-+                    <i class="fa-solid fa-check"></i>
+-+                </span>
+-+                <span><b>Cybersecurity and Risk Management:</b> Proven ability to implement frameworks like ISO 27001 and NIST CSF, reducing security risks by 70% and ensuring 100% compliance during audits.</span>
+-+            </li>
+-+            <li class="highlight-list-item">
+-+                <span class="icon-bg">
+-+                    <i class="fa-solid fa-check"></i>
+-+                </span>
+-                 <span><b>Incident Response and Threat Mitigation:</b> Skilled in rapid response to cyber threats, such as resolving ransomware attacks within 2 hours to minimize damage and save over $1M in potential losses.</span>
+-             </li>
+--            <li class="d-flex align-items-center mb-3">
+--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
+-+            <li class="highlight-list-item">
+-+                <span class="icon-bg">
+-+                    <i class="fa-solid fa-check"></i>
+-+                </span>
+-                 <span><b>Pre-Sales Technical Expertise:</b> Experienced in delivering tailored technical demonstrations and proof-of-concept solutions, closing $20M+ in enterprise business and increasing deal closure rates by 25%.</span>
+-             </li>
+--            <li class="d-flex align-items-center mb-3">
+--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
+-+            <li class="highlight-list-item">
+-+                <span class="icon-bg">
+-+                    <i class="fa-solid fa-check"></i>
+-+                </span>
+-                 <span><b>Customer Enablement and Training:</b> Delivered customized training programs to over 500 clients, driving a 40% increase in product adoption and boosting retention rates by 30%.</span>
+-             </li>
+--            <li class="d-flex align-items-center mb-3">
+--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
+-+            <li class="highlight-list-item">
+-+                <span class="icon-bg">
+-+                    <i class="fa-solid fa-check"></i>
+-+                </span>
+-                 <span><b>Wireless Network Design:</b> Certified Wireless Professional (CWDP, CWSP, CWNA) with expertise in secure deployment of wireless solutions using advanced protocols like WPA3 and 802.1x.</span>
+-             </li>
+--            <li class="d-flex align-items-center mb-3">
+--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
+-+            <li class="highlight-list-item">
+-+                <span class="icon-bg">
+-+                    <i class="fa-solid fa-check"></i>
+-+                </span>
+-                 <span><b>Advanced Network Security:</b> Designed and deployed threat detection systems, increasing anomaly detection rates by 50% and securing network infrastructure end-to-end.</span>
+-             </li>
+--            <li class="d-flex align-items-center mb-3">
+--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
+-+            <li class="highlight-list-item">
+-+                <span class="icon-bg">
+-+                    <i class="fa-solid fa-check"></i>
+-+                </span>
+-                 <span><b>Python and Bash Scripting:</b> Automated repetitive workflows to reduce technical demo preparation time by 35%, improving team productivity and operational efficiency.</span>
+-             </li>
+--            <li class="d-flex align-items-center mb-3">
+--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
+-+            <li class="highlight-list-item">
+-+                <span class="icon-bg">
+-+                    <i class="fa-solid fa-check"></i>
+-+                </span>
+-                 <span><b>Collaboration with R&D:</b> Served as a bridge between clients and R&D teams, influencing 5+ feature launches that increased product adoption by 15%.</span>
+-             </li>
+--            <li class="d-flex align-items-center mb-3">
+--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
+-+            <li class="highlight-list-item">
+-+                <span class="icon-bg">
+-+                    <i class="fa-solid fa-check"></i>
+-+                </span>
+-                 <span><b>Data-Driven Problem Solving:</b> Achieved measurable outcomes, such as exceeding annual sales quotas by 120% and improving customer satisfaction scores by 20%.</span>
+-             </li>
+-         </ul>
+-diff --git a/components/footer.html b/components/footer.html
+-index 53c5bda..3893c28 100644
+---- a/components/footer.html
+-+++ b/components/footer.html
+-@@ -12,4 +12,5 @@
+-             <i class="fa-brands fa-github fa-lg"></i>
+-         </a>
+-     </div>
+-+    <a href="#top" class="btn btn-secondary btn-sm mt-3">Back to Top</a>
+- </footer>
+-diff --git a/components/header.html b/components/header.html
+-index 8e0a907..858cca2 100644
+---- a/components/header.html
+-+++ b/components/header.html
+-@@ -1,6 +1,5 @@
+--<header class="text-center py-5">
+--    <div class="container">
+--        <h1>Kris Armstrong</h1>
+--        <p>Cybersecurity Specialist | Networking Professional</p>
+--    </div>
+-+<header class="hero text-center py-5">
+-+    <h1 class="display-4 fw-bold text-primary">Welcome to My Professional Portfolio</h1>
+-+    <p class="lead text-light">Explore my expertise in cybersecurity and networking.</p>
+-+    <a href="contact.html" class="btn btn-primary btn-lg mt-3">Get in Touch</a>
+- </header>
+-\ No newline at end of file
+-diff --git a/components/key-achievements.html b/components/key-achievements.html
+-index d955a7f..10d283b 100644
+---- a/components/key-achievements.html
+-+++ b/components/key-achievements.html
+-@@ -1,45 +1,67 @@
+--<section id="key-highlights" class="mt-5">
+--    <div class="container mb-5">
+--        <h2 class="fw-bold fs-3 text-primary text-uppercase border-bottom pb-2">Key Achievements</h2>
+-+<section id="key-achievements" class="section">
+-+    <div class="container">
+-+        <h2 class="section-title">Key Achievements</h2>
+-         <ul class="list-unstyled mt-4">
+--            <li class="d-flex align-items-center mb-3">
+--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
+--                <span><b>Strategic Revenue Growth:</b> Partnered with enterprise teams to deliver tailored technical solutions, driving over $20M in new business and achieving a 25% increase in deal closure rates.</span>
+-+            <li class="highlight-list-item">
+-+                <span class="icon-bg">
+-+                    <i class="fa-solid fa-check"></i>
+-+                </span>
+-+                <span><b>Strategic Revenue Growth:</b> Partnered with enterprise teams to deliver tailored technical solutions, driving over $20M in new business and achieving a 25% increase in deal closure
+-+                    rates.</span>
+-             </li>
+--            <li class="d-flex align-items-center mb-3">
+--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
+-+            <li class="highlight-list-item">
+-+                <span class="icon-bg">
+-+                    <i class="fa-solid fa-check"></i>
+-+                </span>
+-                 <span><b>Customer-Centric Innovation:</b> Designed end-to-end networking and security solutions that boosted customer satisfaction scores by 20% and secured long-term client retention.</span>
+-             </li>
+--            <li class="d-flex align-items-center mb-3">
+--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
+-+            <li class="highlight-list-item">
+-+                <span class="icon-bg">
+-+                    <i class="fa-solid fa-check"></i>
+-+                </span>
+-                 <span><b>Security Leadership:</b> Spearheaded cybersecurity initiatives to achieve compliance with industry frameworks like ISO 27001 and NIST CSF, reducing organizational risk by 70%.</span>
+-             </li>
+--            <li class="d-flex align-items-center mb-3">
+--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
+-+            <li class="highlight-list-item">
+-+                <span class="icon-bg">
+-+                    <i class="fa-solid fa-check"></i>
+-+                </span>
+-                 <span><b>Incident Response Expertise:</b> Led the resolution of high-priority cybersecurity incidents, including ransomware mitigation within hours, safeguarding over $1M in potential losses.</span>
+-             </li>
+--            <li class="d-flex align-items-center mb-3">
+--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
+-+            <li class="highlight-list-item">
+-+                <span class="icon-bg">
+-+                    <i class="fa-solid fa-check"></i>
+-+                </span>
+-                 <span><b>Operational Efficiency:</b> Automated workflows and technical demonstrations with Python and Bash scripting, reducing preparation time by 35% and improving team productivity.</span>
+-             </li>
+--            <li class="d-flex align-items-center mb-3">
+--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
+--                <span><b>Training and Enablement:</b> Delivered advanced technical training to over 500 clients, increasing product adoption by 40% and equipping customers to navigate complex cybersecurity challenges.</span>
+-+            <li class="highlight-list-item">
+-+                <span class="icon-bg">
+-+                    <i class="fa-solid fa-check"></i>
+-+                </span>
+-+                <span><b>Training and Enablement:</b> Delivered advanced technical training to over 500 clients, increasing product adoption by 40% and equipping customers to navigate complex cybersecurity
+-+                    challenges.</span>
+-             </li>
+--            <li class="d-flex align-items-center mb-3">
+--                <i class="fa=solid fa-circle-check me-3 fa-lg>"></i>
+-+            <li class="highlight-list-item">
+-+                <span class="icon-bg">
+-+                    <i class="fa-solid fa-check"></i>
+-+                </span>
+-                 <span><b>Network Security Enhancements:</b> Designed and deployed advanced threat detection systems and secure wireless solutions using protocols like WPA3 and 802.1x, increasing anomaly detection rates by 50%.</span>
+-             </li>
+--            <li class="d-flex align-items-center mb-3">
+--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
+-+            <li class="highlight-list-item">
+-+                <span class="icon-bg">
+-+                    <i class="fa-solid fa-check"></i>
+-+                </span>
+-                 <span><b>R&D Collaboration:</b> Bridged customer feedback and product innovation, influencing the launch of 5+ strategic features and driving a 15% increase in product adoption.</span>
+-             </li>
+--            <li class="d-flex align-items-center mb-3">
+--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
+-+            <li class="highlight-list-item">
+-+                <span class="icon-bg">
+-+                    <i class="fa-solid fa-check"></i>
+-+                </span>
+-                 <span><b>Metrics-Driven Results:</b> Consistently exceeded sales and performance quotas by 120% through a focus on translating technical expertise into actionable business value.</span>
+-             </li>
+--            <li class="d-flex align-items-center mb-3">
+--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
+-+            <li class="highlight-list-item">
+-+                <span class="icon-bg">
+-+                    <i class="fa-solid fa-check"></i>
+-+                </span>
+-                 <span><b>Team Leadership:</b> Mentored cross-functional teams, empowering peers and junior engineers to enhance their skills, align with business goals, and deliver impactful outcomes.</span>
+-             </li>
+-         </ul>
+-diff --git a/components/key-highlights.html b/components/key-highlights.html
+-index cec2ac0..467fa95 100644
+---- a/components/key-highlights.html
+-+++ b/components/key-highlights.html
+-@@ -1,45 +1,65 @@
+--<section id="key-highlights" class="mt-5">
+--    <div class="container mb-5">
+--        <h2 class="fw-bold fs-3 text-primary text-uppercase border-bottom pb-2">Key Highlights</h2>
+-+<section id="key-highlights" class="section">
+-+    <div class="container">
+-+        <h2 class="section-title">Key Highlights</h2>
+-         <ul class="list-unstyled mt-4">
+--            <li class="d-flex align-items-center mb-3">
+--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
+-+            <li class="highlight-list-item">
+-+                <span class="icon-bg">
+-+                    <i class="fa-solid fa-check"></i>
+-+                </span>
+-                 <span><b>Pre-Sales Technical Expertise:</b> Partnered with enterprise sales teams to close $20M+ in new business by delivering tailored technical demonstrations and proof-of-concept (POC) solutions, increasing deal closure rates by 25%.</span>
+-             </li>
+--            <li class="d-flex align-items-center mb-3">
+--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
+-+            <li class="highlight-list-item">
+-+                <span class="icon-bg">
+-+                    <i class="fa-solid fa-check"></i>
+-+                </span>
+-                 <span><b>Customer-Centric Solutions:</b> Designed tailored end-to-end network and cybersecurity solutions for clients, achieving a customer satisfaction score of 98% and securing long-term partnerships.</span>
+-             </li>
+--            <li class="d-flex align-items-center mb-3">
+--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
+-+            <li class="highlight-list-item">
+-+                <span class="icon-bg">
+-+                    <i class="fa-solid fa-check"></i>
+-+                </span>
+-                 <span><b>Cybersecurity Leadership:</b> Spearheaded compliance initiatives for ISO 27001 and NIST CSF frameworks, ensuring 100% audit success and reducing security risks by 70%.</span>
+-             </li>
+--            <li class="d-flex align-items-center mb-3">
+--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
+-+            <li class="highlight-list-item">
+-+                <span class="icon-bg">
+-+                    <i class="fa-solid fa-check"></i>
+-+                </span>
+-                 <span><b>Incident Response and Threat Mitigation:</b> Led the resolution of a ransomware attack, mitigating damage within 2 hours and saving the organization over $1M in potential losses.</span>
+-             </li>
+--            <li class="d-flex align-items-center mb-3">
+--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
+-+            <li class="highlight-list-item">
+-+                <span class="icon-bg">
+-+                    <i class="fa-solid fa-check"></i>
+-+                </span>
+-                 <span><b>Network Security Enhancements:</b> Implemented advanced threat detection systems and secured wireless networks with WPA3 and 802.1x authentication, increasing anomaly detection rates by 50%.</span>
+-             </li>
+--            <li class="d-flex align-items-center mb-3">
+--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
+-+            <li class="highlight-list-item">
+-+                <span class="icon-bg">
+-+                    <i class="fa-solid fa-check"></i>
+-+                </span>
+-                 <span><b>Post-Sales Training:</b> Delivered targeted training to over 500 enterprise clients, resulting in a 40% increase in product adoption and driving strategic growth for the organization.</span>
+-             </li>
+--            <li class="d-flex align-items-center mb-3">
+--                <i class="fa=solid fa-circle-check me-3 fa-lg>"></i>
+-+            <li class="highlight-list-item">
+-+                <span class="icon-bg">
+-+                    <i class="fa-solid fa-check"></i>
+-+                </span>
+-                 <span><b>Customer Retention:</b> Boosted retention rates by 30% by providing hands-on technical support and designing self-service resources for clients.</span>
+-             </li>
+--            <li class="d-flex align-items-center mb-3">
+--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
+-+            <li class="highlight-list-item">
+-+                <span class="icon-bg">
+-+                    <i class="fa-solid fa-check"></i>
+-+                </span>
+-                 <span><b>Automation for Efficiency:</b> Automated repetitive workflows with Python and Bash scripts, reducing technical demo preparation time by 35% and improving team productivity.</span>
+-             </li>
+--            <li class="d-flex align-items-center mb-3">
+--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
+--                <span><b>Collaboration with R&D: </b> Served as the "voice of the customer" for product development, driving the successful launch of 5+ new features and increasing product adoption by 15%.</span>
+-+            <li class="highlight-list-item">
+-+                <span class="icon-bg">
+-+                    <i class="fa-solid fa-check"></i>
+-+                </span>
+-+                <span><b>Collaboration with R&D:</b> Served as the "voice of the customer" for product development, driving the successful launch of 5+ new features and increasing product adoption by 15%.</span>
+-             </li>
+--            <li class="d-flex align-items-center mb-3">
+--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
+-+            <li class="highlight-list-item">
+-+                <span class="icon-bg">
+-+                    <i class="fa-solid fa-check"></i>
+-+                </span>
+-                 <span><b>Metrics-Driven Results:</b> Exceeded annual sales quotas by 120% by effectively translating complex technical concepts into actionable business value for clients.</span>
+-             </li>
+-         </ul>
+-diff --git a/components/navbar.html b/components/navbar.html
+-index 0704a4f..1f7b52e 100644
+---- a/components/navbar.html
+-+++ b/components/navbar.html
+-@@ -1,13 +1,12 @@
+--<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+-+<nav class="navbar navbar-expand-lg sticky-navbar">
+-     <div class="container">
+--        <a class="navbar-brand" href="#">Kris Armstrong</a>
+--
+--        <!-- Toggler for Mobile View -->
+-+        <a class="navbar-brand" href="#">
+-+            <span>Kris Armstrong</span>
+-+            <small class="d-block text-muted">Cybersecurity Specialist | Networking Professional</small>
+-+        </a>
+-         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+-             <span class="navbar-toggler-icon"></span>
+-         </button>
+--
+--        <!-- Navbar Links -->
+-         <div class="collapse navbar-collapse" id="navbarNav">
+-             <ul class="navbar-nav ms-auto">
+-                 <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+-@@ -16,8 +15,6 @@
+-                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+-             </ul>
+-         </div>
+--
+--        <!-- Theme Toggle Button -->
+-         <button id="theme-toggle" class="btn btn-outline-light ms-3">Switch to Light Mode</button>
+-     </div>
+- </nav>
+-\ No newline at end of file
+-diff --git a/components/network-certification.html b/components/network-certification.html
+-index 78c6eec..34afe7a 100644
+---- a/components/network-certification.html
+-+++ b/components/network-certification.html
+-@@ -1,10 +1,12 @@
+--<section id="network-certification" class="my-5 py-4">
+--    <div class="container mb-5">
+--        <h2 class="fw-bold fs-3 text-primary text-uppercase border-bottom pb-2">Network Certification</h2>
+-+<section id="network-certification" class="section">
+-+    <div class="container">
+-+        <h2 class="section-title">Network Certifications</h2>
+-         <ul class="list-unstyled mt-4">
+--            <li class="d-flex align-items-center mb-3">
+--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
+--                <span><b>CCN -</b> Cisco Certified Network Professional</span>
+-+            <li class="highlight-list-item">
+-+                <span class="icon-bg">
+-+                    <i class="fa-solid fa-check"></i>
+-+                </span>
+-+                <span><b>CCNP -</b> Cisco Certified Network Professional</span>
+-             </li>
+-         </ul>
+-     </div>
+-diff --git a/components/professional-summary.html b/components/professional-summary.html
+-index 76c3589..0b6c7ed 100644
+---- a/components/professional-summary.html
+-+++ b/components/professional-summary.html
+-@@ -1,9 +1,10 @@
+--<section id="professional-summary" class="my-5 py-4">
+--    <div class="container mb-5">
+--        <h2 class="fw-bold fs-3 text-primary text-uppercase border-bottom pb-2">Professional Summary</h2>
+-+<section id="professional-summary" class="section">
+-+    <div class="container">
+-+        <h2 class="section-title">Professional Summary</h2>
+-         <p>
+-             A results-driven professional with over 20 years of expertise in networking and cybersecurity.
+--            I specialize in designing secure, scalable solutions and delivering technical excellence.
+-+        </p>
+-+        <p>I specialize in designing secure, scalable solutions and delivering technical excellence.
+-         </p>
+-     </div>
+- </section>
+-\ No newline at end of file
+-diff --git a/components/security-certification.html b/components/security-certification.html
+-index f43036b..a33a7a5 100644
+---- a/components/security-certification.html
+-+++ b/components/security-certification.html
+-@@ -1,11 +1,13 @@
+--<section id="security-certification" class="my-5 py-4">
+--    <div class="container mb-5">
+--        <h2 class="fw-bold fs-3 text-primary text-uppercase border-bottom pb-2">Security Certification</h2>
+-+<section id="security-certification" class="section">
+-+    <div class="container">
+-+        <h2 class="section-title">Security Certifications</h2>
+-         <ul class="list-unstyled mt-4">
+--            <li class="d-flex align-items-center mb-3">
+--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
+-+            <li class="highlight-list-item">
+-+                <span class="icon-bg">
+-+                    <i class="fa-solid fa-check"></i>
+-+                </span>
+-                 <span><b>CISSP -</b> Certified Information Systems Security Professional</span>
+-             </li>
+-         </ul>
+-     </div>
+--</section>
+-+</section>
+-\ No newline at end of file
+-diff --git a/components/what-drives-me.html b/components/what-drives-me.html
+-index 040f993..5258f5f 100644
+---- a/components/what-drives-me.html
+-+++ b/components/what-drives-me.html
+-@@ -1,6 +1,6 @@
+--<section id="what-drives-me" class="my-5 py-4">
+--    <div class="container mb-5">
+--        <h2 class="fw-bold fs-3 text-primary text-uppercase border-bottom pb-2">What Drives Me</h2>
+-+<section id="what-drives-me" class="section">
+-+    <div class="container">
+-+        <h2 class="section-title">What Drives Me</h2>
+-         <p>
+-             My passion lies in solving complex challenges within the ever-evolving fields of <b>cybersecurity</b> and <b>network engineering.</b> I am driven by the opportunity to craft innovative, scalable, and secure solutions that not only meet technical needs but also deliver measurable business outcomes.
+-         </p>
+-diff --git a/components/wireless-certification.html b/components/wireless-certification.html
+-index ea8c7f6..0fc2251 100644
+---- a/components/wireless-certification.html
+-+++ b/components/wireless-certification.html
+-@@ -1,16 +1,29 @@
+--<section id="text-primary text-uppercase" class="my-5 py-4">
+--    <div class="container mb-5">
+--        <h2 class="fw-bold fs-3 text-primary text-uppercase border-bottom pb-2">Wireless Certification</h2>
+-+<section id="wireless-certification" class="section">
+-+    <div class="container">
+-+        <h2 class="section-title">Wireless Certifications</h2>
+-         <ul class="list-unstyled mt-4">
+--            <li class="d-flex align-items-center mb-3">
+--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>
+--                <span><b>CWNA -</b> Certified Wireless Network Administrator</span>
+-+            <li class="highlight-list-item">
+-+                <span class="icon-bg">
+-+                    <i class="fa-solid fa-check"></i>
+-+                </span>
+-+                <span>
+-+                    <b>CWNA -</b> Certified Wireless Network Administrator</span>
+-             </li>
+--            <li class="d-flex align-items-center mb-3">
+--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>       <span><b>CWSP -</b> Certified Wireless Security Professional</span>
+-+
+-+            <li class="highlight-list-item">
+-+                <span class="icon-bg">
+-+                    <i class="fa-solid fa-check"></i>
+-+                </span>
+-+                <span>
+-+                    <b>CWSP -</b> Certified Wireless Security Professional</span>
+-             </li>
+--            <li class="d-flex align-items-center mb-3">
+--                <i class="fa-solid fa-circle-check me-3 fa-lg"></i>        <span><b>CWDP -</b> Certified Wireless Design Professional</span>
+-+
+-+            <li class="highlight-list-item">
+-+                <span class="icon-bg">
+-+                    <i class="fa-solid fa-check"></i>
+-+                </span>
+-+                <span><b>CWDP -</b> Certified Wireless Design
+-+                    Professional</span>
+-             </li>
+-         </ul>
+-     </div>
+-diff --git a/contact.html b/contact.html
+-index c0be1f6..f98871b 100644
+---- a/contact.html
+-+++ b/contact.html
+-@@ -6,6 +6,11 @@
+-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-     <title>Contact</title>
+-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+-+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+-+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+-+    <link rel="stylesheet" href="/styles/global.css">
+-+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+-+    <script src="scripts/contact.js"></script>
+- </head>
+- 
+- <body data-page="contact" class="bg-dark text-light">
+-diff --git a/index.html b/index.html
+-index 30cedad..5a3cc68 100644
+---- a/index.html
+-+++ b/index.html
+-@@ -4,11 +4,11 @@
+- <head>
+-     <meta charset="UTF-8">
+-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+--    <title>Index</title>
+-+    <title>Home</title>
+-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+-     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+--    <!-- Font Awesome -->
+--
+-+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+-+    <link rel="stylesheet" href="/styles/global.css">
+- </head>
+- 
+- <body data-page="index" class="bg-dark text-light">
+-@@ -18,9 +18,9 @@
+-     <header id="header" aria-label="Page Header"></header>
+-     <!--Main Content-->
+-     <main aria-label="Main Content">
+--        <section id="professional-summary"></section>
+--        <section id="key-highlights"></section>
+--        <section id="core-competencies"></section>
+-+        <section id="professional-summary" aria-live="polite"></section>
+-+        <section id="key-highlights" aria-live="polite"></section>
+-+        <section id="core-competencies" aria-live="polite"></section>
+-     </main>
+-     <footer id="footer" aria-label="Footer"></footer>
+-     <!-- Bootstrap JS Script -->
+-diff --git a/scripts/content-loader.js b/scripts/content-loader.js
+-index e713987..79e4d5e 100644
+---- a/scripts/content-loader.js
+-+++ b/scripts/content-loader.js
+-@@ -1,14 +1,23 @@
+--// Enhanced content loader with caching and improved error handling
+- const cache = new Map(); // Cache to optimize content fetching
+- 
+- export const loadContent = (id, url) => {
+-     const element = document.getElementById(id);
+--    if (!element) return Promise.resolve(); // Skip if element doesn't exist
+-+    if (!element) {
+-+        console.warn(`Element with ID "${id}" not found.`);
+-+        return Promise.resolve(); // Skip if element doesn't exist
+-+    }
+- 
+-     // Check cache before making a network request
+-     if (cache.has(url)) {
+-         element.innerHTML = cache.get(url);
+-+        element.classList.add("loaded"); // Add 'loaded' class for animation
+-         console.log(`Loaded (cached) content for ${id}`);
+-+
+-+        // Reapply sticky behavior if it's the navbar
+-+        if (id === "navbar") {
+-+            ensureStickyBehavior(element);
+-+        }
+-+
+-         return Promise.resolve();
+-     }
+- 
+-@@ -19,12 +28,22 @@ export const loadContent = (id, url) => {
+-         })
+-         .then((data) => {
+-             element.innerHTML = data || "<p>Content unavailable.</p>";
+--            cache.set(url, data); // Save fetched content to cache
+-+            setTimeout(() => {
+-+                element.classList.add("loaded"); // Add 'loaded' class for animation
+-+                console.log(`Added 'loaded' class to ${id}`);
+-+            }, 50); // Delay for rendering
+-+
+-+            // Reapply sticky behavior if it's the navbar
+-+            if (id === "navbar") {
+-+                ensureStickyBehavior(element);
+-+            }
+-+
+-+            cache.set(url, data); // Cache the content
+-             console.log(`Loaded content for ${id}`);
+-         })
+--        .catch((error) =>
+--            console.error(`Error loading content for ${id} from ${url}:`, error)
+--        );
+-+        .catch((error) => {
+-+            console.error(`Error loading content for ${id} from ${url}:`, error);
+-+        });
+- };
+- 
+- export const initContentLoader = () => {
+-@@ -32,40 +51,80 @@ export const initContentLoader = () => {
+- 
+-     if (!pageId) {
+-         console.error("No data-page attribute found on <body>.");
+--        return Promise.resolve(); // Return resolved promise to avoid blocking
+-+        return Promise.resolve();
+-     }
+- 
+-     console.log(`Initializing content loader for pageId: ${pageId}`);
+- 
+-     return Promise.all([
+--        loadContent("navbar", "components/navbar.html"),
+--        loadContent("header", "components/header.html"),
+--        loadContent("footer", "components/footer.html"),
+-+        loadContent("navbar", "components/navbar.html").catch(() =>
+-+            console.error("Failed to load navbar")
+-+        ),
+-+        loadContent("header", "components/header.html").catch(() =>
+-+            console.error("Failed to load header")
+-+        ),
+-+        loadContent("footer", "components/footer.html").catch(() =>
+-+            console.error("Failed to load footer")
+-+        ),
+-     ]).then(() => {
+-         switch (pageId) {
+-             case "index":
+-                 return Promise.all([
+--                    loadContent("professional-summary", "components/professional-summary.html"),
+--                    loadContent("key-highlights", "components/key-highlights.html"),
+--                    loadContent("core-competencies", "components/core-competencies.html"),
+-+                    loadContent("professional-summary", "components/professional-summary.html").catch(() =>
+-+                        console.error("Failed to load professional-summary")
+-+                    ),
+-+                    loadContent("key-highlights", "components/key-highlights.html").catch(() =>
+-+                        console.error("Failed to load key-highlights")
+-+                    ),
+-+                    loadContent("core-competencies", "components/core-competencies.html").catch(() =>
+-+                        console.error("Failed to load core-competencies")
+-+                    ),
+-                 ]);
+-             case "certification":
+-                 return Promise.all([
+--                    loadContent("security-certification", "components/security-certification.html"),
+--                    loadContent("wireless-certification", "components/wireless-certification.html"),
+--                    loadContent("network-certification", "components/network-certification.html"),
+-+                    loadContent("security-certification", "components/security-certification.html").catch(() =>
+-+                        console.error("Failed to load security-certification")
+-+                    ),
+-+                    loadContent("wireless-certification", "components/wireless-certification.html").catch(() =>
+-+                        console.error("Failed to load wireless-certification")
+-+                    ),
+-+                    loadContent("network-certification", "components/network-certification.html").catch(() =>
+-+                        console.error("Failed to load network-certification")
+-+                    ),
+-                 ]);
+-             case "about":
+-                 return Promise.all([
+--                    loadContent("about-me", "components/about-me.html"),
+--                    loadContent("key-achievements", "components/key-achievements.html"),
+--                    loadContent("what-drives-me", "components/what-drives-me.html"),
+-+                    loadContent("about-me", "components/about-me.html").catch(() =>
+-+                        console.error("Failed to load about-me")
+-+                    ),
+-+                    loadContent("key-achievements", "components/key-achievements.html").catch(() =>
+-+                        console.error("Failed to load key-achievements")
+-+                    ),
+-+                    loadContent("what-drives-me", "components/what-drives-me.html").catch(() =>
+-+                        console.error("Failed to load what-drives-me")
+-+                    ),
+-                 ]);
+-             case "contact":
+--                return loadContent("contact-form", "components/contact-form.html");
+-+                return loadContent("contact-form", "components/contact-form.html").catch(() =>
+-+                    console.error("Failed to load contact-form")
+-+                );
+-             default:
+-                 console.warn(`No content defined for pageId: ${pageId}`);
+-                 return Promise.resolve();
+-         }
+-     });
+-+};
+-+
+-+const ensureStickyBehavior = (navbarElement) => {
+-+    if (!navbarElement.classList.contains("sticky-top")) {
+-+        navbarElement.classList.add("sticky-top"); // Ensure sticky class is applied
+-+    }
+-+
+-+    // Force a layout recalculation (optional, in case sticky behavior still fails)
+-+    navbarElement.style.position = "relative";
+-+    requestAnimationFrame(() => {
+-+        navbarElement.style.position = ""; // Reset to allow sticky behavior
+-+    });
+-+
+-+    console.log("Sticky behavior ensured for navbar.");
+- };
+-\ No newline at end of file
+-diff --git a/scripts/main.js b/scripts/main.js
+-index cc6aba3..91ecced 100644
+---- a/scripts/main.js
+-+++ b/scripts/main.js
+-@@ -11,4 +11,14 @@ document.addEventListener("DOMContentLoaded", () => {
+-         .catch((err) =>
+-             console.error("Error during initialization:", err)
+-         );
+-+});
+-+
+-+window.addEventListener("scroll", () => {
+-+    const navbar = document.querySelector(".navbar"); // Target your navbar element
+-+
+-+    if (window.scrollY > 10) {
+-+        navbar.classList.add("scrolled"); // Add shadow or style changes when scrolling
+-+    } else {
+-+        navbar.classList.remove("scrolled"); // Remove shadow or style changes when at the top
+-+    }
+- });
+-\ No newline at end of file
+-diff --git a/scripts/theme-manager.js b/scripts/theme-manager.js
+-index f097de0..5510048 100644
+---- a/scripts/theme-manager.js
+-+++ b/scripts/theme-manager.js
+-@@ -4,28 +4,12 @@ export const setupThemeToggle = () => {
+-     const navbar = document.querySelector(".navbar");
+- 
+-     if (!toggleButton) {
+--        console.error("Theme toggle button not found in the DOM.");
+-+        console.error("Theme toggle button not found.");
+-         return;
+-     }
+- 
+--    // Helper function to apply hover effects
+--    const applyHoverEffects = (elements, isDark) => {
+--        if (!elements) return;
+--        elements.forEach((el) => {
+--            el.style.transition = "transform 0.2s ease, color 0.2s ease";
+--            el.addEventListener("mouseenter", () => {
+--                el.style.color = isDark ? "#4dabf7" : "#1a73e8";
+--                el.style.transform = "scale(1.1)";
+--            });
+--            el.addEventListener("mouseleave", () => {
+--                el.style.color = "";
+--                el.style.transform = "";
+--            });
+--        });
+--    };
+--
+-     const applyTheme = (isDark) => {
+--        // Body and Navbar theme changes
+-+        // Toggle dark and light mode classes
+-         body.classList.toggle("bg-dark", isDark);
+-         body.classList.toggle("text-light", isDark);
+-         body.classList.toggle("bg-light", !isDark);
+-@@ -36,29 +20,19 @@ export const setupThemeToggle = () => {
+-         navbar.classList.toggle("navbar-light", !isDark);
+-         navbar.classList.toggle("bg-light", !isDark);
+- 
+--        // Apply hover effects
+--        const icons = Array.from(document.querySelectorAll(".fa-circle-check"));
+--        const titles = Array.from(document.querySelectorAll(".section-title"));
+--        const buttons = Array.from(document.querySelectorAll(".btn"));
+--        applyHoverEffects(icons, isDark);
+--        applyHoverEffects(titles, isDark);
+--        applyHoverEffects(buttons, isDark);
+--
+--        // Update button text and appearance
+-+        // Update toggle button text
+-         toggleButton.textContent = isDark
+-             ? "Switch to Light Mode"
+-             : "Switch to Dark Mode";
+-         toggleButton.classList.toggle("btn-outline-light", isDark);
+-         toggleButton.classList.toggle("btn-outline-dark", !isDark);
+- 
+--        // Save theme in localStorage
+--        if (localStorage) {
+--            localStorage.setItem("theme", isDark ? "dark" : "light");
+--        }
+-+        // Save theme preference
+-+        localStorage.setItem("theme", isDark ? "dark" : "light");
+-     };
+- 
+--    // Check saved theme or default to dark
+--    const savedTheme = (localStorage && localStorage.getItem("theme")) || "dark";
+-+    // Load saved theme or default to dark mode
+-+    const savedTheme = localStorage.getItem("theme") || "dark";
+-     applyTheme(savedTheme === "dark");
+- 
+-     toggleButton.addEventListener("click", () => {
+-diff --git a/styles/global.css b/styles/global.css
+-index d3fcb9d..e07a8a6 100644
+---- a/styles/global.css
+-+++ b/styles/global.css
+-@@ -1,5 +1,14 @@
+--i:hover {
+--    color: #1a73e8; /* Brighter blue on hover */
+--    transform: scale(1.1); /* Slightly larger */
+--    transition: transform 0.2s ease, color 0.2s ease; /* Smooth hover effect */
+-+@import url('sections.css');
+-+@import url('forms.css');
+-+@import url('buttons.css');
+-+@import url('theme.css');
+-+@import url('navbar.css');
+-+
+-+/* Footer social icons */
+-+.social-icons a {
+-+    transition: transform 0.3s ease;
+-+}
+-+
+-+.social-icons a:hover {
+-+    transform: scale(1.1); /* Zoom on hover */
+- }
+-\ No newline at end of file
+-diff --git a/styles/styles.css.old b/styles/styles.css.old
+-deleted file mode 100644
+-index e7f309c..0000000
+---- a/styles/styles.css.old
+-+++ /dev/null
+-@@ -1,8 +0,0 @@
+--
+--body {
+--    font-family: Arial, sans-serif;
+--}
+--.section-title {
+--    color: #007bff;
+--    margin-bottom: 1rem;
+--}
 diff --git a/contact.html b/contact.html
-index c0be1f6..f98871b 100644
+index f98871b..248e9cd 100644
 --- a/contact.html
 +++ b/contact.html
-@@ -6,6 +6,11 @@
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Contact</title>
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-+    <link rel="stylesheet" href="/styles/global.css">
-+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-+    <script src="scripts/contact.js"></script>
+@@ -10,7 +10,6 @@
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="/styles/global.css">
+     <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+-    <script src="scripts/contact.js"></script>
  </head>
  
  <body data-page="contact" class="bg-dark text-light">
-diff --git a/index.html b/index.html
-index 30cedad..5a3cc68 100644
---- a/index.html
-+++ b/index.html
-@@ -4,11 +4,11 @@
- <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
--    <title>Index</title>
-+    <title>Home</title>
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
--    <!-- Font Awesome -->
--
-+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-+    <link rel="stylesheet" href="/styles/global.css">
- </head>
- 
- <body data-page="index" class="bg-dark text-light">
-@@ -18,9 +18,9 @@
-     <header id="header" aria-label="Page Header"></header>
-     <!--Main Content-->
-     <main aria-label="Main Content">
--        <section id="professional-summary"></section>
--        <section id="key-highlights"></section>
--        <section id="core-competencies"></section>
-+        <section id="professional-summary" aria-live="polite"></section>
-+        <section id="key-highlights" aria-live="polite"></section>
-+        <section id="core-competencies" aria-live="polite"></section>
-     </main>
-     <footer id="footer" aria-label="Footer"></footer>
-     <!-- Bootstrap JS Script -->
 diff --git a/scripts/content-loader.js b/scripts/content-loader.js
-index e713987..79e4d5e 100644
+index 1d535b0..37c7c09 100644
 --- a/scripts/content-loader.js
 +++ b/scripts/content-loader.js
-@@ -1,14 +1,23 @@
--// Enhanced content loader with caching and improved error handling
+@@ -1,4 +1,5 @@
  const cache = new Map(); // Cache to optimize content fetching
- 
- export const loadContent = (id, url) => {
++
+ export const loadContent = (id, url, callback) => {
      const element = document.getElementById(id);
--    if (!element) return Promise.resolve(); // Skip if element doesn't exist
-+    if (!element) {
-+        console.warn(`Element with ID "${id}" not found.`);
-+        return Promise.resolve(); // Skip if element doesn't exist
-+    }
- 
-     // Check cache before making a network request
-     if (cache.has(url)) {
-         element.innerHTML = cache.get(url);
-+        element.classList.add("loaded"); // Add 'loaded' class for animation
-         console.log(`Loaded (cached) content for ${id}`);
-+
-+        // Reapply sticky behavior if it's the navbar
-+        if (id === "navbar") {
-+            ensureStickyBehavior(element);
-+        }
-+
-         return Promise.resolve();
+     if (!element) {
+@@ -6,13 +7,22 @@ export const loadContent = (id, url, callback) => {
+         return Promise.resolve(); // Skip if element doesn't exist
      }
  
-@@ -19,12 +28,22 @@ export const loadContent = (id, url) => {
-         })
++    // Check cache before making a network request
++    if (cache.has(url)) {
++        element.innerHTML = cache.get(url);
++        if (callback) callback(); // Execute callback after loading cached content
++        return Promise.resolve();
++    }
++
+     return fetch(url)
+         .then((res) => res.text())
          .then((data) => {
              element.innerHTML = data || "<p>Content unavailable.</p>";
--            cache.set(url, data); // Save fetched content to cache
-+            setTimeout(() => {
-+                element.classList.add("loaded"); // Add 'loaded' class for animation
-+                console.log(`Added 'loaded' class to ${id}`);
-+            }, 50); // Delay for rendering
-+
-+            // Reapply sticky behavior if it's the navbar
-+            if (id === "navbar") {
-+                ensureStickyBehavior(element);
-+            }
-+
-+            cache.set(url, data); // Cache the content
-             console.log(`Loaded content for ${id}`);
+-            if (callback) callback(); // Call the callback after content is loaded
++            cache.set(url, data); // Save fetched content to cache
++            if (callback) callback(); // Execute callback after content is loaded
          })
--        .catch((error) =>
--            console.error(`Error loading content for ${id} from ${url}:`, error)
--        );
-+        .catch((error) => {
-+            console.error(`Error loading content for ${id} from ${url}:`, error);
-+        });
+         .catch((error) => {
++            element.innerHTML = "<p>Failed to load content. Please try again later.</p>";
+             console.error(`Error loading content for ${id}:`, error);
+         });
  };
- 
- export const initContentLoader = () => {
-@@ -32,40 +51,80 @@ export const initContentLoader = () => {
- 
-     if (!pageId) {
-         console.error("No data-page attribute found on <body>.");
--        return Promise.resolve(); // Return resolved promise to avoid blocking
-+        return Promise.resolve();
-     }
- 
+@@ -28,7 +38,7 @@ export const initContentLoader = () => {
      console.log(`Initializing content loader for pageId: ${pageId}`);
  
      return Promise.all([
--        loadContent("navbar", "components/navbar.html"),
--        loadContent("header", "components/header.html"),
--        loadContent("footer", "components/footer.html"),
-+        loadContent("navbar", "components/navbar.html").catch(() =>
-+            console.error("Failed to load navbar")
-+        ),
-+        loadContent("header", "components/header.html").catch(() =>
-+            console.error("Failed to load header")
-+        ),
-+        loadContent("footer", "components/footer.html").catch(() =>
-+            console.error("Failed to load footer")
-+        ),
-     ]).then(() => {
-         switch (pageId) {
-             case "index":
-                 return Promise.all([
--                    loadContent("professional-summary", "components/professional-summary.html"),
--                    loadContent("key-highlights", "components/key-highlights.html"),
--                    loadContent("core-competencies", "components/core-competencies.html"),
-+                    loadContent("professional-summary", "components/professional-summary.html").catch(() =>
-+                        console.error("Failed to load professional-summary")
-+                    ),
-+                    loadContent("key-highlights", "components/key-highlights.html").catch(() =>
-+                        console.error("Failed to load key-highlights")
-+                    ),
-+                    loadContent("core-competencies", "components/core-competencies.html").catch(() =>
-+                        console.error("Failed to load core-competencies")
-+                    ),
-                 ]);
-             case "certification":
-                 return Promise.all([
--                    loadContent("security-certification", "components/security-certification.html"),
--                    loadContent("wireless-certification", "components/wireless-certification.html"),
--                    loadContent("network-certification", "components/network-certification.html"),
-+                    loadContent("security-certification", "components/security-certification.html").catch(() =>
-+                        console.error("Failed to load security-certification")
-+                    ),
-+                    loadContent("wireless-certification", "components/wireless-certification.html").catch(() =>
-+                        console.error("Failed to load wireless-certification")
-+                    ),
-+                    loadContent("network-certification", "components/network-certification.html").catch(() =>
-+                        console.error("Failed to load network-certification")
-+                    ),
-                 ]);
-             case "about":
-                 return Promise.all([
--                    loadContent("about-me", "components/about-me.html"),
--                    loadContent("key-achievements", "components/key-achievements.html"),
--                    loadContent("what-drives-me", "components/what-drives-me.html"),
-+                    loadContent("about-me", "components/about-me.html").catch(() =>
-+                        console.error("Failed to load about-me")
-+                    ),
-+                    loadContent("key-achievements", "components/key-achievements.html").catch(() =>
-+                        console.error("Failed to load key-achievements")
-+                    ),
-+                    loadContent("what-drives-me", "components/what-drives-me.html").catch(() =>
-+                        console.error("Failed to load what-drives-me")
-+                    ),
+-        loadContent("navbar", "components/navbar.html").catch(() =>
++        loadContent("navbar", "components/navbar.html", ensureStickyBehavior).catch(() =>
+             console.error("Failed to load navbar")
+         ),
+         loadContent("header", "components/header.html").catch(() =>
+@@ -76,7 +86,7 @@ export const initContentLoader = () => {
+                     ),
                  ]);
              case "contact":
--                return loadContent("contact-form", "components/contact-form.html");
-+                return loadContent("contact-form", "components/contact-form.html").catch(() =>
-+                    console.error("Failed to load contact-form")
-+                );
+-                return loadContent("contact-form", "components/contact-form.html").catch(() =>
++                return loadContent("contact-form", "components/contact-form.html", setupContactForm).catch(() =>
+                     console.error("Failed to load contact-form")
+                 );
              default:
-                 console.warn(`No content defined for pageId: ${pageId}`);
-                 return Promise.resolve();
-         }
+@@ -86,16 +96,39 @@ export const initContentLoader = () => {
      });
+ };
+ 
+-const ensureStickyBehavior = (navbarElement) => {
+-    if (!navbarElement.classList.contains("sticky-top")) {
+-        navbarElement.classList.add("sticky-top"); // Ensure sticky class is applied
++const ensureStickyBehavior = (element) => {
++    if (!element.classList.contains("sticky-top")) {
++        element.classList.add("sticky-top");
+     }
++    console.log("Sticky behavior ensured for navbar.");
 +};
-+
-+const ensureStickyBehavior = (navbarElement) => {
-+    if (!navbarElement.classList.contains("sticky-top")) {
-+        navbarElement.classList.add("sticky-top"); // Ensure sticky class is applied
+ 
+-    // Force a layout recalculation (optional, in case sticky behavior still fails)
+-    navbarElement.style.position = "relative";
+-    requestAnimationFrame(() => {
+-        navbarElement.style.position = ""; // Reset to allow sticky behavior
+-    });
++const setupContactForm = () => {
++    const form = document.getElementById("form");
++    const btn = document.getElementById("button");
+ 
+-    console.log("Sticky behavior ensured for navbar.");
++    if (!form) {
++        console.error("Form not found in the DOM after dynamic load.");
++        return;
 +    }
 +
-+    // Force a layout recalculation (optional, in case sticky behavior still fails)
-+    navbarElement.style.position = "relative";
-+    requestAnimationFrame(() => {
-+        navbarElement.style.position = ""; // Reset to allow sticky behavior
-+    });
++    form.addEventListener("submit", function (event) {
++        event.preventDefault();
++        btn.textContent = "Sending...";
 +
-+    console.log("Sticky behavior ensured for navbar.");
++        const serviceID = "service_y3acoix"; // Replace with your service ID
++        const templateID = "template_2twx09d"; // Replace with your template ID
++
++        emailjs.sendForm(serviceID, templateID, form)
++            .then(() => {
++                btn.textContent = "Send Email";
++                alert("Your message has been sent successfully!");
++                form.reset();
++            })
++            .catch((err) => {
++                btn.textContent = "Send Email";
++                alert("Failed to send the message. Please try again later.");
++                console.error("EmailJS error:", err);
++            });
++    });
  };
 \ No newline at end of file
 diff --git a/scripts/main.js b/scripts/main.js
-index cc6aba3..91ecced 100644
+index 91ecced..5bfaf45 100644
 --- a/scripts/main.js
 +++ b/scripts/main.js
-@@ -11,4 +11,14 @@ document.addEventListener("DOMContentLoaded", () => {
-         .catch((err) =>
-             console.error("Error during initialization:", err)
-         );
+@@ -21,4 +21,8 @@ window.addEventListener("scroll", () => {
+     } else {
+         navbar.classList.remove("scrolled"); // Remove shadow or style changes when at the top
+     }
 +});
 +
-+window.addEventListener("scroll", () => {
-+    const navbar = document.querySelector(".navbar"); // Target your navbar element
-+
-+    if (window.scrollY > 10) {
-+        navbar.classList.add("scrolled"); // Add shadow or style changes when scrolling
-+    } else {
-+        navbar.classList.remove("scrolled"); // Remove shadow or style changes when at the top
-+    }
++document.addEventListener("DOMContentLoaded", () => {
++    initContentLoader();
  });
 \ No newline at end of file
-diff --git a/scripts/theme-manager.js b/scripts/theme-manager.js
-index f097de0..5510048 100644
---- a/scripts/theme-manager.js
-+++ b/scripts/theme-manager.js
-@@ -4,28 +4,12 @@ export const setupThemeToggle = () => {
-     const navbar = document.querySelector(".navbar");
- 
-     if (!toggleButton) {
--        console.error("Theme toggle button not found in the DOM.");
-+        console.error("Theme toggle button not found.");
-         return;
-     }
- 
--    // Helper function to apply hover effects
--    const applyHoverEffects = (elements, isDark) => {
--        if (!elements) return;
--        elements.forEach((el) => {
--            el.style.transition = "transform 0.2s ease, color 0.2s ease";
--            el.addEventListener("mouseenter", () => {
--                el.style.color = isDark ? "#4dabf7" : "#1a73e8";
--                el.style.transform = "scale(1.1)";
--            });
--            el.addEventListener("mouseleave", () => {
--                el.style.color = "";
--                el.style.transform = "";
--            });
--        });
--    };
--
-     const applyTheme = (isDark) => {
--        // Body and Navbar theme changes
-+        // Toggle dark and light mode classes
-         body.classList.toggle("bg-dark", isDark);
-         body.classList.toggle("text-light", isDark);
-         body.classList.toggle("bg-light", !isDark);
-@@ -36,29 +20,19 @@ export const setupThemeToggle = () => {
-         navbar.classList.toggle("navbar-light", !isDark);
-         navbar.classList.toggle("bg-light", !isDark);
- 
--        // Apply hover effects
--        const icons = Array.from(document.querySelectorAll(".fa-circle-check"));
--        const titles = Array.from(document.querySelectorAll(".section-title"));
--        const buttons = Array.from(document.querySelectorAll(".btn"));
--        applyHoverEffects(icons, isDark);
--        applyHoverEffects(titles, isDark);
--        applyHoverEffects(buttons, isDark);
--
--        // Update button text and appearance
-+        // Update toggle button text
-         toggleButton.textContent = isDark
-             ? "Switch to Light Mode"
-             : "Switch to Dark Mode";
-         toggleButton.classList.toggle("btn-outline-light", isDark);
-         toggleButton.classList.toggle("btn-outline-dark", !isDark);
- 
--        // Save theme in localStorage
--        if (localStorage) {
--            localStorage.setItem("theme", isDark ? "dark" : "light");
--        }
-+        // Save theme preference
-+        localStorage.setItem("theme", isDark ? "dark" : "light");
-     };
- 
--    // Check saved theme or default to dark
--    const savedTheme = (localStorage && localStorage.getItem("theme")) || "dark";
-+    // Load saved theme or default to dark mode
-+    const savedTheme = localStorage.getItem("theme") || "dark";
-     applyTheme(savedTheme === "dark");
- 
-     toggleButton.addEventListener("click", () => {
-diff --git a/styles/global.css b/styles/global.css
-index d3fcb9d..e07a8a6 100644
---- a/styles/global.css
-+++ b/styles/global.css
-@@ -1,5 +1,14 @@
--i:hover {
--    color: #1a73e8; /* Brighter blue on hover */
--    transform: scale(1.1); /* Slightly larger */
--    transition: transform 0.2s ease, color 0.2s ease; /* Smooth hover effect */
-+@import url('sections.css');
-+@import url('forms.css');
-+@import url('buttons.css');
-+@import url('theme.css');
-+@import url('navbar.css');
-+
-+/* Footer social icons */
-+.social-icons a {
-+    transition: transform 0.3s ease;
-+}
-+
-+.social-icons a:hover {
-+    transform: scale(1.1); /* Zoom on hover */
- }
-\ No newline at end of file
-diff --git a/styles/styles.css.old b/styles/styles.css.old
-deleted file mode 100644
-index e7f309c..0000000
---- a/styles/styles.css.old
-+++ /dev/null
-@@ -1,8 +0,0 @@
--
--body {
--    font-family: Arial, sans-serif;
--}
--.section-title {
--    color: #007bff;
--    margin-bottom: 1rem;
--}

@@ -1,4 +1,5 @@
 const cache = new Map(); // Cache to optimize content fetching
+
 export const loadContent = (id, url, callback) => {
     const element = document.getElementById(id);
     if (!element) {
@@ -6,13 +7,22 @@ export const loadContent = (id, url, callback) => {
         return Promise.resolve(); // Skip if element doesn't exist
     }
 
+    // Check cache before making a network request
+    if (cache.has(url)) {
+        element.innerHTML = cache.get(url);
+        if (callback) callback(); // Execute callback after loading cached content
+        return Promise.resolve();
+    }
+
     return fetch(url)
         .then((res) => res.text())
         .then((data) => {
             element.innerHTML = data || "<p>Content unavailable.</p>";
-            if (callback) callback(); // Call the callback after content is loaded
+            cache.set(url, data); // Save fetched content to cache
+            if (callback) callback(); // Execute callback after content is loaded
         })
         .catch((error) => {
+            element.innerHTML = "<p>Failed to load content. Please try again later.</p>";
             console.error(`Error loading content for ${id}:`, error);
         });
 };
@@ -28,7 +38,7 @@ export const initContentLoader = () => {
     console.log(`Initializing content loader for pageId: ${pageId}`);
 
     return Promise.all([
-        loadContent("navbar", "components/navbar.html").catch(() =>
+        loadContent("navbar", "components/navbar.html", ensureStickyBehavior).catch(() =>
             console.error("Failed to load navbar")
         ),
         loadContent("header", "components/header.html").catch(() =>
@@ -76,7 +86,7 @@ export const initContentLoader = () => {
                     ),
                 ]);
             case "contact":
-                return loadContent("contact-form", "components/contact-form.html").catch(() =>
+                return loadContent("contact-form", "components/contact-form.html", setupContactForm).catch(() =>
                     console.error("Failed to load contact-form")
                 );
             default:
@@ -86,16 +96,39 @@ export const initContentLoader = () => {
     });
 };
 
-const ensureStickyBehavior = (navbarElement) => {
-    if (!navbarElement.classList.contains("sticky-top")) {
-        navbarElement.classList.add("sticky-top"); // Ensure sticky class is applied
+const ensureStickyBehavior = (element) => {
+    if (!element.classList.contains("sticky-top")) {
+        element.classList.add("sticky-top");
+    }
+    console.log("Sticky behavior ensured for navbar.");
+};
+
+const setupContactForm = () => {
+    const form = document.getElementById("form");
+    const btn = document.getElementById("button");
+
+    if (!form) {
+        console.error("Form not found in the DOM after dynamic load.");
+        return;
     }
 
-    // Force a layout recalculation (optional, in case sticky behavior still fails)
-    navbarElement.style.position = "relative";
-    requestAnimationFrame(() => {
-        navbarElement.style.position = ""; // Reset to allow sticky behavior
-    });
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        btn.textContent = "Sending...";
 
-    console.log("Sticky behavior ensured for navbar.");
+        const serviceID = "service_y3acoix"; // Replace with your service ID
+        const templateID = "template_2twx09d"; // Replace with your template ID
+
+        emailjs.sendForm(serviceID, templateID, form)
+            .then(() => {
+                btn.textContent = "Send Email";
+                alert("Your message has been sent successfully!");
+                form.reset();
+            })
+            .catch((err) => {
+                btn.textContent = "Send Email";
+                alert("Failed to send the message. Please try again later.");
+                console.error("EmailJS error:", err);
+            });
+    });
 };

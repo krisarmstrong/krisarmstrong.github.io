@@ -22,3 +22,7 @@ window.addEventListener("scroll", () => {
         navbar.classList.remove("scrolled"); // Remove shadow or style changes when at the top
     }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    initContentLoader();
+});
