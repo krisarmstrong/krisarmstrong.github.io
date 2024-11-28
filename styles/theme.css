@@ -28,6 +28,15 @@
     line-height: 1.4; /* Improved spacing */
 }
 
+/* General body styles for light/dark themes */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Ensures full height for the body */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    position: relative; /* Sticky context */
+}
+
 body.bg-light .welcome-heading {
     color: #2a9d8f; /* Use teal for light mode */
 }

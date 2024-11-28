@@ -1,32 +1,37 @@
-// JavaScript for Navbar and Theme
-import { initContentLoader } from "./content-loader.js";
+import { initContentLoader } from "./content-management.js";
 import { setupThemeToggle } from "./theme-manager.js";
 
-// Ensure navbar scroll behavior runs after dynamic content loads
 document.addEventListener("DOMContentLoaded", () => {
-    initContentLoader(() => {
-        console.log("All content loaded successfully.");
-        setupThemeToggle(); // Ensure theme toggle functionality
-        setupNavbarScrollBehavior(); // Ensure scroll behavior is set after navbar loads
-    });
+    initContentLoader()
+        .then(() => {
+            console.log("All content loaded successfully.");
+            setupThemeToggle(); // Enable light/dark theme toggle
+            setupNavbarBehavior(); // Enable sticky navbar and scroll behavior
+        })
+        .catch((err) => console.error("Error during initialization:", err));
 });
 
-// Navbar scroll behavior
-const setupNavbarScrollBehavior = () => {
-    const navbar = document.querySelector(".navbar");
+const setupNavbarBehavior = () => {
+    const navbar = document.getElementById("navbar");
+
     if (!navbar) {
         console.warn("Navbar not found in the DOM.");
         return;
     }
 
-    // Always ensure sticky-top is applied
-    navbar.classList.add("sticky-top");
+    // Ensure sticky-top class is applied
+    if (!navbar.classList.contains("sticky-top")) {
+        console.log("Adding sticky-top class to navbar.");
+        navbar.classList.add("sticky-top");
+    }
 
     // Add scroll behavior
     window.addEventListener("scroll", () => {
         if (window.scrollY > 10) {
+            console.log("Adding scrolled class to navbar.");
             navbar.classList.add("scrolled");
         } else {
+            console.log("Removing scrolled class from navbar.");
             navbar.classList.remove("scrolled");
         }
     });
