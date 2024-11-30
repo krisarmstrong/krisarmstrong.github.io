@@ -1,17 +1,9 @@
-<section id="contact-form" class="section text-center">
+<section id="contact-form" class="py-5">
     <div class="container">
-        <h2 class="section-title">Contact Me</h2>
-        <form 
-            id="form" 
-            class="form-container row g-4 justify-content-center" 
-            style="max-width: 600px; margin: auto;"
-        >
-            <!-- Recipient's Name (Optional) -->
-            <input 
-                type="hidden" 
-                name="to_name" 
-                value="Kris" 
-            > 
+        <h2 class="h2 text-primary fw-bold mb-4 pb-2 border-bottom">Contact Me</h2>
+        <form id="form" class="row g-4 mx-auto" style="max-width: 600px;">
+            <!-- Recipient's Name (Hidden) -->
+            <input type="hidden" name="to_name" value="Kris">
 
             <!-- Your Name -->
             <div class="col-12">
@@ -52,20 +44,12 @@
                 ></textarea>
             </div>
 
-            <!-- Optional Reply-To Field -->
-            <input 
-                type="hidden" 
-                name="reply_to" 
-                id="reply_to" 
-                value=""
-            >
+            <!-- Reply-To Field (Hidden) -->
+            <input type="hidden" name="reply_to" id="reply_to" value="">
 
             <!-- Submit Button -->
             <div class="col-12">
-                <button 
-                    id="button" 
-                    type="submit" 
-                    class="btn btn-primary btn-lg px-4 py-2">
+                <button id="button" type="submit" class="btn btn-primary btn-lg px-4 py-2">
                     Send
                 </button>
             </div>
