@@ -111,7 +111,7 @@ export const loadContent = (id, url) => {
 // Page components definition
 const pageComponents = {
     index: ["professional-summary", "key-highlights", "core-competencies"],
-    certification: ["security-certification", "wireless-certification", "network-certification"],
+    certification: ["security-certification", "wireless-certification", "network-certification", "other-certification"],
     about: ["about-me", "key-achievements", "what-drives-me"],
     contact: ["contact-form"],
 };
